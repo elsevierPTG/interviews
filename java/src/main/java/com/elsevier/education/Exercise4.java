@@ -2,7 +2,7 @@ package com.elsevier.education;
 
 /**
 
-TODO Could the following class have a race condition? If not, why not, and if so, how could we fix it?
+TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
 */
 public class Exercise4 {
@@ -11,12 +11,8 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		/**
-		 * increment the count and return the new value.
-		 */
 		public int increment() {
-			count++;
-			return count;
+			return ++count;
 		}
 		
 		public int getCount() {

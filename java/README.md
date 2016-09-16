@@ -1,6 +1,6 @@
-# coding-challenges
+# Java Coding Challenges
 
-This is a set of coding challenges designed to vet the technical ability of software engineers applying to Elsevier.
+This is a set of Java-specific coding challenges designed to vet the technical ability of software engineers applying to Elsevier.
 
 Steps:
 
