@@ -2,21 +2,19 @@ package com.elsevier.education;
 
 /**
 
-TODO: Make this class Singleton and modify main method to call doSomething method.
+TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
 
 */
 public class Exercise5 {
 	
 	public static class Singleton {
-		
 		public void doSomeThing() {
-
-			System.out.println("Doing some thing....");
+			System.out.println("Doing something....");
 	    }
+	}
 		
-		public static void main(String a[]){
-			Singleton st = new Singleton();
-	        st.doSomeThing();
-	    }
+	public static void main(String a[]){
+		Singleton st = new Singleton();
+		st.doSomeThing();
 	}
 }

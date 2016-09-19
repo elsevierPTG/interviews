@@ -4,9 +4,9 @@ This is a set of Java-specific coding challenges designed to vet the technical a
 
 Steps:
 
-- Clone this repo and create a branch using your name as the branch name.
+- Fork this repo
 - Modify the code as described in the TODO items inside Exercise1, Exercise2, etc.
-- Send a pull request for your branch when you consider the assignment complete.
+- Send a pull request for your fork when you consider the assignment complete.
 
 Additional Notes:
 
