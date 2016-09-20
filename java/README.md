@@ -10,6 +10,5 @@ Steps:
 
 Additional Notes:
 
-- The exercises increase in difficulty, if you can't answer one just move on
 - Don't spend more than 30 minutes on this entire assignment
 - Use comments or javadocs to describe why you made particular design decisions
