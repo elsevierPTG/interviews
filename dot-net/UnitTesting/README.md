@@ -6,9 +6,9 @@ Write a unit test for the UpdateLessonGrade method of the LessonService. Feel fr
 
 Steps:
 
-- Clone this repo and create a branch using your name as the branch name.
+- Fork this repo
 - Write a unit test for the UpdateLessonGrade method of the LessonService.
-- Send a pull request for your branch when you consider the assignment complete.
+- Send a pull request for your fork when you consider the assignment complete.
 
 Additional Notes:
 
