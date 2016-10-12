@@ -1,0 +1,70 @@
+//Override methods toString(), hashcode(), and equals()
+
+package com.elsevier.eols.usermanagementservice.model;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class EvolvePar {
+   
+   @JsonProperty("par")
+   private List<EvolveParSchema> par;
+
+   public List<EvolveParSchema> getPar() {
+      return par;
+   }
+
+   public void setPar(List<EvolveParSchema> par) {
+      this.par = par;
+   }
+
+   //implementation of String Method
+   @Override
+    public String toString(){
+	   StringBuffer strBuff = new StringBuffer();
+	   for(int i=0;i<par.size();i++){
+	   
+	   /*par.get(i) will give the hashcode value of objects , as i don't know the data members of the EvolvePar.
+	    if i knew the data members i would have done like par.get(i).getDataMember().
+	   Second approach would be to think that EvolvePar will have it's own toString implementation
+		*/
+		
+		   strBuff.append(par.get(i) + ",");
+	   }
+		return strBuff.toString();  
+	}
+	
+	//implementing hashCode method 
+	@Override
+	public int hashCode() {
+		 StringBuffer strBuff = new StringBuffer();
+		 if(par == null){
+			return 0;
+		 }else{
+			   for(int i=0;i<par.size();i++){
+				   strBuff.append(par.get(i));
+			   }
+			 return strBuff.hashCode();
+		 }
+		
+	}
+	
+	//implementation of equals method comparing the two class objects 
+	// For the below methos i am not aware of the data members of EvolveParSchema , hence comparing the object refrences.
+   @Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || (o.getClass() != this.getClass()))
+			return false;
+		if ((o instanceof EvolvePar)) {
+			if (par == null) {
+				if (((EvolvePar) o).par != null)
+					return false;
+			} else if (!par.equals(((EvolvePar) o).par))
+				return false;
+		}
+		return true;   
+   
+}
