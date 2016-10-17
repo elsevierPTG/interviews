@@ -6,9 +6,9 @@ Review the ExampleProgram console application. Do not modify or refactor the cod
 
 Steps:
 
-- Clone this repo and create a branch using your name as the branch name.
+- Fork this repo
 - Describe any changes you think should be made in INSTRUCTIONS.txt file in the 'Suggested Changes' section.
-- Send a pull request for your branch when you consider the assignment complete.
+- Send a pull request for your fork when you consider the assignment complete.
 
 Additional Notes:
 
