@@ -26,17 +26,23 @@ public class Exercise3 {
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
+		
 		private Integer id;
 		
+		//No need to check for null since null cannot be passed.
 		public Person(int newId) {
 			id = newId;
 		}
-		
+				
+		//Just return the hashCode id so if .equals on two of the same people is true
+		//then the hashcodes are the same.
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
+			//Automatically send false if other is not a person.  
+			if (!(other instanceof Person)) return false;
 			return id.equals(((Person)other).id);
 		}
 	}
