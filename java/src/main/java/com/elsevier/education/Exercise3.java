@@ -16,8 +16,9 @@ public class Exercise3 {
 		Set<Person> people = new HashSet<>();
 	
 		Person p1 = new Person(1);
+		Person p2 = new Person(1);
 		people.add(p1);
-		people.add(p1);
+		people.add(p2);
 		
 		System.out.println(people.size());
 		
