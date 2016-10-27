@@ -23,9 +23,12 @@ public class Exercise3 {
 		
 	}
 	
-	public static class Person {
+	public  class Person {
 	
-		private static Random generator = new java.util.Random();
+		//private static Random generator = new java.util.Random();
+		// it create random every time - it is not require
+		
+		private static final  String generator = "12212";
 		private Integer id;
 		
 		public Person(int newId) {
@@ -33,7 +36,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * generator;
 		}
 		
 		public boolean equals(Object other) {
