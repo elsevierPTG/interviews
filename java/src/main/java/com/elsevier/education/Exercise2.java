@@ -11,9 +11,11 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+	
+		private Engine engine = null;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
@@ -21,9 +23,19 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	public  class GasEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
+	
+	public  class ElectricEngine implements Engine{
+	  public void spinWheels(){
+		  // no-op for now
+	  }
+	}
+	public  interface Engine{
+		public void spinWheels();
+	}
+	
 }
