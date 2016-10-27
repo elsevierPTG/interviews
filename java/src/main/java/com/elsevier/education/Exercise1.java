@@ -1,8 +1,11 @@
 package com.elsevier.education;
 
+import java.util.Set;
+
 /**
 
 TODO: Make this class immutable.
+ Answer: Don't expose  setters
 
 */
 public class Exercise1 {
@@ -19,6 +22,7 @@ public class Exercise1 {
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
+		//Making immutable
 		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
 		}
@@ -26,6 +30,7 @@ public class Exercise1 {
 		public String getFirstName() {
 			return firstName;
 		}
+		//Making immutable
 		public void setFirstName(String newName) {
 			firstName = newName;
 		}
@@ -33,6 +38,7 @@ public class Exercise1 {
 		public String getLastName() {
 			return lastName;
 		}
+		//Making immutable
 		public void setLastName(String newName) {
 			lastName = newName;
 		}
