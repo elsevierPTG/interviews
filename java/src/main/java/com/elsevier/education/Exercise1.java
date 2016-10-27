@@ -3,17 +3,20 @@ package com.elsevier.education;
 /**
 
 TODO: Make this class immutable.
-
+// final can not be inherit , private const -not able to edit from other class
 */
 public class Exercise1 {
 
-	public static class Person {
+	public final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		private Person(String firstName,String lastName,Set<String> phoneNumber) {
+			this.firstName =firstName ;
+			this.lastName = lastName;
+			this.phoneNumber =phoneNumber ;
 		}
 
 		public Set<String> getPhoneNumbers() {
