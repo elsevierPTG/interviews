@@ -28,7 +28,7 @@ public class Exercise3 {
 		//private static Random generator = new java.util.Random();
 		// it create random every time - it is not require
 		
-		private static final  String generator = "12212";
+		private static final  String generator = "12212L";
 		private Integer id;
 		
 		public Person(int newId) {
