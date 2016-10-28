@@ -1,40 +1,35 @@
-package com.elsevier.education;
+package com.company;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
+ * Created by Yash Gupta
+ */
+public final class Exercise1 {
 
-TODO: Make this class immutable.
+    public static final class Person {
 
-*/
-public class Exercise1 {
+        private Set<String> phoneNumbers;
+        private String firstName;
+        private String lastName;
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
-		}
+        public Person(Set<String> newPhoneNumbers,String newFirstName,String newLastName ) {
+            this.phoneNumbers = new HashSet<String>(newPhoneNumbers);
+            this.firstName = newFirstName;
+            this.lastName = newLastName;
+        }
 
-		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
-		public String getFirstName() {
-			return firstName;
-		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
-		public String getLastName() {
-			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
-	}
+        public Set<String> getPhoneNumbers() {
+            return phoneNumbers;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+    }
 }
