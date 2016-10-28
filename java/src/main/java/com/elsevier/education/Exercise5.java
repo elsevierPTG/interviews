@@ -1,20 +1,23 @@
-package com.elsevier.education;
+package com.company;
 
 /**
-
-TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
-
-*/
+ * Created by Yash Gupta
+ */
 public class Exercise5 {
-	
-	public static class Singleton {
-		public void doSomeThing() {
-			System.out.println("Doing something....");
-	    }
-	}
-		
-	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
-	}
+
+    private Exercise5(){}
+    public static class Singleton {
+        private static final Singleton SINGLETON_INSTANCE = new Singleton();
+        private Singleton(){}
+        public static Singleton getSingletonInstance(){
+            return SINGLETON_INSTANCE;
+        }
+        public void doSomeThing() {
+            System.out.println("Doing something....");
+        }
+    }
+
+    public static void main(String a[]){
+        Singleton.getSingletonInstance().doSomeThing();
+    }
 }
