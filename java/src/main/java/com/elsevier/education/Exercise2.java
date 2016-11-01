@@ -11,19 +11,31 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		private Engine engine;
+		// Dependency Injection via Constructor	
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+        
+	public interface Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
+	
+	public static class GasEngine implements Engine {
+		public void spinWheels() {
+		}
+	}
+	
+	public static class ElectricEngine implements Engine {
+		public void spinWheels() {
+		}
+	}
+	
 }
