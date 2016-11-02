@@ -1,40 +1,43 @@
 package com.elsevier.education;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
 
 TODO: Make this class immutable.
 
+Lavkesh:
+ I initilaize all fields through constructor
+ I deleted all setter method as there will be no setter method in immutable class
+ I return copy of phoneNumbers set as set is mutable object. We need to return copy of mutable object.
+ I make class as final, as no class can extend it and modify its behaviour.
 */
 public class Exercise1 {
 
-	public static class Person {
+	public static final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
-
+		
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
+			return phoneNumbers != null ? new HashSet<>(phoneNumbers) : null;
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
 }
