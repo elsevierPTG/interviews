@@ -17,23 +17,29 @@ public class Exercise3 {
 	
 		Person p1 = new Person(1);
 		people.add(p1);
-		people.add(p1);
+		Person p2 = new Person(1); // creating second object with same ID
+		people.add(p2);
 		
-		System.out.println(people.size());
+		System.out.println(people.size()); //outputs the size as 1
 		
 	}
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		//Not using Random number generator
+		//private static Random generator = new java.util.Random();
 		private Integer id;
+		private int idModifier = 10;
 		
 		public Person(int newId) {
 			id = newId;
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();//comment it.since it uses Random generator, 
+			//it can generate different hashcode for the objects with same ID
+			
+			return id * idModifier;// it will generate same hashcode for the objects with same ID
 		}
 		
 		public boolean equals(Object other) {

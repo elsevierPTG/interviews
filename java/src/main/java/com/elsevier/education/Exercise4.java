@@ -9,9 +9,10 @@ public class Exercise4 {
 
 	public static class Counter {
 		
+		//can also use  AutomicInteger 
 		private int count = 0;
 		
-		public int increment() {
+		public int synchronized increment() {// defining method 'synchronized' , so that count variable is thread-safe
 			return ++count;
 		}
 		
@@ -19,7 +20,7 @@ public class Exercise4 {
 			return count;
 		}
 		
-		public void resetCount() {
+		public void synchronized resetCount() {// defining method 'synchronized' , so that count variable is thread-safe
 			count = 0;
 		}
 
