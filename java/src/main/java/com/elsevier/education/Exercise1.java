@@ -2,16 +2,15 @@ package com.elsevier.education;
 
 /**
 
-TODO: Make this class immutable.
-
+We need to make this class and its members final, also comment out the setter method
 */
-public class Exercise1 {
+public final class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
 		}
@@ -33,8 +32,10 @@ public class Exercise1 {
 		public String getLastName() {
 			return lastName;
 		}
+		/*
 		public void setLastName(String newName) {
 			lastName = newName;
 		}
+		*/
 	}
 }
