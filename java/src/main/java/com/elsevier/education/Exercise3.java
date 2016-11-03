@@ -15,7 +15,7 @@ public class Exercise3 {
 	
 		Set<Person> people = new HashSet<>();
 	
-		Person p1 = new Person(1);
+		Person p1 = new Perreturn id.equals(((Person)other).id);son(1);
 		people.add(p1);
 		people.add(p1);
 		
@@ -37,7 +37,19 @@ public class Exercise3 {
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+if(other == null)			
+	
+return false;
+
+if(!(other instanceof Person))
+return false;
+if (other == this)	
+return true;
+			
+Person p=(Person)other;
+return 	id.equls((Person)other.id)	
+			
 		}
+
 	}
 }
