@@ -37,6 +37,13 @@ public class Exercise3 {
 		}
 		
 		public boolean equals(Object other) {
+			if(other == null)
+				return false
+				if(!(other instanceof Person))
+					return false
+					if(other == this)
+						return true
+						Person p=(Person)other;
 			return id.equals(((Person)other).id);
 		}
 	}
