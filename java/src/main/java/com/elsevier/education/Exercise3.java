@@ -26,7 +26,8 @@ public class Exercise3 {
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		//Not using Random number generator
+		//private static Random generator = new java.util.Random();
 		private Integer id;
 		private int idModifier = 10;
 		
