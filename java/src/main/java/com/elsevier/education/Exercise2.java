@@ -11,7 +11,17 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
+		
+		@Autowired
+		@Qualifier("gasEngine") // if want electricEngine, can wire that object here
+		public Engine setEngine(Engine engine1){
+			engine = engine1;
+		}		
+		
+		public Engine getEngine(){
+			return engine;
+		}
 		
 		public Car() {
 		}
@@ -21,8 +31,23 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	interface Engine{
+		spinWheels();
+	}
+	@Component("gasEngine")
+	public class GasEngine implements Engine {
+		@override
 		public void spinWheels() {
+			System.out.println("GasEngine spinWheels---------->");
+			// no-op for now
+		}
+	}
+	
+	@Component("electricEngine")
+	public class ElectricEngine implements Engine {
+		@override
+		public void spinWheels() {
+			System.out.println("ElectricEngine spinWheels---------->");
 			// no-op for now
 		}
 	}
