@@ -31,11 +31,17 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		/**
+		 * HashSet class uses hashCode function to check is one object is the same as another
+		 * This function should use static data for hashCode
+		 * Because id variable is Integer and Integer.hashCode() returns the integer value as hashCode we can use "id" variable value as hashCode
+		 * @return
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
-		
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
