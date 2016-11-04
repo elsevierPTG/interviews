@@ -8,6 +8,10 @@ can run with gradlew clean build; java -cp build/classes/main com.elsevier.educa
 
 TODO We should be able to call people.add() twice but end with only one object in it.
 
+HashSet uses hashCode method in Person object to see if the object already exists.
+Since the hashCode implementation here is unique per person, adding twice will end up with 
+only one object in set.
+
 */
 public class Exercise3 {
 
