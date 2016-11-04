@@ -13,7 +13,7 @@ public class Exercise3 {
 
 	public static void main(String[] args) {
 	
-		Set<Person> people = new HashSet<>();
+		Set<Person> people = new HashSet<>(); 
 	
 		Person p1 = new Person(1);
 		people.add(p1);
