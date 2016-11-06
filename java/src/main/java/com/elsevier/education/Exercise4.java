@@ -4,6 +4,8 @@ package com.elsevier.education;
 
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
+I am going with no. I made the methods synchronized to avoid issues in a multi threaded
+ situation.
 */
 public class Exercise4 {
 
@@ -11,15 +13,16 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
-			return ++count;
-		}
-		
-		public int getCount() {
+		public synchronized int increment() {
+			++count;
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized int getCount() {
+			return count;
+		}
+		
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
