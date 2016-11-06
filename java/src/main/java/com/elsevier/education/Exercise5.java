@@ -13,6 +13,10 @@ public class Exercise5 {
 		private Singleton(){
 			//creating the private constructor
 		}
+		/**
+		 * Factory method to return singleton 
+		 * @return
+		 */
 		public static Singleton getSingletonInstance(){
 			if(null == instance){
 				synchronized (Singleton.class) {

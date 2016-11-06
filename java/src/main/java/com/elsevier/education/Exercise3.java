@@ -33,12 +33,19 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		/**
+		 * @return hashCode
+		 */
 		public int hashCode() {
 			//using the id.hasCode() as Integer class has a default implementation  for hash
 			//multiplying with primeHashCode to have 2nd degree of hash function
 			return id.hashCode() * primeHash;
 		}
 		
+		/**
+		 * @param other
+		 * @return boolean
+		 */
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
