@@ -26,8 +26,8 @@ public class Exercise2 {
 		}
 	}
 
-	public interface Engine(){
-		public void spinWheels() {}
+	public interface Engine {
+		public void spinWheels();
 	}
 
 	public static class GasEngine implements Engine {

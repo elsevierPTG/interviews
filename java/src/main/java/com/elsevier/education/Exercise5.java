@@ -7,7 +7,9 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 */
 public class Exercise5 {
 
-	public class Singleton {
+
+
+	public static class Singleton {
 
 		private static Singleton testSingleton;
 
