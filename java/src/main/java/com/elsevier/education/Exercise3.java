@@ -23,7 +23,7 @@ public class Exercise3 {
 		
 	}
 	
-	public static class Person {
+	public static String class Person {
 	
 		private static Random generator = new java.util.Random();
 		private Integer id;
