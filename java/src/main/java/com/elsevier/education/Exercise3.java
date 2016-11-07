@@ -8,6 +8,8 @@ can run with gradlew clean build; java -cp build/classes/main com.elsevier.educa
 
 TODO We should be able to call people.add() twice but end with only one object in it.
 
+Solution: set will accept people twice but will return only one object
+
 */
 public class Exercise3 {
 
