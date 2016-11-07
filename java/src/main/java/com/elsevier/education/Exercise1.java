@@ -5,13 +5,13 @@ package com.elsevier.education;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
+public final class Exercise1 {
 
-	public static class Person {
+	public final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
 		}
