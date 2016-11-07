@@ -7,7 +7,8 @@ import java.util.*;
 can run with gradlew clean build; java -cp build/classes/main com.elsevier.education.Exercise3
 
 TODO We should be able to call people.add() twice but end with only one object in it.
-
+Using the default implementation of hashCode from Integer class
+and a prime factor that will be same for all the objects
 */
 public class Exercise3 {
 
@@ -25,17 +26,26 @@ public class Exercise3 {
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		private static final Integer primeHash = 31;// prime for the hashcode
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
 		
+		/**
+		 * @return hashCode
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			//using the id.hasCode() as Integer class has a default implementation  for hash
+			//multiplying with primeHashCode to have 2nd degree of hash function
+			return id.hashCode() * primeHash;
 		}
 		
+		/**
+		 * @param other
+		 * @return boolean
+		 */
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
