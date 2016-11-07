@@ -11,7 +11,9 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		//private GasEngine engine = new GasEngine();
+		@Autowired
+		private GasEngine engine;
 		
 		public Car() {
 		}
@@ -20,8 +22,17 @@ public class Exercise2 {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+	public abstract class Engine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	public static class GasEngine extends Engine{
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	public static class ElectricEngine extents Engine{
 		public void spinWheels() {
 			// no-op for now
 		}
