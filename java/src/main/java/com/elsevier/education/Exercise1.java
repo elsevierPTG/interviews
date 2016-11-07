@@ -7,7 +7,7 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
+	public static String class Person {
 		
 		private Set<String> phoneNumbers;
 		private String firstName;

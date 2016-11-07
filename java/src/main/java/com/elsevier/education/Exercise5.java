@@ -8,6 +8,11 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 public class Exercise5 {
 	
 	public static class Singleton {
+		
+		//Creating a private constructor for making singleton class as actual singleton.
+		private Singleton(){
+			
+		}
 		public void doSomeThing() {
 			System.out.println("Doing something....");
 	    }

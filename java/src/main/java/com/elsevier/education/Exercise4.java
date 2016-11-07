@@ -9,6 +9,9 @@ public class Exercise4 {
 
 	public static class Counter {
 		
+		//Creating new method and making it as synchronized. Hence it becomes synchronized.
+		public synchronized count(){
+			
 		private int count = 0;
 		
 		public int increment() {
@@ -22,6 +25,7 @@ public class Exercise4 {
 		public void resetCount() {
 			count = 0;
 		}
-
+		}
+		
 	}
 }
