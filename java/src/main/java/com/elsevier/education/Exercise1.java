@@ -3,9 +3,11 @@ package com.elsevier.education;
 /**
 
 TODO: Make this class immutable.
+A class is made immutable when it cannot be modified by an outsider
+Declaring a class final keeps it safe from overriding
 
 */
-public class Exercise1 {
+public final class Exercise1 {
 
 	public static class Person {
 		

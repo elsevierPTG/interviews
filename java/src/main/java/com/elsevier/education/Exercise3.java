@@ -7,6 +7,7 @@ import java.util.*;
 can run with gradlew clean build; java -cp build/classes/main com.elsevier.education.Exercise3
 
 TODO We should be able to call people.add() twice but end with only one object in it.
+Solution: We need not override hashcode and equals method
 
 */
 public class Exercise3 {
@@ -32,12 +33,12 @@ public class Exercise3 {
 			id = newId;
 		}
 		
-		public int hashCode() {
+		/*public int hashCode() {
 			return id * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
-		}
+		}*/
 	}
 }
