@@ -4,37 +4,40 @@ package com.elsevier.education;
 
 TODO: Make this class immutable.
 
-*/
-public class Exercise1 {
+to make class immutable we need to remove get methods and make feilds as final and private and class as final
 
-	public static class Person {
+*/
+public  class Exercise1 {
+
+	public final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		private Person(Set<String> pn,String fn,String ln) {
+			this.phoneNumbers=pn;
+			this.firstName=fn;
+			this.lastName=ln;
 		}
 
+		 public static Person createNewInstance(Set<String> pn,String fn,String ln)
+		    {
+			return new Person(pn, fn, ln);
+		    }
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }
