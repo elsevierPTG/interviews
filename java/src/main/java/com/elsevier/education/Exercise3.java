@@ -32,8 +32,10 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		//Ensuring all People objects have the same hasCode will ensure HashSet only has one People object
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return 44;
 		}
 		
 		public boolean equals(Object other) {
