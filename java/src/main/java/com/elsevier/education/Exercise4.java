@@ -3,6 +3,7 @@ package com.elsevier.education;
 /**
 
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
+It is not.  We can fix it by adding the 'synchronized' keyword to the methods
 
 */
 public class Exercise4 {
@@ -11,15 +12,18 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		//adding 'synchronized' for thread safety
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		//adding 'synchronized' for thread safety
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		//adding 'synchronized' for thread safety
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
