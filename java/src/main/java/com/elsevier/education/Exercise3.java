@@ -14,7 +14,7 @@ public class Exercise3 {
 	public static void main(String[] args) {
 	
 		Set<Person> people = new HashSet<>();
-	
+	//Set doesn't allow duplicates.
 		Person p1 = new Person(1);
 		people.add(p1);
 		people.add(p1);
