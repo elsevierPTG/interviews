@@ -6,12 +6,14 @@ TODO: Make this class immutable.
 
 */
 public class Exercise1 {
-
-	public static class Person {
+/**
+To make this class as immutable, added final keyword to class and fields, removed setters
+*/
+	public final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
 		}
@@ -19,22 +21,22 @@ public class Exercise1 {
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
+		/*public void setPhoneNumbers(Set<String> newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
-		}
+		}*/
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
+		/*public void setFirstName(String newName) {
 			firstName = newName;
-		}
+		}*/
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
+		/*public void setLastName(String newName) {
 			lastName = newName;
-		}
+		}*/
 	}
 }
