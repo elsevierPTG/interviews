@@ -32,12 +32,13 @@ public class Exercise3 {
 			id = newId;
 		}
 		
-		public int hashCode() {
+		//quick fix - removing hashcode to just use one object into Set.
+		/*public int hashCode() {
 			return id * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
-		}
+		}*/
 	}
 }
