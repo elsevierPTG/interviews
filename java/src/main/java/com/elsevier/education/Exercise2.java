@@ -11,19 +11,32 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private final GasEngine gEngine;
+		private final ElectricEngine eEngine;
 		
-		public Car() {
+		//engine injected using constructors.
+		public Car(GasEngine gEngine) {
+			this.gEngine=gEngine;
+		}
+		public Car(ElectricEngine eEngine) {
+			this.eEngine=eEngine;
 		}
 		
 		public void moveForward() {
-			engine.spinWheels();
+			gEngine.spinWheels();
 		}
 	}
 	
+	//no-op implementations of both engines
 	public static class GasEngine {
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
+	public static class ElectricEngine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	
 }
