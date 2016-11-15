@@ -31,9 +31,15 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+		//Hash set uses hashcode to check for equality of two objects. If two objects are equal then 
+		//hashcode and equals methods should return the same value for both objects. Removing random generator here will do the work for us. 
+		//So instead of generating the random hashcode here standard hashcode with id will be created.
+		//If both objects generate same hashcode then while adding to the set it will ignore adding duplicate objects.
+		//Second time when people.add() is invoked set will return "false" value and it will ignore adding person object to the set.
+		//This way we can avoid duplicate entries in set.
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
