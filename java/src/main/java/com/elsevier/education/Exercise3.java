@@ -14,7 +14,7 @@ public class Exercise3 {
 	public static void main(String[] args) {
 	
 		Set<Person> people = new HashSet<>();
-	
+	//since Person is of type Set, it will prevent duplicate. to check duplicate it uses equal and hasncode method wjich has been used in person class
 		Person p1 = new Person(1);
 		people.add(p1);
 		people.add(p1);
