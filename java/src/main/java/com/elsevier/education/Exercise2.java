@@ -11,9 +11,20 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		// Object for interface is declared. 
+		//private GasEngine engine = new GasEngine();
+		private Engine engine;
+		// Instead of defualt consturctor, constructor with Interface - Engine object is declared to 
+		// have dependency injection of Engine class into Car 				
+		/*public Car() {
+		}*/
+		public car(Engine engine){
+			if(engine instanceof GasEngine){
+				this.engine = new GasEngine();
+			}
+			if(engine instanceof ElectricEngine){
+				this.engine = new ElectricEngine();
+			}
 		}
 		
 		public void moveForward() {
@@ -21,9 +32,22 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	// New Interface Engine is added which can be implemented by both GasEngine and ElectricEngine
+	public static interface Engine {
+		public void spinWheels();					
+	}
+	//Modified GasEngine to implment Engine interface
+	public static class GasEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
+	
+	// Added new class ElectricEngine which implements Engine interface
+	public static class ElectricEngine implements Engine {	
+		public void spinWheels() {
+			// no-op for now
+		}	
+		
+	} 
 }
