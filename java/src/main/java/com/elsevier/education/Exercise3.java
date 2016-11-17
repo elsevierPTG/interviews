@@ -25,7 +25,9 @@ public class Exercise3 {
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		// PRIME number is declared as final for hashcode generation
+		//private static Random generator = new java.util.Random();
+		private static final int hashConst = 20;
 		private Integer id;
 		
 		public Person(int newId) {
@@ -33,7 +35,11 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			// Use of generator.nextInt() will return random number at each invokation. So, hashCode for 
+			// same object will be different. Instead of random number, PRIME constant is used and when
+			// combined with field values, same hashCode will be returned for object with same field values.
+			//return id * generator.nextInt();
+			retrun id*hasConst;
 		}
 		
 		public boolean equals(Object other) {
