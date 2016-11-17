@@ -27,3 +27,23 @@ public class Exercise2 {
 		}
 	}
 }
+
+Solution:
+public interface GasEngine{
+	public void spinWheels();
+}
+
+public static class Car 
+{
+  private GasEngine engine;
+
+  @Inject
+  public Car(GasEngine engine){
+    this.engine = engine;
+  }
+  public void moveForward() {
+    engine.spinWheels();
+  }
+	
+}
+
