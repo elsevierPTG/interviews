@@ -10,16 +10,22 @@ public class Exercise4 {
 	public static class Counter {
 		
 		private int count = 0;
-		
-		public int increment() {
+		/**
+		 * synchronized method will be allowed to access one thread at a time. hence it is threadsafe now.
+		 */
+		public synchronized int increment() {
 			return ++count;
 		}
-		
-		public int getCount() {
+		/**
+		 * synchronized method will be allowed to access one thread at a time. hence it is threadsafe now.
+		 */
+		public synchronized int getCount() {
 			return count;
 		}
-		
-		public void resetCount() {
+		/**
+		 * synchronized method will be allowed to access one thread at a time. hence it is threadsafe now.
+		 */
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
