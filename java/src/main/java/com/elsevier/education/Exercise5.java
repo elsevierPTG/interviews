@@ -6,10 +6,23 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 
 */
 public class Exercise5 {
-	
-	public static class Singleton {
-		public void doSomeThing() {
+	// implement clonable interface for clone not support Exception//
+	public static class Singleton implements clonable {
+		//create private static reference  //
+		private static Singleton st=new Singleton();
+		//create private constructor//
+		private Singleton(){}
+		// make a method as synchronized and instance or factory merthod
+		public Synchronized Singleton doSomeThing() {
+			if{
+				st=new Singleton();
+			
 			System.out.println("Doing something....");
+			}
+			
+			else {
+				return st;
+			}
 	    }
 	}
 		
