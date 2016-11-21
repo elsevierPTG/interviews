@@ -10,17 +10,17 @@ public class Exercise4 {
 	public static class Counter {
 		
 		private int count = 0;
-		
-		public int increment() {
-			return ++count;
+		/* Synchronized method for thread safe */
+		public Synchronized int increment() {
+			return count++;
 		}
 		
-		public int getCount() {
-			return count;
+		public Synchronized int getCount() {
+			return count.getIncrement();
 		}
 		
-		public void resetCount() {
-			count = 0;
+		public Synchronized void resetCount() {
+			return count = 0;
 		}
 
 	}

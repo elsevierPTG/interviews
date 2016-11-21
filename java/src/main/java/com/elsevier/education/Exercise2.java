@@ -13,17 +13,34 @@ public class Exercise2 {
 		
 		private GasEngine engine = new GasEngine();
 		
-		public Car() {
+		public Car(GasEngine engine) {
+			this.engine=new Engine();
 		}
+		public Cat(ElectricEngine engine){
+			this.engine=new Engine();
+		}
+		
+		
+
 		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
 	
-	public static class GasEngine {
+	Interface Engine{
+		spinWheels(){}
+	}
+	public static class GasEngine implements Engine {
 		public void spinWheels() {
-			// no-op for now
+			System.Out.println("this is GasEngine...");
 		}
 	}
+	
+	
+public class ElectricERngine implements Engine{
+public void spinWheels(){
+	System.out.println("this is Electric Engin...");
+}
+}
 }
