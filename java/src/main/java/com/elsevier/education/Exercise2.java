@@ -22,6 +22,7 @@ public class Exercise2 {
 	}
 	
 	public static class GasEngine {
+		private void  car c;
 		public void spinWheels() {
 			// no-op for now
 		}
