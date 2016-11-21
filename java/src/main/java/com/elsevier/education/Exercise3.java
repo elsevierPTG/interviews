@@ -32,8 +32,13 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		/**
+		 * now hasCode() returns id value,hence Set uses hascode to store the instance.
+		 * when hascode value is same, it overwrites the existing instance.
+		 * removed return id * generator.nextInt();
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
