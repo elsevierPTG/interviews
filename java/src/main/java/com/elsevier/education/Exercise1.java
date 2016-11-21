@@ -9,7 +9,7 @@ public class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
+		private  final Set<String> phoneNumbers;
 		private String firstName;
 		private String lastName;
 		
@@ -18,9 +18,6 @@ public class Exercise1 {
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
 		}
 		
 		public String getFirstName() {
