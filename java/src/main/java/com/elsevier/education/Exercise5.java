@@ -16,7 +16,7 @@ public class Exercise5 {
 			
 		}
 		
-		public Singleton getInstance() {
+		public static Singleton getInstance() {
 			return INSTANCE;
 		}
 		public void doSomeThing() {
@@ -25,7 +25,7 @@ public class Exercise5 {
 	}
 		
 	public static void main(String a[]){
-		Singleton st = Singleton.INSTANCE;
+		Singleton st = Singleton.getInstance();
 		st.doSomeThing();
 	}
 }
