@@ -25,7 +25,6 @@ public class Exercise3 {
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -33,7 +32,13 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			/**
+			 * Earlier code was breaking the contract between hashCode and
+			 * equals function which says if two objects are equal according
+			 * to their equals function then their hashCode function must return
+			 * the same value.
+			 */
+			return id;
 		}
 		
 		public boolean equals(Object other) {
