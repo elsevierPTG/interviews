@@ -31,11 +31,11 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
-		
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
