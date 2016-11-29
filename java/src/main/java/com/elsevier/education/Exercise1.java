@@ -1,40 +1,40 @@
 package com.elsevier.education;
 
+import java.util.Collections;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 /**
 
-TODO: Make this class immutable.
+Person class is immutable, because it is final
+ and it's fields are final, not immutable.
 
 */
 public class Exercise1 {
 
-	public static class Person {
+	public final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
 
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			return phoneNumbers.stream().map(String::new).collect(Collectors.toSet());
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
 }
