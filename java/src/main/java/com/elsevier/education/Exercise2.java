@@ -11,9 +11,10 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine; // Using the interface instead of class to achieve loose coupling
 		
-		public Car() {
+		public Car(Engine engine) {
+                   this.engine = engine; // Engine has been used to inject any type of engine.
 		}
 		
 		public void moveForward() {
@@ -21,9 +22,20 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
-	}
+	public class GasEngin implements Engine  { // created GasEngine which implements Engine interface.
+	   public void spinWheels() {
+	    }
+           }
+         
+        public class ElectricEngine implements Engine  { // created ElectricEngine which implements Engine interface.
+	    public void spinWheels()   {
+	     }
+         }
 }
+
+public interface engine {            // created an interface for loose coupling.
+	public void spinWheels();
+}
+
+
+
