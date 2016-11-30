@@ -33,7 +33,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id;
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
