@@ -25,19 +25,26 @@ public class Exercise3 {
 	
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		//removed the Random generator class as it is not required. 
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		public Integer getId(){         // created getter for id.
+		        return this.id;      
+            	}
+	
+	        public void setId(Integer id){   // created setter for id.
+		        this.id=id;
+	        } 
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();  // hashCode of the id has been used to return the same value whenever it is called on the same id.                             
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+			return id.equals(((Person)other).getId());
 		}
 	}
 }

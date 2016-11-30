@@ -11,15 +11,15 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		public synchronized int increment() {  // made this method as synchronized to make as thread safe.
 			return ++count;
 		}
 		
-		public int getCount() {
+		public synchronized int getCount() {  // made this method as synchronized to make as thread safe.
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized void resetCount() {  // made this method as synchronized to make as thread safe.
 			count = 0;
 		}
 
