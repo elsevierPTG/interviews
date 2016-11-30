@@ -15,9 +15,9 @@ public class Exercise1 {
 		
 		public Person(Set<String> newPhoneNumbers,String newFirstName, String newLastName) 
 		{
-		this.phoneNumbers = newPhoneNumbers;
-		this.lastName =  newLastName;
-		this.firstName = newFirstName;
+			this.phoneNumbers = newPhoneNumbers;
+			this.lastName =  newLastName;
+			this.firstName = newFirstName;
 		}
 
 		public Set<String> getPhoneNumbers() {
