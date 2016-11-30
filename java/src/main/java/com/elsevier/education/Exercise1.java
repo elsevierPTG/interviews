@@ -7,34 +7,36 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
+	public final class Person {  // making the class as final to protect it from overridden by other class.
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers; // making property as final so that can be initialized only once.
+		private final String firstName;         // making property as final so that can be initialized only once.
+		private final String lastName;          // making property as final so that can be initialized only once.
 		
-		public Person() {
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+                     Set<String> temp = new HashSet<>(); // temp variable has created to perform deep copy rather than 
+                                                         // shallow copy.                                           
+                     temp = phoneNumbers;
+                     this.phoneNumbers = temp;
+                     this.firstName = firstName ;
+                     this.lastName = lastName;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		// removed the setter for phoneNumbers, not allowing to set from outside the class. 
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		// removed the setter for firstName, not allowing to set from outside the class.
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
+                // removed the setter for firstName, not allowing to set from outside the class.
+		
 	}
 }
