@@ -7,14 +7,14 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 */
 public class Exercise5 {
 	
-	public static class Singleton {
+	public enum Singleton {
+            INSTANCE;
 		public void doSomeThing() {
 			System.out.println("Doing something....");
 	    }
 	}
 		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+		Singleton.INSTANCE.doSomeThing();
 	}
 }
