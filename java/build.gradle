@@ -10,8 +10,15 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.4'
+    testCompile 'org.springframework:spring-test:2.5'
+    testCompile 'org.springframework:spring-tx:3.1.2.RELEASE'
+    compile 'org.springframework:spring-core:3.2.5.RELEASE'
+    compile 'org.springframework:spring-beans:3.2.5.RELEASE'
+    compile 'org.springframework:spring-context:3.2.5.RELEASE'
+    
 }
 
 task wrapper(type: Wrapper) {
