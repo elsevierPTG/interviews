@@ -8,18 +8,19 @@ TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 public class Exercise4 {
 
 	public static class Counter {
+		/* volatile - to ensure value is read from memory directly*/
+		private volatile int count = 0;
 		
-		private int count = 0;
-		
-		public int increment() {
+		/*add synchronized keyword to ensure only one thread is accessing at a time*/
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
