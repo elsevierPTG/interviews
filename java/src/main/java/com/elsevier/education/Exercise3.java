@@ -33,11 +33,19 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			int hashcode = 0;
+			hashcode = id.hashCode();
+			return hashcode;
 		}
 		
-		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+		public boolean equals(Object obj) {
+			if(obj instanceof Person){
+				Person pp = (Person)obj;
+				return(pp.id == this.id);
+			}
+			else{
+				return false;
+			}
 		}
 	}
 }
