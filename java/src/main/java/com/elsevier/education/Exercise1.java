@@ -1,5 +1,9 @@
 package com.elsevier.education;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
 
 TODO: Make this class immutable.
@@ -9,24 +13,24 @@ public class Exercise1 {
 
 	public final static class Person {
 
-		// make instance variables final
-		private final Set<String> phoneNumbers;
-		private final String firstName;
-		private final String lastName;
+		// create Hashset so it can be cloned
+		private  HashSet<String> phoneNumbers;
+		private  String firstName;
+		private  String lastName;
 
 		//default constructor private
 		private Person() {
 		}
 
 		public Person(Set<String> phones, String first, String last) {
-			setFirstName(first);
-			setLastName(last);
+			this.firstName = first;
+			this.lastName=last;
 			setPhoneNumbers(phones);
 		}
 
 		// clone the set so original can't be modified
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers.clone();
+			return (Set<String>) phoneNumbers.clone();
 		}
 
 		// setters made private,  object instance created as copy instead of referenced
@@ -49,7 +53,7 @@ public class Exercise1 {
 			return lastName;
 		}
 		// setters made private
-		public void setLastName(String newName) {
+		private void setLastName(String newName) {
 			lastName = newName;
 		}
 	}
