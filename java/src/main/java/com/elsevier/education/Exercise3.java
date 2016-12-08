@@ -3,11 +3,8 @@ package com.elsevier.education;
 import java.util.*;
 
 /**
-
 can run with gradlew clean build; java -cp build/classes/main com.elsevier.education.Exercise3
-
 TODO We should be able to call people.add() twice but end with only one object in it.
-
 */
 public class Exercise3 {
 
@@ -24,8 +21,7 @@ public class Exercise3 {
 	}
 	
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+		//private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -33,7 +29,11 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			//Cannot use a random generator, should be a non-zero constant for hash code to be effective
+			int hashCode = 23;
+			
+			return id * hashCode;			
+			//return id * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
