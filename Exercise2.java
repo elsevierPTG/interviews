@@ -1,6 +1,5 @@
 package com.elsevier.education;
 
-import javax.annotation.Resource;
 /**
 
 TODO refactor the Car to use dependency injection of the engine
@@ -12,8 +11,7 @@ public class Exercise2 {
 
 	public static class Car {
 
-		@Resource
-		private Engine engine;
+		@Inject private Engine engine;
 
 
 		public Car() {
@@ -26,20 +24,16 @@ public class Exercise2 {
 	}
 
 	public interface Engine {
-		public void spinWheels() ;
-	}
-	
-	public static class GasEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
+	}
+	
+	public static class GasEngine implements Engine {
 
 	}
 
 	public static class ElectricEngine implements Engine {
-		public void spinWheels() {
-			// no-op for now
-		}
 
 	}
 }
