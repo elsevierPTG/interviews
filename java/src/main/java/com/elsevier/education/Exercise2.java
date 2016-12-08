@@ -9,7 +9,7 @@ public class Exercise2 {
     
     public static class Car {
         
-        private Engine engine;
+        private Engine engine = null;
         
         //Injecting Engine
         public Car(Engine engine) {
@@ -21,7 +21,7 @@ public class Exercise2 {
         }
     }
     
-    public static interface Engine {
+    public interface Engine {
         void spinWheels();
     }
     
