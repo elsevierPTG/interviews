@@ -1,6 +1,5 @@
 package com.elsevier.education;
 
-
 /**
  * TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
  */

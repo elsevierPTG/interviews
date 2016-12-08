@@ -13,7 +13,7 @@ public class Exercise4 {
 		volatile private int count = 0;
 
 		// synchronize updates to count
-		public synchronized int  increment() {
+		public int synchronized increment() {
 			return ++count;
 		}
 
@@ -23,7 +23,7 @@ public class Exercise4 {
 		}
 
 		// synchronize updates to count
-		public synchronized void  resetCount() {
+		public void synchronized resetCount() {
 			count = 0;
 		}
 
