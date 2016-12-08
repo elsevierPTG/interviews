@@ -27,13 +27,16 @@ public class Exercise3 {
 	
 		private static Random generator = new java.util.Random();
 		private Integer id;
-		
+		private Integer hashMultiplier;
+
+		// generate the same hashMultiplier for the same Id
 		public Person(int newId) {
 			id = newId;
+			hashMultiplier=generator.nextInt();
 		}
-		
+		// modified to use instance value rather than random value so hash will be same for equal instance
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * hashMultiplier;
 		}
 		
 		public boolean equals(Object other) {

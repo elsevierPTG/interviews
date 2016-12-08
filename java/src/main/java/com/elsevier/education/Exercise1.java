@@ -7,32 +7,48 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+	public final static class Person {
+
+		// make instance variables final
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+
+		//default constructor private
+		private Person() {
 		}
 
-		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+		public Person(Set<String> phones, String first, String last) {
+			setFirstName(first);
+			setLastName(last);
+			setPhoneNumbers(phones);
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
+
+		// clone the set so original can't be modified
+		public Set<String> getPhoneNumbers() {
+			return phoneNumbers.clone();
+		}
+
+		// setters made private,  object instance created as copy instead of referenced
+		private void setPhoneNumbers(Set<String> newPhoneNumbers) {
+			phoneNumbers = new HashSet<String>();
+			for (String phoneNum:newPhoneNumbers) {
+				phoneNumbers.add(phoneNum);
+			}
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
+		// setters made private
+		private void setFirstName(String newName) {
 			firstName = newName;
 		}
 		
 		public String getLastName() {
 			return lastName;
 		}
+		// setters made private
 		public void setLastName(String newName) {
 			lastName = newName;
 		}
