@@ -6,6 +6,17 @@ sourceCompatibility = 1.8
 
 version = '1.0'
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java/com/elsevier/education']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -16,4 +27,11 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.0'
+}
+
+task compileClasses(type: JavaCompile) {
+    source = sourceSets.main.java.srcDirs
+    include '*.java'
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = sourceSets.main.output.classesDir
 }
