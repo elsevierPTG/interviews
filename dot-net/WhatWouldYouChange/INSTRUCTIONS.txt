@@ -5,4 +5,12 @@
 
 
 Suggested Changes:
+	1. The program should allow the user to specify the file to be opened as a command line parameter; this can be implemented by supplying args[0] as a parameter to exampleClass.ExampleMethod() in 
+	Program.Main, instead of it being hardcoded as it is now (and the hardcoded example has a typo in any case!)
 	
+	2. In the try block in ExampleClass.ExampleMethod(), the creation of the StreamReader should be incorporated into a using statement and block, which should then wrap the ReadToEnd() method call.
+	This will help to ensure that the StreamReader resource is closed properly after it is used.
+
+	3. In the catch block in ExampleClass.ExampleMethod(), instead of using a succession of standard string assignments to set the default value of the string, a verbatim string literal using the @ 
+	symbol should be used instead.  This will make the default value more readable, and not clutter it up with a large number of newline escape characters.  Also, potentially a brief message indicating
+	that there was an issue reading the file, and that the displayed text is a default, can be added to the beginning of the string.
