@@ -4,10 +4,17 @@ import java.util.*;
 
 /**
 
-can run with gradlew clean build; java -cp build/classes/main com.elsevier.education.Exercise3
+ To fix the program, the hash is changed to be the id.
+ HashSet internally uses hashes to classify objects.
+ If two hashes are different, the objects themselves are
+ considered to be different.  By removing the randomness from
+ the hash method, Persons are now hashed by their id.  Now,
+ adding the same user twice won't happen because the HashSet
+ will encounter the same hash twice.
 
-TODO We should be able to call people.add() twice but end with only one object in it.
+ Note: equals method was updated to check instance type before casting
 
+ @author Joseph Cosentino
 */
 public class Exercise3 {
 
@@ -24,19 +31,23 @@ public class Exercise3 {
 	}
 	
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		@Override
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
-		
+
+		@Override
 		public boolean equals(Object other) {
+		    if (!(other instanceof Person)) {
+		        return false;
+            }
 			return id.equals(((Person)other).id);
 		}
 	}
