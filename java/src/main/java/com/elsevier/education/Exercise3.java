@@ -26,6 +26,8 @@ public class Exercise3 {
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
+		// private List<Integer> randomIntList = new ArrayList<>();
+		
 		private Integer id;
 		
 		public Person(int newId) {
@@ -33,7 +35,18 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			/*
+			Integer random = generator.nextInt();
+			while(randomIntList.contains(random)){
+				random = generator.nextInt();
+			}
+			randomIntList.add(random);
+			return id * random;
+			*/
+			
+			// OR
+
+			return id * id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
