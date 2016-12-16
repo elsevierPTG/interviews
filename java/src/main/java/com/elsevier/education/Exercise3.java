@@ -26,7 +26,7 @@ public class Exercise3 {
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
-		// private List<Integer> randomIntList = new ArrayList<>();
+		// private static List<Integer> randomIntList = new ArrayList<>();
 		
 		private Integer id;
 		
