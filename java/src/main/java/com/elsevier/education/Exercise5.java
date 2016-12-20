@@ -8,13 +8,15 @@ public class Exercise5 {
 
 	public static class Singleton {
 
+		// eager initialization of the class. 
 		private static final Singleton INSTANCE = new Singleton();
 
 		private Singleton() {
 
 		}
 
-		public Singleton getInstance() {
+		// marking static final so that sub class cannot override.
+		public static final Singleton getInstance() {
 			return INSTANCE;
 		}
 

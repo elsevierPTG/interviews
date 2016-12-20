@@ -7,16 +7,19 @@ package com.elsevier.education;
  */
 public class Exercise2 {
 
+	// super interface class.
 	public interface Engine {
 		public void spinWheels();
 	}
 
+	// GasEngine sub class
 	public static class GasEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
 
+	// ElectricEngine sub class
 	public static class ElectricEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
@@ -27,6 +30,7 @@ public class Exercise2 {
 
 		private Engine engine;
 
+		// Constructor injection
 		public Car(Engine engine) {
 			this.engine = engine;
 		}

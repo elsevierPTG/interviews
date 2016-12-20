@@ -11,10 +11,12 @@ public class Exercise1 {
 
 	public static class Person {
 
+		// marking all the instance variables as final 
 		private final Set<String> phoneNumbers;
 		private final String firstName;
 		private final String lastName;
 
+		// passing all the instance variable values in the constructor. 
 		public Person(String firstName, String lastName,
 				final Set<String> phoneNumbers) {
 			this.firstName = firstName;

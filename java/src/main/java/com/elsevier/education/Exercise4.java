@@ -9,6 +9,7 @@ public class Exercise4 {
 
 	public static class Counter {
 
+		// Using atomic Interger for thread safe
 		private AtomicInteger count = new AtomicInteger(0);
 
 		public int increment() {

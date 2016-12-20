@@ -31,6 +31,7 @@ public class Exercise3 {
 			id = newId;
 		}
 
+		// returning ID as hashcode, so that its unique by id.
 		public int hashCode() {
 			return id;
 		}
