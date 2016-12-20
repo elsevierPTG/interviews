@@ -1,9 +1,8 @@
 package com.elsevier.education;
 
 /**
-
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
-
+a)use Synchronized to restrict the multiple thread.
 */
 public class Exercise4 {
 
@@ -11,15 +10,15 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		public Synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public Synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public Synchronized void resetCount() {
 			count = 0;
 		}
 
