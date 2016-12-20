@@ -1,40 +1,42 @@
 package com.elsevier.education;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
-
-TODO: Make this class immutable.
-
-*/
+ * TODO: Make this class immutable.
+ */
 public class Exercise1 {
 
 	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+
+		// marking all the instance variables as final 
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+
+		// passing all the instance variable values in the constructor. 
+		public Person(String firstName, String lastName,
+				final Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = new HashSet<String>();
+			for (String pNo : phoneNumbers) {
+				phoneNumbers.add(pNo);
+			}
 		}
 
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			return Collections.unmodifiableSet(phoneNumbers);
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
