@@ -4,13 +4,15 @@ namespace WriteUnitTest.Services
 {
     public class LessonService
     {
+        public LessonRepository lessonRepo { get; set; }
+
         public LessonService()
         {
+            lessonRepo = new LessonRepository();
         }
 
         public void UpdateLessonGrade(int lessonId, double grade)
         {
-            var lessonRepo = new LessonRepository();
             var lesson = lessonRepo.GetLesson(lessonId);
 
             lesson.Grade = grade;
