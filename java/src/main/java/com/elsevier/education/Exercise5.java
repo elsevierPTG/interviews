@@ -11,10 +11,15 @@ public class Exercise5 {
 		public void doSomething() {
 			System.out.println("Doing something....");
 	    }
+		private Singleton()
+		{}
+		Static Singleton getInstance(){
+			return new Singleton();
+		}
 	}
 		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
+		Singleton st = Singleton.getInstance();
 		st.doSomeThing();
 	}
 }

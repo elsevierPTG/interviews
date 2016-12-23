@@ -25,7 +25,7 @@ public class Exercise3 {
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+			return this == other;
 		}
 	}
 }
