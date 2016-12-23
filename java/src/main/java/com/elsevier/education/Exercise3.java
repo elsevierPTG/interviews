@@ -8,6 +8,8 @@ TODO Examine the failing test case for this class.
  We should be able to call people.add() twice but end with only one object in it.
  We can test with "gradlew test"
 
+Solution: set will accept people twice but will return only one object
+
 */
 public class Exercise3 {
 
