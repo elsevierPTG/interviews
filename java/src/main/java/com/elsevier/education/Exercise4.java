@@ -9,18 +9,20 @@ public class Exercise4 {
 
 	public static class Counter {
 		
-		private int count = 0;
+		  AtomicInteger count = new AtomicInteger(0); 
+
+
 		
 		public int increment() {
-			return ++count;
+			count.incrementAndGet();
 		}
 		
 		public int getCount() {
-			return count;
+			return count.get()
 		}
 		
 		public void resetCount() {
-			count = 0;
+			count.set(0);
 		}
 
 	}

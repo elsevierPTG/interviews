@@ -7,36 +7,45 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
+public  final class Exercise1 {
 
-	public static class Person {
+	public final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String firstName,String lastName,set<String> phoneNumbers) {
+
+                this.firstName=firstName;
+                this.lastName=lastName;
+                this.phoneNumbers=phoneNumbers;
+                
+             
 		}
 
-		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		
+		
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+                
+                public Set getPhoneNumbers(){
+
+                   return collection.Unmodifible(phoneNumbers);
+		
+
 	}
 }
+
+
+1.we have to make this class as a final.
+2.we have to create a parameterized constructor.
+3. all the string variables are final variables.
+3.we have to put getters only,  need to remove the setters.
