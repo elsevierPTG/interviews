@@ -11,9 +11,12 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		//modified engine field to use the interface 'Engine'
+		private Engine engine;
 		
-		public Car() {
+		//modify constructor to take dependency injected engine
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
@@ -21,7 +24,20 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	//All dependency injected engines must follow this interface
+	public interface Engine {
+		public void spinWheels();
+	}
+	
+	//have GasEngine implement Engine interface
+	public static class GasEngine implements Engine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	
+	//have ElectricEngine implement Engine interface
+	public static class ElectricEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}
