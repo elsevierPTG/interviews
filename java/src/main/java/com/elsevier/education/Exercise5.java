@@ -7,14 +7,32 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 */
 public class Exercise5 {
 	
-	public static class Singleton {
+	public  static class Singleton {
+
+              private static Singleton single;
+
+              private Singleton (){ 
+                if(single!=null){
+                 throw new IllegalAccessException("Instance already created") ;             
+
+                 }
+
+            public static Singleton getSingleton(){
+
+            if(single==null){
+              return new Singleton ();
+              } 
+           }
+
+
 		public void doSomething() {
 			System.out.println("Doing something....");
 	    }
 	}
 		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+		Singleton single = Singleton.getSingleton(); 
+		single.doSomeThing();
 	}
 }
+
