@@ -11,7 +11,7 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		Synchronized static int increment() {
 			return ++count;
 		}
 		
