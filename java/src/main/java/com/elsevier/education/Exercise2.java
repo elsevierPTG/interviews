@@ -11,17 +11,33 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private GasEngine gasEngine = new GasEngine();
+		private ElectricEngine electricEngine = new ElectricEngine();
 		
 		public Car() {
 		}
 		
+		public Car(GasEngine gasEngine) {  
+ 			this.gasEngine = gasEngine;   
+		} 
+		
+		public Car(ElectricEngine electricEngine) {  
+ 			this.electricEngine = electricEngine;   
+ 		} 	
+				
 		public void moveForward() {
-			engine.spinWheels();
+			gasEngine.spinWheels();
+			electricEngine.spinWheels();
 		}
 	}
 	
 	public static class GasEngine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	
+	public static class ElectricEngine {
 		public void spinWheels() {
 			// no-op for now
 		}
