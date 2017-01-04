@@ -10,19 +10,19 @@ public class Exercise2 {
 		}
 		
 		public void moveForward() {
-			engine.spinWheel();
+			engine.spinWheels();
 		}
 	}
 	
     /** make an abstract Engine class **/
 	public static abstract class Engine {
         // ensures concrete implementations have a spinWheels() implementation 
-		public abstract void spinWheel();
+		public abstract void spinWheels();
 	}
 	public static class GasEngine extends Engine {
 
 		@Override
-		public void spinWheel() {
+		public void spinWheels() {
 			// TODO no-op
 			
 		}
@@ -31,7 +31,7 @@ public class Exercise2 {
 	public static class Electric extends Engine {
 
 		@Override
-		public void spinWheel() {
+		public void spinWheels() {
 			// TODO no-op
 			
 		}
