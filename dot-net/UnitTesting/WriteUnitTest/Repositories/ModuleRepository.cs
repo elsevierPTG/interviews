@@ -1,16 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WriteUnitTest.Entities;
+using WriteUnitTest.Interfaces;
 
 namespace WriteUnitTest.Repositories
 {
-    public class ModuleRepository
+    public class ModuleRepository : RepositoryBase<Module>, IRepository<Module>
     {
-        private readonly List<Module> moduleList;
-
         public ModuleRepository()
         {
-            moduleList = new List<Module>
+            InitializeRepository(CollectionInitializer);
+        }
+
+        public Module GetById(int id)
+        {
+            return dataList.FirstOrDefault(x => x.Lessons.Any(y => y.LessonId == id));
+        }
+
+
+        public List<Module> CollectionInitializer()
+        {
+            return new List<Module>
             {
                 new Module
                 {
@@ -33,11 +43,6 @@ namespace WriteUnitTest.Repositories
                     }
                 }
             };
-        }
-
-        public Module GetModule(int lessonId)
-        {
-            return moduleList.FirstOrDefault(x => x.Lessons.Any(y => y.LessonId == lessonId));
         }
     }
 }
