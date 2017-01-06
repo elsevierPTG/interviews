@@ -5,4 +5,15 @@
 
 
 Suggested Changes:
-	
+	1. In Program.cs (line 11), the file name is not correct. Need to add a "."
+
+	2. In ExampleClass.cs, the file stream is not properly disposed. Need to wrap in using statement.
+
+	3. In ExampleClass.cs, the stream reader is not properly disposed. Need to wrap it in using statement.
+
+	4. In ExampleClass.cs, it is not necessary to use both the File.Open() method and the stream reader. Either one would suffice to read the file.
+	   For instance, could use the fs.Read method from the file stream to read the file. Or could use the StreamReader constructor that takes the file path instead of the file stream.
+
+	5. In ExampleClass.cs, the catch block builds the text string by using +. This is inefficient as it creates/destroys the text string multiple times. Instead should use the StringBuilder class to build the text string.
+
+	6. In ExampleClass.cs, the catch block does not indicate that an error occurred. Should probably either log/write error message to console.
