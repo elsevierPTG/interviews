@@ -1,0 +1,11 @@
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.dll
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.pdb
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.dll
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.pdb
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Castle.Core.dll
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Moq.dll
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.exe
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.pdb
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Castle.Core.xml
+C:\Users\bettori\Documents\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Moq.xml

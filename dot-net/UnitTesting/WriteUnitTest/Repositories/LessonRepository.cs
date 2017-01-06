@@ -1,16 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WriteUnitTest.Entities;
+using WriteUnitTest.Interfaces;
 
 namespace WriteUnitTest.Repositories
 {
-    public class LessonRepository
+    public class LessonRepository : RepositoryBase<Lesson>, IRepository<Lesson>
     {
-        private readonly List<Lesson> lessonList;
-
         public LessonRepository()
         {
-            lessonList = new List<Lesson>
+            InitializeRepository(CollectionInitializer);
+        }
+
+        /// <summary>
+        ///  Use interface method here in order to facilitate mocking
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Lesson GetById(int id)
+        {
+            return dataList.FirstOrDefault(x => x.LessonId == id);
+        }
+
+        public List<Lesson> CollectionInitializer()
+        {
+            return new List<Lesson>
             {
                 new Lesson
                 {
@@ -25,11 +39,6 @@ namespace WriteUnitTest.Repositories
                     IsPassed = false
                 }
             };
-        }
-
-        public Lesson GetLesson(int lessonId)
-        {
-            return lessonList.FirstOrDefault(x => x.LessonId == lessonId);
         }
     }
 }
