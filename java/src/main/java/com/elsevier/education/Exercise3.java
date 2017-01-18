@@ -1,7 +1,5 @@
 package com.elsevier.education;
 
-import java.util.*;
-
 /**
 
 TODO Examine the failing test case for this class.
@@ -13,7 +11,6 @@ public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +18,12 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			/*
+			 * If we are generating a random number and multiplying with id, it would definitely give different
+			 * results, even if id is equal.
+			 * But the only parameter id will be same for both the objects. So, we have to remove that multiplication part.
+			 */
+			return id;
 		}
 		
 		public boolean equals(Object other) {
