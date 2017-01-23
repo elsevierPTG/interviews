@@ -11,19 +11,28 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		final Vehicle v;				
+		public Car(Vehicle v) {
+			this.v = v;
 		}
 		
 		public void moveForward() {
-			engine.spinWheels();
+			v.spinWheels();
 		}
 	}
 	
-	public static class GasEngine {
+	public static class GasEngine implements Vehicle{
 		public void spinWheels() {
 			// no-op for now
 		}
+	}
+	public static class ElectricEngine implements Vehicle{
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	/** Create an interface for achieving abstraction**/
+	public interface Vehicle{
+		void spinWheels();
 	}
 }
