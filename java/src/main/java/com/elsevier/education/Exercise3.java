@@ -10,10 +10,12 @@ TODO Examine the failing test case for this class.
 
 */
 public class Exercise3 {
-
+	/**
+	 * Removed random generator because it would cause id collision for hashCode.
+	 * Added prime number to generate better hashCode.
+	 */
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +23,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * 17;
 		}
 		
 		public boolean equals(Object other) {
