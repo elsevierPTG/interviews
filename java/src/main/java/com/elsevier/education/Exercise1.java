@@ -9,11 +9,11 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
+	public final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private  Set<String> phoneNumbers;
+		private  String firstName;
+		private   String lastName;
 		
 		public Person() {
 		}
