@@ -1,0 +1,7 @@
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.dll
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.pdb
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.exe
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.pdb
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.dll
+C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.pdb

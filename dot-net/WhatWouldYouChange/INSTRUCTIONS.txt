@@ -5,4 +5,5 @@
 
 
 Suggested Changes:
-	
+	1) Instead of using a Try Catch statement, you can check for the existence of the input file.  The Try Catch operation would be more expensive than an If Else conditional statement that prints the file if it exists or prints the Lorem Ipsum text.  It would also reduce the amount of Exceptions thrown while the application runs.  I recommend using File.Exists(exampleTextFile) in an IF statement to verify the file exists before the File.Open 
+	2) The text value assignment in the Catch statement can use a String Literal instead of the multiple additions of text and the escape character (\n).  This is more a cosmetic change to the code for readability
