@@ -1,7 +1,1 @@
 C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe.config
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\bin\Debug\ExampleText.txt
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.pdb
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.csprojResolveAssemblyReference.cache
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.exe
-C:\Users\mgoll\Documents\Visual Studio 2015\Repos\Elsevier Interview\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.pdb

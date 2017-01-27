@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WriteUnitTest.Repositories;
 using WriteUnitTest.Services;
-using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.UnitTests.Services
 {
