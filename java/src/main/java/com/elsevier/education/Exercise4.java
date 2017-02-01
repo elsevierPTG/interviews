@@ -4,6 +4,18 @@ package com.elsevier.education;
 
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
+ No its not, We can fix it by using an AtomicInteger. An operation needs to be atomic to be thread safe
+
+ private AtomicInteger c = new AtomicInteger(0);
+
+ increment
+ c.incrementAndGet()
+
+ get
+ c.get()
+
+ reset
+ c.set(0)
 */
 public class Exercise4 {
 
