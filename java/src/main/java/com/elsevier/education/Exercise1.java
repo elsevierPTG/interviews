@@ -7,6 +7,7 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
+
 public class Exercise1 {
 	// Class should be final to avoid being derived
 	public final class Person {
