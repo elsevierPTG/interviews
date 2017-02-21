@@ -19,13 +19,27 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
+		public Integer getId(){
+			return id;
+		}
+		/**
+		Since id is unique for each person I removed random number generation code and instead returned id in below method.
+		*/
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+		return id.equals(((Person)other).id);
+			
+		}
+		public String toString(){
+			return "id:"+id;
 		}
 	}
+	
+
+	
 }

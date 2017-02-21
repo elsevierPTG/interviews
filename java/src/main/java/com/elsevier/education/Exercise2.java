@@ -11,19 +11,34 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private GasEngine engine = new GasEngine();		
 		
 		public Car() {
 		}
-		
+		private final Engine engine;
+		//added constructor dependency injection here
+		Public Car(final Engine engine){
+			this.engine=engine;
+		}		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+	/* I have used abstarct class here considering gas engine and electric engine having is A relationship with Engine class*/
+	public static abstract class Engine{
+			public abstract void spinWheels();
+		
+	}
+	public static class GasEngine extends Engine{
 		public void spinWheels() {
 			// no-op for now
+			
+		}
+	}
+	public class ElectricEngine extends Engine{
+		public void spinWheels(){
+			//no-op for now
+			
 		}
 	}
 }
