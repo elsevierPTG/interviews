@@ -7,7 +7,7 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public final class Exercise1 {
+public  class Exercise1 {
 
 	public static final class Person {
 		
