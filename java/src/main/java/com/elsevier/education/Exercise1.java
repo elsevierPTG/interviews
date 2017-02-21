@@ -22,22 +22,22 @@ public final class Exercise1 {
 			return phoneNumbers;
 		}
 		
-		/*public void setPhoneNumbers(Set<String> newPhoneNumbers) {
+		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
-		}*/
+		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		/*public void setFirstName(String newName) {
+		public void setFirstName(String newName) {
 			firstName = newName;
-		}*/
+		}
 		
 		public String getLastName() {
 			return lastName;
 		}
-		/*public void setLastName(String newName) {
+		public void setLastName(String newName) {
 			lastName = newName;
-		}*/
+		}
 	}
 }
