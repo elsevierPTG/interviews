@@ -32,12 +32,13 @@ public class Exercise2 {
 	public static class GasEngine extends Engine{
 		public void spinWheels() {
 			// no-op for now
-			
+			System.out.println("inside GasEngine spinWheels() method");
 		}
 	}
 	public class ElectricEngine extends Engine{
 		public void spinWheels(){
-			System.out.println("inside Electric engine");
+			//no-op for now
+			System.out.println("inside Electric engine spinWheels() method");
 		}
 	}
 }
