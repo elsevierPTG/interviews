@@ -6,29 +6,26 @@ TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
 */
 
-// The Counter is not thread-safe.
-// In order to make it a thread-safe, we have to make increment and resetCount methods synchronized.
-// The idea behind making these two functions synchronized is so that only one thread will be able to modify
-// the count at one point of time.
+// The counter is not thread-safe. In order to make it a thread-safe we have to 
+// make increment and resetCount operations synchronized. However making a method 
+// synchronized is heavy and hence I feel like using AutomicInteger as a counter 
+// for making it thread-safe without making methods synchronized.
 public class Exercise4 {
 
 	public class Counter {
 		
-		private int count = 0;
+		private final AtomicInteger count = new AtomicInteger();
 		
-		// Make increment() synchronized.
-		public synchronized int increment() {
-			return ++count;
+		public int increment() {
+			return count.incrementAndGet();
 		}
 		
 		public int getCount() {
-			return count;
+			return count.get();
 		}
 		
-		// Make resetCount() synchronized.
-		public synchronized void resetCount() {
-			count = 0;
+		public void resetCount() {
+			count.set(0);
 		}
-
 	}
 }
