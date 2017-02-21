@@ -11,7 +11,7 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private GasEngine engine;
 		private ElectricEngine eleEngine;
 		public Car() {
 		}
