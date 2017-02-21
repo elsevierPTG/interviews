@@ -12,18 +12,32 @@ public class Exercise2 {
 	public static class Car {
 		
 		private GasEngine engine = new GasEngine();
-		
+		private ElectricEngine eleEngine;
 		public Car() {
 		}
-		
+		public void setEngine(GasEngine engine){
+			this.engine=engine;
+		}		
+		public void setEleEngine(ElectricEngine eleEngine){
+			this.eleEngine=eleEngine;
+		}
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+	public abstract class Engine{
+			public void spinWheels();
+		
+	}
+	public static class GasEngine extends Engine{
 		public void spinWheels() {
 			// no-op for now
+			
+		}
+	}
+	public class ElectricEngine extends Engine{
+		public void spinWheels(){
+			System.out.println("inside Electric engine");
 		}
 	}
 }
