@@ -19,13 +19,38 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
+		public Integer getId(){
+			return id;
+		}
 		
 		public int hashCode() {
 			return id * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+//			return id.equals(((Person)other).id);
+			Person person=(Person)other;
+			return (this.getId()==person.getId());
+		}
+		public String toString(){
+			return "id:"+id;
 		}
 	}
+	
+public static void main(String args[])	{
+	HashSet<Person> persons=new HashSet<Person>();
+	person.add(new Person(1));
+	person.add(new Person(2));
+	System.out.println("before adding duplicate");
+	for(Person pr:persons){
+		System.out.println("item:"+pr);
+	}
+	Person duplicate=new Person(1);
+	persons.add(duplicate);
+	System.out.println("after adding duplicate object");
+	for(Person pr:persons){
+		System.out.println("item"+pr);
+	}
+}//end of main method
+	
 }
