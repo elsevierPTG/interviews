@@ -22,35 +22,24 @@ public class Exercise3 {
 		public Integer getId(){
 			return id;
 		}
+		/**
+		Since id is unique for each person I removed random number generation code and instead returned id in below method.
+		*/
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
-//			return id.equals(((Person)other).id);
-			Person person=(Person)other;
-			return (this.getId()==person.getId());
+		return id.equals(((Person)other).id);
+			
 		}
 		public String toString(){
 			return "id:"+id;
 		}
 	}
 	
-public static void main(String args[])	{
-	HashSet<Person> persons=new HashSet<Person>();
-	person.add(new Person(1));
-	person.add(new Person(2));
-	System.out.println("before adding duplicate");
-	for(Person pr:persons){
-		System.out.println("item:"+pr);
-	}
-	Person duplicate=new Person(1);
-	persons.add(duplicate);
-	System.out.println("after adding duplicate object");
-	for(Person pr:persons){
-		System.out.println("item"+pr);
-	}
-}//end of main method
+
 	
 }
