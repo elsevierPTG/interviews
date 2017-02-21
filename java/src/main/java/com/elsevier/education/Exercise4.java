@@ -5,23 +5,28 @@ package com.elsevier.education;
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
 */
+
+
+// The counter is not thread-safe. In order to make it a thread-safe we have to 
+// make increment and resetCount operations synchronized. However making a method 
+// synchronized is heavy and hence I feel like using AutomicInteger as a counter 
+// for making it thread-safe without making methods synchronized.
 public class Exercise4 {
 
-	public static class Counter {
+	public class Counter {
 		
-		private int count = 0;
+		private final AtomicInteger count = new AtomicInteger();
 		
 		public int increment() {
-			return ++count;
+			return count.incrementAndGet();
 		}
 		
 		public int getCount() {
-			return count;
+			return count.get();
 		}
 		
 		public void resetCount() {
-			count = 0;
+			count.set(0);
 		}
-
 	}
 }
