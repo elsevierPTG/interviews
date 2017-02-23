@@ -1,15 +1,15 @@
 package com.elsevier.education;
 
 import java.util.Set;
-
+import static java.lang.System.out;
 /**
-
-TODO: Make this class immutable.
-
+Add final keyword/modifier to make immutable
 */
+
 public class Exercise1 {
 
-	public static class Person {
+	// add final keyword here for Person class
+	public final static class Person {
 		
 		private Set<String> phoneNumbers;
 		private String firstName;
@@ -37,6 +37,14 @@ public class Exercise1 {
 		}
 		public void setLastName(String newName) {
 			lastName = newName;
+		}
+	}
+	
+	// cannot do this
+	public class AnotherPerson extends Person {
+	
+		public void doSomethingMore() {
+			out.println("Something more");
 		}
 	}
 }
