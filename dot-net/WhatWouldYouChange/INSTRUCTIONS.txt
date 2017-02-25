@@ -5,4 +5,17 @@
 
 
 Suggested Changes:
-	
+	1) In Program.cs pass a valid file name into ExampleMethod. "ExampleTexttxt" should be "ExampleText.txt"
+	2) In Program.cs the Main method takes an extraneous string array "args" that isn't being referenced anywhere. This can be removed for clarity of code.
+	3) The class Program and method Main aren't descriptive of the actions they accomplish. I would move the code inside of Main into its own method called 
+		FileToConsole or something otherwise more self explantory and call that from Main instead. The methods names don't explain their purpose.
+	4) Similarly in ExampleClass.cs, ExampleMethod doesn't explain what it does. I'd rename to something like ReadFromFile
+	5) In ExampleClass.cs, I wouldn't used a try/catch block in ExampleMethod especially with how it's currently duplicating proper functionality in reading 
+		from the sameple text file. Right now that method is silently failing without the end user knowing and any changes to the sample file won't be seen.
+		Instead I would use File. Exists to check that we have a valid path before opening the file. If a file does not exist I would either throw an exception 
+		or otherwise inform the end user that the requested file was not found so that the problem can be fixed.
+	6) The string builder in the catch statement in ExmapleClass.cs is a bit messy. If that needed to exist I'd clean that up to either be in one big text block with text = @"" or at
+		least append text using text += "".
+	7) Having exampleText as a global public string in ExampleClass seems unecessary and potentially confusing if other methods are referencing it. It doesn't seem 
+		to need to exist at all as nothing is setting to it and it can be removed in favor of having ExampleMethod return the string variable text. This would
+		require an update on line 13 of Program.cs to be Console.Write(exampleClass.ExampleMethod("ExampleText.txt")); and line 11 can be deleted.
