@@ -11,15 +11,17 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		//It is not thread safe because instance variable "count" value can be randomly changed by calling multiple threads.
+		//Added synchronized keyword in below methods to ensure only one thread is accessing at a time.
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
