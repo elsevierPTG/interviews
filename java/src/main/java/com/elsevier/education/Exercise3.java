@@ -21,11 +21,20 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			int hashcode = 0;
+			hashcode = id.hashcode();
+			return hashcode;
 		}
 		
-		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+		public boolean equals(Object obj) {
+			if(obj instanceof Person){
+				Person p = (Person)obj;
+				return(p.id == this.id);
+			}
+			else{
+				return false;
+			}
+				
 		}
 	}
 }
