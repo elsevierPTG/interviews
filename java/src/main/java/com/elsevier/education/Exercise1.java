@@ -9,34 +9,29 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
+	public  final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final firstName;
 		
-		public Person() {
-		}
+		public Person(Set<String>phoneNumber,String firstName,firstName) {
+			this.phoneNumber=phoneNumber;
+			 this.firstName=firstName;
+			 this.lastName;
+				
+						
+}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+		}				
 		public String getFirstName() {
 			return firstName;
-		}
-		public void setFirstName(String newName) {
-			firstName = newName;
+		}	
 		}
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
 	}
-}
