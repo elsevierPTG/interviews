@@ -8,12 +8,16 @@ TODO: Make this class immutable.
 
 */
 public class Exercise1 {
-
-	public static class Person {
+	/*
+	Some of the possible ways:
+	Don't provide methods that modify the mutable objects.
+	Use final access modifier for class and variables
+	*/
+	public final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
 		}
