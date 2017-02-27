@@ -1,8 +1,12 @@
 package com.elsevier.education;
 
-import java.util.*;
-
 /**
+Candidate : Jin W. Chen
+Email : JinWChen@yahoo.com
+recruiter :
+Linda Pham | Technical Recruiter
+JOBSPRING PHILADELPHIA 
+Office: (267) 765-6100
 
 TODO Examine the failing test case for this class.
  We should be able to call people.add() twice but end with only one object in it.
@@ -12,8 +16,7 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,11 +24,22 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
+
+			if (other == this) {
+				return true;
+			}
+				
+			if (!(other instanceof Person)) {
+				return false;
+			}
+				
 			return id.equals(((Person)other).id);
+			
 		}
 	}
+
 }
