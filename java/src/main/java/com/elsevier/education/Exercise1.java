@@ -8,35 +8,37 @@ TODO: Make this class immutable.
 
 */
 public class Exercise1 {
-
-	public static class Person {
+	/*To make the class as immutable, we need to use final keyword.*/
+	public  final static class Person {
+		/* Make all fields final so that it’s value can be assigned only once*/
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+		public Person(String firstName,String lastName,Set<String> phoneNumbers) {
+			this.firstName = firstName;
+ 			this.lastName = lastName;
+ 			Set<String> tempSet = new Set<String>();
+ 			Iterator<String> it = phoneNumbers.iterator();
+ 			while(it.hasNext()){
+ 				tempSet.add(it.next);
+ 			}
+ 			this.phoneNumbers = tempSet;
 		}
 
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			return (Set<String>)phoneNumbers.clone();
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }
