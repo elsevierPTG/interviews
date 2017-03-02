@@ -21,9 +21,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			int hashcode = 0;
- +			hashcode = id.hashcode();
- +			return hashcode;
+ +			return id;// Hash code remains same for the object created . Its enough to check for equals .
 		}
 		
 			public boolean equals(Object obj) {
