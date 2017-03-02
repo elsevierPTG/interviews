@@ -9,16 +9,16 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public final static class Person {
+	public final static class Person {  // Class made Final
 		
-		private final Set<String> phoneNumbers;
+		private final Set<String> phoneNumbers;  
 		private final String firstName;
-		private final String lastName;
+		private final String lastName;         // all the class varialble made final 
 		
-		public Person(Set<String> phoneNumbers,String firstName,String lastName) {
+		public Person(Set<String> phoneNumbers,String firstName,String lastName) { // Parameterized constructors used to set the values . 
 			this.phoneNumbers = phoneNumbers;
- +			this.firstName = firstName;
- +			this.lastName = lastName;
+ 			this.firstName = firstName;
+ 			this.lastName = lastName;
 		}
 
 		public Set<String> getPhoneNumbers() {
@@ -35,5 +35,5 @@ public class Exercise1 {
 			return lastName;
 		}
 		
-	
+	// All the setter methods are removed .
 }
