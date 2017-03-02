@@ -11,15 +11,24 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		/*
+		 Data member "count" is not thread safe. Using "synchronized" keyword so that it will allow only one thread to access.
+		 */
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		/*
+		 Data member "count" is not thread safe. Using "synchronized" keyword so that it will allow only one thread to access.
+		 */
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		/*
+		 Data member "count" is not thread safe. Using "synchronized" keyword so that it will allow only one thread to access.
+		 */
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
