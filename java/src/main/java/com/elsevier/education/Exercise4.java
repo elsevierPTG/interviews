@@ -11,7 +11,8 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		//Making the increment method synchronized makes the counter thread safe .
+		public synchronized int increment() {
 			return ++count;
 		}
 		
