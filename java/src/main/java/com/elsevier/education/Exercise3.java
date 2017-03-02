@@ -21,18 +21,18 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
- +			return id;// Hash code remains same for the object created . Its enough to check for equals .
+ 			return id;// Hash code remains same for the object created . Its enough to check for equals .
 		}
 		
 			public boolean equals(Object obj) {
- +			if(obj instanceof Person){
- +				Person p = (Person)obj;
- +				return(p.id == this.id);
- +			}
- +			else{
- +				return false;
- +			}
- +				
+ 			if(obj instanceof Person){
+ 				Person p = (Person)obj;
+ 				return(p.id == this.id);
+ 			}
+ 			else{
+ 				return false;
+ 			}
+ 				
   		}
 	}
 }
