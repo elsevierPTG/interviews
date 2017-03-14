@@ -19,9 +19,9 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+		//Added id.hashCode methos to get the same hashcode everytime
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
