@@ -10,7 +10,15 @@ TODO Examine the failing test case for this class.
 
 */
 public class Exercise3 {
+	
+	public static void main(String[] args) {
+		Set<Person> people = new HashSet<>();
+		Person p1 = new Person(1);
+		people.add(p1);
+		people.add(p1);
+		System.out.println(people.size());
 
+	}
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
@@ -21,7 +29,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
