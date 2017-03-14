@@ -29,7 +29,7 @@ public class Exercise5 {
 	}
 		
 	public static void main(String a[]){
-		//getInstatbnce is ussed to get the singleton instance
+		//getInstatbnce is used to get the singleton instance
 		Singleton st = Singleton.getInstance();
 		st.doSomeThing();
 	}
