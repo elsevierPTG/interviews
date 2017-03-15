@@ -13,15 +13,18 @@ public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
-		private Integer id;
 		
+		private Integer id;
+		private static final hashUnique=23;
 		public Person(int newId) {
 			id = newId;
 		}
 		
-		public int hashCode() {
-			return id * generator.nextInt();
+		public int hashCode() {			
+			//Use of generator.nextInt() will always give random values on every invocation 
+			//to prevent  from having different hashcode values for same object , a unique constant is used
+			//so that same hashcode can be returned with same field values	
+			return id*hashUnique;
 		}
 		
 		public boolean equals(Object other) {
