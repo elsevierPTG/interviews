@@ -9,18 +9,22 @@ public class Exercise4 {
 
 	public static class Counter {
 		
-		private int count = 0;
 		
+		// creating  atomic integer to achieve thread safe
+		private AtomicInteger count=new AtomicInteger(0);
 		public int increment() {
-			return ++count;
+			//incrementandget is thread safe which return updated value
+			return count.incrementAndGet();
 		}
 		
 		public int getCount() {
-			return count;
+			// count.get is used to make it thread safe
+			return count.get();
 		}
 		
 		public void resetCount() {
-			count = 0;
+			// count.set() is used to make it thread safe
+			count.set(0);
 		}
 
 	}
