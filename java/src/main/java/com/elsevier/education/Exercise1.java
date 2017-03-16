@@ -11,12 +11,13 @@ public class Exercise1 {
 
 	public final class Person {
 		
-		private final Set<String> phoneNumbers;
-		private final String firstName;
-		private final String lastName;
 		// Here we need to change: 1.Class Person as final.
                 //                         2.Variables that are declared as final.
                 // In order to make them immutable such that their values cannot be altered.
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+		
  
 		
 
@@ -33,9 +34,9 @@ public class Exercise1 {
 		public String getLastName() {
 			return lastName;
 		}
-		public Person(Set<String> newPhoneNumbers,String fn,String ln) {
-                // Here we need to:1.Make deep copy using parameterized constructor.
+		// Here we need to:1.Make deep copy using parameterized constructor.
                 //                 2.This makes the values that is being passed to this constructor as immutable.
+		public Person(Set<String> newPhoneNumbers,String fn,String ln) {               
 
                 this.phoneNumbers=newPhoneNumbers;
                 this.firstName=fn;
