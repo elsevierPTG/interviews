@@ -10,7 +10,10 @@ public class Exercise4 {
 	public static class Counter {
 		
 		private int count = 0;
-		
+		 //It's not thread-safe.
+                //So we do the following to make it threadsafe:
+		//1.We can use synchronized modifier for all methods.
+                // 2.Variable "count" can be randomly changed from multiple threads,so we need to maintain thread safety using synchronization.
 		public synchronized int increment() {
 			return ++count;
 		}
@@ -23,9 +26,7 @@ public class Exercise4 {
 			count = 0;
 		}
 		
-                //It's not thread-safe.
-                //So we do the following to make it threadsafe:1.We can use synchronized modifier for all methods.
-                //                                             2.Variable "count" can be randomly changed from multiple threads,so we need to maintain thread safety using synchronization.
+               
 
 	}
 }
