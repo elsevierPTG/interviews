@@ -7,14 +7,30 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 */
 public class Exercise5 {
 	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
-	}
-		
-	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
-	}
+	public final static class Singleton {
+        private final static Singleton st = new Singleton();
+        public static Singleton getInstance() {
+
+        if(st!=null){
+        throw new IllegalStateException("Instance already created");
+        }
+        else
+        {
+        return st;
+        }
+        //Check is done to explore whether the object is already created.
+	//If yes,then an IllegalStateException is thrown as it violates singleton properties. 
+        private Singleton() {}
+
+        //We make constructor as private because: 1.We cannot create object outside of the class.
+        //                                        2.Singleton cannot allow any duplication in creating the instance of the class.
+
+
+        public void doSomeThing() {
+        System.out.println("Doing something....");
+        }
+        }
+        public static void main(String a[]){
+        Singleton.getInstance().doSomeThing();
+        }
 }
