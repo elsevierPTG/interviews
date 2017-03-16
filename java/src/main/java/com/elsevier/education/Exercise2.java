@@ -8,14 +8,16 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 
 */
 public class Exercise2 {
+	// Define new interface Enigne
         public interface Engine {
                 default void spinWheels() {
         // no-op for now
              }
       }
 	public static class Car {
-		//To create dependency injection we do the following: 1.To create a static class Car.
-                //                                                    2.This class can be used to create an object for the class Engine i.e., outside of it to maintain dependency injection.
+		//To create dependency injection we do the following: 
+		//1.To create a static class Car.
+                //2.This class can be used to create an object for the class Engine i.e., outside of it to maintain dependency injection.
  
 		private final Engine engine;
                 public Car(Engine engine) {
@@ -25,13 +27,13 @@ public class Exercise2 {
                 engine.spinWheels();
              }
       } 
+	// Define new classes - GasEngine and ElectricEngine to implement interface Engine
 	        public static class GasEngine implements Engine {
              }
 
                 public static class ElectricEngine implements Engine {
              }
-	        //To create an appropriate abstraction we need: 1.To create an interface Engine.
-                //                                              2.To create static classes GasEngine and 
+	        
 		
 	
 	        public static void main(String[] args) {
