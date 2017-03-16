@@ -11,9 +11,10 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		private Engine engine ;
+		//Modified for the dependency injection
+		public Car(Engine Engine) {
+			this.Engine = Engine
 		}
 		
 		public void moveForward() {
@@ -26,4 +27,13 @@ public class Exercise2 {
 			// no-op for now
 		}
 	}
+	public static class ElectricEngine{
+		public void spinwheels(){
+			//no -op for now
+		}
+	}
+}
+//Interface to provide abstraction for the classes
+public static interface Engine(){
+	public void spinWheels();
 }
