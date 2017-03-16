@@ -17,10 +17,11 @@ public class Exercise5 {
 	    }
 		//Created a method to get the instance of the singleton class .
 		public Singleton getInstance(){
-			if(singleton != null){
+			if(singleton == null){
 				singleton = new Singleton();
-				return singleton();
+				
 			}
+			return singleton;
 		}
 	}
 		
