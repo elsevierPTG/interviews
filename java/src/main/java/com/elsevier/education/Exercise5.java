@@ -9,6 +9,9 @@ public class Exercise5 {
 	
 	public final static class Singleton {
         private final static Singleton st = new Singleton();
+	
+	//Check is done to explore whether the object is already created.
+	//If yes,then an IllegalStateException is thrown as it violates singleton properties. 
         public static Singleton getInstance() {
 
         if(st!=null){
@@ -18,12 +21,13 @@ public class Exercise5 {
         {
         return st;
         }
-        //Check is done to explore whether the object is already created.
-	//If yes,then an IllegalStateException is thrown as it violates singleton properties. 
+        
+	//We make constructor as private because: 
+	//1.We cannot create object outside of the class.
+        //2.Singleton cannot allow any duplication in creating the instance of the class.
         private Singleton() {}
 
-        //We make constructor as private because: 1.We cannot create object outside of the class.
-        //                                        2.Singleton cannot allow any duplication in creating the instance of the class.
+        
 
 
         public void doSomeThing() {
