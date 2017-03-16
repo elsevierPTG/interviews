@@ -28,4 +28,13 @@ public class Exercise3 {
 			return id.equals(((Person)other).id);
 		}
 	}
+	
+    public static void main(String[] args) {
+        Set<Person> people = new HashSet(<Person>);
+        /*
+         * You can call people.add twice with the same id. But Set don't allow duplicate objects.
+         */
+        people.add(new Person(1));
+        people.add(new Person(1));
+    }
 }

@@ -11,9 +11,38 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private interface Engine {
+			void displayEngine();
+		}
 		
-		public Car() {
+		private class GasEngine implements Engine {
+			void displayEngine() {
+				System.out.println("This is a gas engine");
+			}
+		}
+
+		private class ElectricEngine implements Engine{
+			void displayEngine() {
+				System.out.println("This is a electric engine");
+			}
+		}
+		
+		private Engine engine;
+		
+		/**
+		 * @param - GasEngine 
+		 * Inject the dependency of engine at run time.
+		 */
+		public Car(Engine ge) {
+			engine = ge;
+		}
+		
+		/**
+		 * @param - or, we can create a setter method
+		 * Create a setter method.
+		 */
+		public void setGasEngine(Engine ge) {
+			engine = ge;
 		}
 		
 		public void moveForward() {
