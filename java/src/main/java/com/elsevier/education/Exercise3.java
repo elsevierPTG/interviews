@@ -20,10 +20,15 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		 //In this case: 1.HashCode function to used to check if objects are equal.
+                //              2.This function uses static data for hashCode.
+                //              3.id variable returns Integer.
+                //              4.Integer.hashCode() returns the integer value as hashCode.
 		public int hashCode() {
-			return id * generator.nextInt();
-		}
-		
+			return id;
+		}	
+               
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
