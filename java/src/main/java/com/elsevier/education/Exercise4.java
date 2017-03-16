@@ -10,16 +10,16 @@ public class Exercise4 {
 	public static class Counter {
 		
 		private int count = 0;
-		
-		public int increment() {
+		// Counter is not thread safe . It could be made thread safe  by making the code syncronized.
+		public Syncronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public Syncronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public Syncronized void resetCount() {
 			count = 0;
 		}
 
