@@ -1,0 +1,7 @@
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe.config
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleText.txt
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.pdb
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.exe
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.pdb
