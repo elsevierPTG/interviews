@@ -27,5 +27,12 @@ public class Exercise3 {
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
+		
+		public static void main(String args[]){
+			Set<Person> people = new HashSet<>();
+			Person p1 = new Person(1);
+			people.add(p1);
+			people.add(p1);
+		}
 	}
 }
