@@ -19,9 +19,9 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+		// will reurn the id that is passed in the constructor during initialisation and hence reference will be maintained
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
