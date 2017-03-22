@@ -33,6 +33,7 @@ public class Exercise3 {
 			Person p1 = new Person(1);
 			people.add(p1);
 			people.add(p1);
+			System.out.prinln(people.size());
 		}
 	}
 }
