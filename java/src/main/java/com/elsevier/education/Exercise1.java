@@ -10,7 +10,7 @@ TODO: Make this class immutable.
 public class Exercise1 {
 
 	public static final class Person {
-		
+		// All the class variable are made final and hence cant be changed
 		private final Set<String> phoneNumbers;
 		private final String firstName;
 		private final String lastName;
