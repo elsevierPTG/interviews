@@ -34,11 +34,3 @@ public class Exercise2 {
                 }
 	}
 }
-
-/**
- * Creating engine interface with a contract obligating
- * classes to implement the method spinWheels
-*/
-public interface Engine {
-	public void spinWheels();
-}
