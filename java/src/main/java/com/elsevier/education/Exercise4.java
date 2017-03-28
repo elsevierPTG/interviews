@@ -5,7 +5,7 @@ package com.elsevier.education;
 DONE: Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
 EXPLANATION: Counter is NOT thread-safe: because the "increment" method is not
-atomic, a thread which is trying to "getCount" while another thread is "incrementing"
+atomic, a thread which is "getCount"ing while another thread is "increment"ing
 might return a stale value.
 
 One possible solution (among many!) is to make every method which uses the mutable

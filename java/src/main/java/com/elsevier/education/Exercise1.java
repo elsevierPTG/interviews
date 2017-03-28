@@ -9,11 +9,11 @@ DONE: Make this class immutable.
 EXPLANATION: To force immutability, I removed the "setters" and
 default constructor, made the three instance variables final,
 and added a new constructor which receives the values of all
-three instance values.
+three instance variables.
 
 (Making the three instance variables final isn't strictly necessary,
 but communicates that future developers shouldn't write methods which
-mutate those variable.)
+mutate those variables.)
 */
 public class Exercise1 {
 
