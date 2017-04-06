@@ -1,9 +1,1 @@
-build/
-
-.gradle/
-.idea/
-
-# Package Files #
-*.jar
-
 *.log
