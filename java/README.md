@@ -61,8 +61,8 @@ Please let me know if there are any issues with tests / verification / project s
 
 It took me a bit more than an hour to complete the exercises.
 
-Most of the time was spent "cleaning up" the project, writing tests, and writing this documentation..
-See the git log for more details.
+Most of the time was spent "cleaning up" the project, writing tests, and writing this documentation.
+See the git logs for more details.
 
 
 ### Contact Info
