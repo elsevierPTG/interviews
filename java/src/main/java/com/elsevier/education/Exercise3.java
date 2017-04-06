@@ -4,28 +4,27 @@ import java.util.*;
 
 /**
 
-TODO Examine the failing test case for this class.
- We should be able to call people.add() twice but end with only one object in it.
- We can test with "gradlew test"
+  For this, I used very simple equals and hashcode methods.
+  If there was more state here, I would either use the equals and hashcode implementations as specified
+  in Joshua Bloch's "Effective Java" book, or use one of the available equals and hashcode builders.
 
 */
 public class Exercise3 {
 
-	public static class Person {
+  public static class Person {
 
-		private static Random generator = new java.util.Random();
-		private Integer id;
+    private Integer id;
 
-		public Person(int newId) {
-			id = newId;
-		}
+    public Person(int newId) {
+      id = newId;
+    }
 
-		public int hashCode() {
-			return id * generator.nextInt();
-		}
+    public int hashCode() {
+      return id;
+    }
 
-		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
-		}
-	}
+    public boolean equals(Object other) {
+      return id.equals(((Person)other).id);
+    }
+  }
 }

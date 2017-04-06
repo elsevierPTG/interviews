@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class Exercise3Test {
 
-    @org.junit.Ignore
     @Test
     public void testAsElement() {
 

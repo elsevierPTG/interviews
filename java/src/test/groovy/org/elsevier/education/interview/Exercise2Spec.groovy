@@ -30,7 +30,6 @@ class Exercise2Spec extends Specification {
     name       | engine
     'electric' | new ElectricEngine()
     'gas'      | new GasEngine()
-
   }
 
 }

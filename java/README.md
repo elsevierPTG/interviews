@@ -32,6 +32,7 @@ Additional Notes:
         * added settings.gradle to avoid creating cruft in the parent directory
     * Tests
         * added infrastructure for testing solutions with [spock](http://docs.spockframework.org)
+        * write failing tests
     * Fix failing tests
 
 
