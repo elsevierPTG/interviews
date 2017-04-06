@@ -20,8 +20,7 @@ repositories {
 }
 
 dependencies {
-  compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
-
+  compile "org.codehaus.groovy:groovy:${groovyVersion}"
   testCompile "junit:junit:${junitVersion}"
 
   testCompile "org.spockframework:spock-core:${spockVersion}"
