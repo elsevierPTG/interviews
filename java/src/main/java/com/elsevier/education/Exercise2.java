@@ -15,7 +15,7 @@ Use abstraction for two types of engines and simple fatory pattern to choose eng
 */
 public class Exercise2 {
 
-	public class Car {
+	public static class Car {
 		
 		public class Engine {
 			public void spinWeels() {
