@@ -18,3 +18,21 @@ Additional Notes:
 
 - Don't spend more than 30 minutes on this assignment
 - Use comments to describe why you made particular design decisions
+
+
+## Millar Notes
+
+* Change Log (ish)
+    * Project Cleanup
+        * fixed .gitignore so that gradle wrapper artifacts are retained
+        * using newer gradle plugin syntax
+        * modified version to comply with semantic versioning
+        * Ignored failing tests
+        * made code formatting consistent, and added a .editorconfig file to keep things consistent
+        * added settings.gradle to avoid creating cruft in the parent directory
+    * Tests
+        * added infrastructure for testing solutions with [spock](http://docs.spockframework.org)
+    * Fix failing tests
+
+
+

@@ -1,0 +1,9 @@
+//
+// gradle settings
+//
+// This prevents gradle from creating cruft in the parent directory
+//
+
+rootProject.name = "elsevier-java-interview"
+
+
