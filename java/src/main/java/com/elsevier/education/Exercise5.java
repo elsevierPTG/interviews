@@ -19,8 +19,8 @@ public class Exercise5 {
 		*/
 		public static Singleton getInstance() {
 			if (uniqueInstance == null) {
-				if(uniqueInstance == null){
-					synchronized (Singleton.class) {
+				synchronized (Singleton.class) {
+					if(uniqueInstance == null){
 						uniqueInstance = new Singleton();
 					}
 				}
