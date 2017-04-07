@@ -9,7 +9,7 @@ TODO: Make this class immutable.
 */
 /**
 
-Removed Setter  Methods,Made all fields private. Declared the class final.And the constructor was made private.
+Remove Setter  Methods or create private setters,Made all fields private. Declared the class final.And the constructor was made private.
 
 */
 public final class Exercise1 {
@@ -35,6 +35,21 @@ public final class Exercise1 {
 		
 		public String getLastName() {
 			return lastName;
+		}
+		//Either we can remove setter or create private setters
+		
+		public Set<String> setPhoneNumbers() {
+			this.phoneNumbers= phoneNumbers;
+		}
+		
+		
+		public String setFirstName() {
+			this.firstName=firstName;
+		}
+	
+		
+		public String setLastName() {
+			this.lastName= lastName;
 		}
 	
 	}
