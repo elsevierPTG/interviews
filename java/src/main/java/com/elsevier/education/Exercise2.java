@@ -28,4 +28,16 @@ public class Exercise2 {
 			// no-op for now
 		}
 	}
+	
+	public static class ElctricEngine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
 }
+
+public interface Engine
+{
+	
+}
+
