@@ -11,10 +11,12 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private GasEngine engine;
 		
-		public Car() {
+		public Car(GasEngine engine ) {
+			this.engine=engine;
 		}
+
 		
 		public void moveForward() {
 			engine.spinWheels();
