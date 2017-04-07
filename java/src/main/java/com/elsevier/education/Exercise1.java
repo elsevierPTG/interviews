@@ -7,36 +7,34 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
+
+// Removed setters, values (phoneNumbers, firstName and lastName) can only be set upon instantiation. Getters
+// can be called to retrieve values.
+
 public class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+			this.phoneNumbers = phoneNumbers;
+			this.firstName = firstName;
+			this.lastName = lastName;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
