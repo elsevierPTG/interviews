@@ -8,6 +8,12 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 
 */
 
+/*created interface so the gas/electric engines can access its method
+*initialized methods of gas/electric to return no-op
+*possible to pass in both electric and gas engine
+*used this implementation as it seems the most straightforward in accomplish the task
+*/
+
 public static void main(String[]){
 	
 }
