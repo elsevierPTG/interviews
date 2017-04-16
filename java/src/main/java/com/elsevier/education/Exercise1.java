@@ -1,42 +1,42 @@
 package com.elsevier.education;
 
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
-
-TODO: Make this class immutable.
-
-*/
+ *
+ * Making this class immutable. Changes: made class definition and field final
+ * removed Setter methods Changed ctor to accept properties as a ctor dependency
+ */
 public class Exercise1 {
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+	public final static class Person {
+
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = new HashSet<String>();
+			Iterator<String> iterator = phoneNumbers.iterator();
+			while (iterator.hasNext()) {
+				this.phoneNumbers.add(iterator.next());
+			}
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }

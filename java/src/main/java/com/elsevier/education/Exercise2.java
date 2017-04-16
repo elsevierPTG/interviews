@@ -1,29 +1,40 @@
 package com.elsevier.education;
 
 /**
+ * Refactored the Car class to use dependency injection of the engine.
+ * Introduced an new EngineService interface with 2 implementations of GasEngine and ElectricEngine
+ * The GasEngine spinWheels method returns the sound Vroom and
+ * the ElectricEngine returns whirr Please see corresponding test case for how to use
+ */
 
-TODO refactor the Car to use dependency injection of the engine
-TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
-TODO make sure we have no-op implementations of the gas engine and electric engine
-
-*/
 public class Exercise2 {
 
 	public static class Car {
-		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+
+		private EngineService engine;
+
+		public Car(EngineService engine) {
+			this.engine = engine;
 		}
-		
-		public void moveForward() {
-			engine.spinWheels();
+
+		public String moveForward() {
+			return engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
+
+	public interface EngineService {
+		String spinWheels();
+	}
+
+	public static class GasEngine implements EngineService {
+		public String spinWheels() {
+			return "Vroom vroom vroom vroom...";
+		}
+	}
+
+	public static class ElectricEngine implements EngineService {
+		public String spinWheels() {
+			return "Whirring whirr whirr whirr...";
 		}
 	}
 }
