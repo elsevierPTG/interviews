@@ -10,7 +10,7 @@ package com.elsevier.education;
  public Car gasCar() {
      Engine power = new GasEngine();
      power.setSound("Vroooom");
-    return gasCar;
+    return gasCar; 
  }
 
  @Bean
@@ -102,5 +102,5 @@ public class Exercise2 {
         }
 
 	}
-    
+
 }
