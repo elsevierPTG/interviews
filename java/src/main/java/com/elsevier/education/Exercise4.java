@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
 
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
+
  This class Counter is not thread safe because ++count is not an atomic operation. So two objects could
  be calling increment() and the first caller fetches the current value of count, increments it but before saving it
  the second caller fetches the original value and overwrites the newly saved one. Usually a static class is
