@@ -10,7 +10,7 @@ public class Exercise3Test {
     @Test
     public void testAsElement() {
 
-        Set<Person> people = new HashSet<>();
+        Set<Person> people = new HashSet<Person>();
 
         Person p1 = new Person(1);
         people.add(p1);
