@@ -15,12 +15,17 @@ repositories {
 
 }
 
+ext {
+    generatedSourcesDir = 'build/generated/source/apt/main'
+}
+
+
 sourceSets {
     main {
         java {
             // workaround for intellij weirdness
             // same for immutables
-            srcDirs 'build/generated/source/apt/main'
+            srcDirs += generatedSourcesDir
         }
     }
 }
@@ -37,5 +42,16 @@ dependencies {
     // test deps
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
+}
+
+/*
+ * workaround for javac bug from http://stackoverflow.com/questions/41219903/endpostable-already-set-when-adding-sourceset
+ */
+
+tasks.withType(JavaCompile) {
+    if (file(generatedSourcesDir).exists()) {
+        FileCollection collection = files { file(generatedSourcesDir).listFiles() }
+        collection.each { delete it }
+    }
 }
 
