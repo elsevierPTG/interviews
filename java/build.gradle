@@ -1,19 +1,41 @@
+plugins {
+    id "net.ltgt.apt" version "0.10"
+}
 
-
+apply plugin: 'maven'
 apply plugin: 'java'
+apply plugin: 'net.ltgt.apt'
 
 sourceCompatibility = 1.8
 
-version = '1.0'
+description = 'Example1'
 
 repositories {
     mavenCentral()
+
 }
+
+sourceSets {
+    main {
+        java {
+            // workaround for intellij weirdness
+            // same for immutables
+            srcDirs 'build/generated/source/apt/main'
+        }
+    }
+}
+
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+
+    def immutablesVersion = "2.4.6";
+    apt             group: "org.immutables", name: "value", version: immutablesVersion // for annotation processing only
+    compileOnly     group: "org.immutables", name: "value", version: immutablesVersion, "classifier": "annotations" // compilation-only annotations artifact
+
+    compile         group: "com.google.guava",     name: "guava", version: "21.0"
+
+    // test deps
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
-}
