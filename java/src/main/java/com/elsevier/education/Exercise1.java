@@ -13,9 +13,16 @@ import java.util.Set;
  *     <li>has toString()</li>
  *     <li>has hashCode()</li>
  *     <li>does not allow null's</li>
+ *     <li>automatically generates a fluent Builder</li>
  * </ul>
  *
- * I also wrote an immutable {@link Person} to demonstrate that I could do it
+ * I also wrote an immutable {@link Person} from scratch to demonstrate that I could do it for the purposes of this exercise.
+ *
+ * In general, I prefer the <a href="http://immutables.github.io">Immutables</a> library because, in "real" projects because:
+ * <ul>
+ *     <li>over time, people forget to update the {@link #toString()} and {@link #hashCode()} with new fields</li>
+ *     <li>you'll also want serialization, which you have to do by hand, but immutables.io support via Jackson/GSON</li>
+ * </ul>
  */
 public class Exercise1 {
 
