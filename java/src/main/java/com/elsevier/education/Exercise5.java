@@ -3,7 +3,7 @@ package com.elsevier.education;
 /**
 
 TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
-
+Make the constructor private and return the singleton through a getInstance method
 */
 public class Exercise5 {
 	private static Exercise5 singleton = new Exercise5( );

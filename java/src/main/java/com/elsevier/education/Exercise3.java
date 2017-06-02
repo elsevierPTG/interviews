@@ -16,7 +16,7 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
     public static class Person {
-        
+
         private Integer id;
 
         public Person(int newId) {
