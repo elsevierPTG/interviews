@@ -9,21 +9,45 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 */
 public class Exercise2 {
 
-	public static class Car {
-		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
-		}
-		
-		public void moveForward() {
-			engine.spinWheels();
-		}
+	 public static class Car {
+
+        private SimpleEngine engine;
+
+        public Car() {
+        }
+
+        public Car(SimpleEngine engine) {
+            this.engine = engine;
+        }
+
+        public void moveForward() {
+            engine.spinWheels();
+        }
+    }
+
+        interface SimpleEngine {
+            public void spinWheels();
+        }
+
+        public static class GasEngine implements SimpleEngine {
+            public void spinWheels() {
+            System.out.println("Using GasEngine");
+            }
+        }
+
+        public static class ElectricEngine implements SimpleEngine
+
+        {
+            public void spinWheels () {
+            System.out.println("Using ElectricEngine");
+        }
+        }
+
+        public static void main(String args[]) {
+            Car car = new Car(new GasEngine());
+            car.moveForward();
+            Car ElectricCar = new Car(new ElectricEngine());
+            ElectricCar.moveForward();
+
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
-	}
-}
+        }
