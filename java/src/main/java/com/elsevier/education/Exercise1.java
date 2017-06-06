@@ -11,7 +11,7 @@ TODO: Make this class immutable.
 public final class Exercise1 {
 
 	public static final class Person {
-		
+		// All the class variable are made final and hence cant be changed
 		private final Set<String> phoneNumbers;
 		private finalString firstName;
 		private finalString lastName;
