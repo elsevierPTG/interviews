@@ -11,19 +11,42 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+
+		public Car(Engine engine) {
+            this.engine = engine;
+        }
+		public Engine getEngine() {
+			return engine;
 		}
 		
+
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
 	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
-	}
+	abstract interface Engine {
+        public void spinWheels();
+    }
+	
+	public class GasPoweredEngine implements Engine {
+        public void spinWheels() {
+        	// no-op for now
+        }
+    }
+
+	public class ElectricalEngine implements Engine {
+        public void spinWheels() {
+        	// no-op for now
+        }
+    }
+
+    public static void main(String args[]) {
+        Car gasEngineCar = new Car(new GasPoweredEngine());
+        gasEngineCar.moveForward();
+        Car electricalEngineCar = new Car(new ElectricalEngine());
+        electricalEngineCar.moveForward();
+    }
 }
