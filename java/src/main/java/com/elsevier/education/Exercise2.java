@@ -10,12 +10,14 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 public class Exercise2 {
 
 	public static class Car {
-		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+
+		private final GasEngine engine;
+
+		// Use constructor injection
+		public Car(GasEngine engine) {
+			this.engine = engine;
 		}
-		
+
 		public void moveForward() {
 			engine.spinWheels();
 		}
