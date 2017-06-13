@@ -26,28 +26,52 @@ public class Exercise2 {
 		void spinWheels();
 	}
 
-	static class GasEngine implements Engine {
+	static class DefaultEngine implements Engine {
 		@Override
 		public void spinWheels() {
-			// TODO: implement operation
+			// default implementation
+		}
+	}
+
+	static class GasEngine implements Engine {
+		private final Engine defaultEngine;
+
+		// Private constructor to avoid explicit engine creation
+		private GasEngine(Engine defaultEngine) {
+			this.defaultEngine = defaultEngine;
+		}
+
+		public void spinWheels() {
+			// delegate spin wheels to the default implementation
+			defaultEngine.spinWheels();
 		}
 	}
 
 	static class ElectricEngine implements Engine {
+		private final Engine defaultEngine;
+
+		// Private constructor to avoid explicit engine creation
+		private ElectricEngine(Engine defaultEngine) {
+			this.defaultEngine = defaultEngine;
+		}
+
 		@Override
 		public void spinWheels() {
-			// TODO: implement operation
+			// delegate spin wheels to the default implementation
+			defaultEngine.spinWheels();
 		}
 	}
 
 	// Factory class provides methods for correct engine creation.
 	static class Engines {
+		private static final Engine defaultEngine = new DefaultEngine();
+
 		public static Engine newGasEngine() {
-			return new GasEngine();
+			return new GasEngine(defaultEngine);
 		}
 
 		public static Engine newElectricEngine() {
-			return new ElectricEngine();
+			return new ElectricEngine(defaultEngine);
 		}
 	}
 }
