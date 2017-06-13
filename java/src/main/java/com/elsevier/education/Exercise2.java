@@ -10,11 +10,10 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 public class Exercise2 {
 
 	public static class Car {
-
-		private final GasEngine engine;
+		private final Engine engine;
 
 		// Use constructor injection
-		public Car(GasEngine engine) {
+		public Car(Engine engine) {
 			this.engine = engine;
 		}
 
@@ -22,10 +21,33 @@ public class Exercise2 {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+
+	public interface Engine {
+		void spinWheels();
+	}
+
+	static class GasEngine implements Engine {
+		@Override
 		public void spinWheels() {
-			// no-op for now
+			// TODO: implement operation
+		}
+	}
+
+	static class ElectricEngine implements Engine {
+		@Override
+		public void spinWheels() {
+			// TODO: implement operation
+		}
+	}
+
+	// Factory class provides methods for correct engine creation.
+	static class Engines {
+		public static Engine newGasEngine() {
+			return new GasEngine();
+		}
+
+		public static Engine newElectricEngine() {
+			return new ElectricEngine();
 		}
 	}
 }
