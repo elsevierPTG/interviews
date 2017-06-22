@@ -4,6 +4,9 @@ package com.elsevier.education;
 
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
+It was not thread safe because multiple thread can enter into increment and resentCount methods and update the count so 
+it should be in synchronized block
+
 */
 public class Exercise4 {
 
