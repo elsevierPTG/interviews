@@ -9,21 +9,39 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 */
 public class Exercise2 {
 
-	public static class Car {
+	public static class Car extends Engine {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		// private GasEngine engine = new GasEngine();
+
+
+
+		public Car();
+
+
+		@Override
+		public void spinWheels() {
+
 		}
-		
+
 		public void moveForward() {
-			engine.spinWheels();
+			spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
+
+	public enum EngineType {
+		GasEngine,
+		ElectricEngine
+	}
+
+	public abstract class Engine{
+
+
+		EngineType engineType = null;
+		public  Engine (EngineType type){
+			this.engineType = type;
+		};
+
+
+		public abstract void spinWheels();
 	}
 }

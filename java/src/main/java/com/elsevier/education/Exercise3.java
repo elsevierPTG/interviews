@@ -12,20 +12,41 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+
+
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+
+		/**
+		 * added the proper overridden method equals
+		 *
+ 		 * @param o
+		 * @return boolean
+		 */
+		@Override
+		public boolean equals(Object o) {
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+
+			Person person = (Person) o;
+
+			return id != null ? id.equals(person.id) : person.id == null;
+		}
+
+		/**
+		 * added the proper overridden method hashCode
+		 * @return int
+		 */
+
+		@Override
 		public int hashCode() {
-			return id * generator.nextInt();
+			return Objects.hash(id);
 		}
-		
-		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
-		}
+
+
 	}
 }
