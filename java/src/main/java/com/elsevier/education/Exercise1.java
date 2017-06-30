@@ -7,7 +7,10 @@ import java.util.Set;
 /**
 
 TODO: Make this class immutable.
-
+ * The beauty of immetable classes is that they can be shared freely across threads without need for synchronization. Also
+ * they make great building blocks.
+ * Declaring *all* private members as final ensures the Java Memory Model guarantee that when shared (published) from on thread
+ * to other threads, a thread will never see it the object in an inconsistent state.
 */
 public class Exercise1 {
 
