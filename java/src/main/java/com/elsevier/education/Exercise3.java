@@ -16,7 +16,8 @@ TODO Examine the failing test case for this class.
  * too large. But if you have a different hashcode each time, then your {@code Person} object insertions end up in different
  * buckets of the backing {@link HashMap}.
  *
- * In order to fix the hashCode method needs to be re-written so that it always returns the same value. There are plenty
+ * In order to fix the hashCode method needs to be re-written so that it always returns the same value for the
+ * <strong>same</strong> person object id. There are plenty
  * of resources online and books (Effective Java by Joshua Bloch, 2nd Edition) that detail how to correctly
  * write a good hashCode method.
 
