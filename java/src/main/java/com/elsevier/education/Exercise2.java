@@ -1,29 +1,50 @@
 package com.elsevier.education;
 
+import javax.enterprise.inject.Alternative;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+
 /**
-
-TODO refactor the Car to use dependency injection of the engine
-TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
-TODO make sure we have no-op implementations of the gas engine and electric engine
-
-*/
+ * Weld implementation for dependency injection Gas engine set as the default
+ * engine implementation with the Electric engine as the alternate.
+ * 
+ * Default implementation of Engine's spinWheels method permits implementing
+ * classes use of the default method
+ *  
+ *  @author todd weber
+ */
 public class Exercise2 {
 
 	public static class Car {
-		
-		private GasEngine engine = new GasEngine();
-		
+
+		private @Inject Engine engine;
+
 		public Car() {
 		}
-		
+
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
+
+	public static interface Engine {
+		default public void spinWheels() {
 			// no-op for now
 		}
 	}
+
+	/**
+	 * Gas Engine implementation
+	 */
+	@Default
+	public static class GasEngine implements Engine {
+	}
+
+	/**
+	 * Gas Engine implementation
+	 */
+	@Alternative
+	public static class ElectricEngine implements Engine {
+	}
+
 }

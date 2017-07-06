@@ -1,5 +1,8 @@
 # Java Coding Challenges
 
+Submitted by: Todd Weber (todd@webercomputing.com)
+Recruiter: Linda Pham (linda.pham@jobspringpartners.com)
+
 This is a set of Java-specific coding challenges designed to vet the technical ability of software engineers applying to Elsevier.
 
 Note that when you submit this assignment, 
