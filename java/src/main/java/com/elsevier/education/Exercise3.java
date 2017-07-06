@@ -12,18 +12,21 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
+
 		private static Random generator = new java.util.Random();
 		private Integer id;
-		
+
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		//the issue here is that the hashCode method had randomness built into it,
+		//so when HashSet calls it twice on the same Person object, it returns
+		//two different results- so HashSet can't tell that they are the same object
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
-		
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}

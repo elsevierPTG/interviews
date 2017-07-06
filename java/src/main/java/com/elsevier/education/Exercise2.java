@@ -10,20 +10,39 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 public class Exercise2 {
 
 	public static class Car {
-		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+
+		private Engine engine;
+
+		public Car(Engine e) {
+			System.out.println("Car created");
+			this.engine = e;
+
 		}
-		
+
 		public void moveForward() {
 			engine.spinWheels();
 		}
+
 	}
-	
-	public static class GasEngine {
+
+	public static abstract class Engine {
+		public abstract void spinWheels();
+	}
+
+	public static class GasEngine extends Engine {
+		public GasEngine() {
+			System.out.println("Gas Engine created");;
+		}
 		public void spinWheels() {
-			// no-op for now
+			System.out.println("Vroom!");
+		}
+	}
+	public static class ElectricEngine extends Engine {
+		public ElectricEngine() {
+			System.out.println("Electric Engine created");
+		}
+		public void spinWheels() {
+			System.out.println("Whirrr!");
 		}
 	}
 }
