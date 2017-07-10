@@ -14,7 +14,7 @@ public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		private static Random generator = new java.util.Random );
 		private Integer id;
 		
 		public Person(int newId) {

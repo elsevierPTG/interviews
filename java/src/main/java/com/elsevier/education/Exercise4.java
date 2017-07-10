@@ -15,7 +15,7 @@ public class Exercise4 {
 		private int count = 0;
 		
 		public int increment() {
-			synchronized(this) {Â return ++count; }
+			synchronized(this) { return ++count; }
 		}
 		
 		public int getCount() {
@@ -23,7 +23,7 @@ public class Exercise4 {
 		}
 		
 		public void resetCount() {
-			synchronized(this) {Â count = 0; }
+			synchronized(this) { count = 0; }
 		}
 
 	}
