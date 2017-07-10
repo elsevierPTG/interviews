@@ -7,6 +7,12 @@ import java.util.Set;
 
  TODO: Make this class immutable.
 
+ To make this class immutable, I 1) made all the instance variables final
+ so that they cannot be changed once set, 2) removed the setter
+ methods, 3) made getPhoneNumbers (which returns a mutable object) return a
+ copy of the instance variable rather than the variable itself. This is not
+ necessary with firstName and lastName because they are strings so they are
+ already immutable.
  */
 public class Exercise1 {
 
