@@ -23,7 +23,7 @@ public class Exercise4Test {
     t2.start();
     t1.join();
     t2.join();
-    System.out.println(counter.getCount());
+    System.out.println("Counter which should be 20 = " + counter.getCount());
 
   }
 
