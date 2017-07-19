@@ -11,6 +11,10 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.springframework/spring-beans
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.0.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.0.RELEASE'
     testCompile 'junit:junit:4.12'
 }
 
