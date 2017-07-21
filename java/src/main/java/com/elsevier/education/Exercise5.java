@@ -3,18 +3,17 @@ package com.elsevier.education;
 /**
 
 TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
-
+ Changes made:
+  	1) make class Singleton non-static and in a separate file with the class definition
+	2) add a private constructor Singleton(){} to class Singleton
+        3) add a getInstance() method to class Singleton that returns a object of Singleton
+        4) change the main method Singleton st = new Singleton(); statement to Singleton st = Singleton.getInstance();
 */
 public class Exercise5 {
 	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
-	}
-		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+	        Singleton st = Singleton.getInstance();
+	        st.doSomething();
 	}
 }
+	
