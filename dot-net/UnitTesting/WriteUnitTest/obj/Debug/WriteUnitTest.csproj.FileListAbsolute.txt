@@ -1,1 +1,7 @@
 C:\Users\lyncha1\SourceCode\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe.config
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe.config
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.pdb
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\obj\Debug\WriteUnitTest.exe
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\obj\Debug\WriteUnitTest.pdb
+C:\Users\talk2\Source\Repos\Elsevier\dot-net\UnitTesting\WriteUnitTest\obj\Debug\WriteUnitTest.csprojResolveAssemblyReference.cache
