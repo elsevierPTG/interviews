@@ -8,9 +8,10 @@ Suggested Changes:
 	I would use StringBuilder and its AppendLine() method instead of string concatenation. I chose this method for two reasons:
 
 	1. Assuming the number of strings being concatenated here is not significant enough to cause any kind of memory issue, 
-	   the way the code is written makes it hard to read (an maintain). There is no semantic flow of understanding.
+	   the way the code is written makes it hard to read (and maintain). There is no semantic flow of understanding.
 	2. String concatenation is not only messy, it causes a creation of a new string object for each concatenation since you
 	   cannot modify a string in place (i.e. strings are immutable). StringBuilder, on the other hand, is purposefully 
 	   optimized for manipulating strings. It allocates an initial large enough character array to which more and more 
 	   characters can be added (strings are just an array of character, Unicode, codepoints). StringBuilder also has the 
-	   ability to modify the buffer size as the string gets larger. 
+	   ability to modify the buffer size as the string gets larger. Consequently, it provides better performance, readability, 
+	   and maintainability. 
