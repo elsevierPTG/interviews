@@ -9,28 +9,22 @@ public class Exercise5 {
 	
 	public static class Singleton {
 
-		private static Singleton singleton = new Singleton();
+	    // To make sure others do not create object.
+	    private Singleton(){}
 
-		/*
-		private constructor to avoid client to use constructor
-		 */
-		private Singleton(){}
 
-        /**
-         * This is eager initialization of singleton class.
-         * @return
-         */
-		public static Singleton getInstance(){
-			return singleton;
-		}
+	    // This inner class shall help creating object.
+        private static class SingletonHelper{
+            private static final Singleton singleton = new Singleton();
+        }
 
-		public void doSomething() {
+		public void doSomeThing() {
 			System.out.println("Doing something....");
 	    }
+	}
 
-    }
-		
 	public static void main(String a[]){
-		Singleton.getInstance().doSomething();
+		Singleton st = new Singleton();
+		st.doSomeThing();
 	}
 }
