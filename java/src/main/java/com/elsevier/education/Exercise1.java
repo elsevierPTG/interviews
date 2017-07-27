@@ -4,45 +4,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * TODO: Make this class immutable.
- * Went with Double checked Singleton.
+ * TODO: Make this class immutable.\
  */
-public final class Exercise1 {
+public class Exercise1 {
 
-	public static class Person {
+	public static final class Person {
 
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 
-		/*
-        This is made volatile so that as to prevent thread from seeing half serialized class.
-         */
-		private volatile static Person person;
-
-		private Person() {
-		}
-
-		private Person(Set<String> phoneNumbers, String firstName, String lastName) {
-			this.phoneNumbers = phoneNumbers;
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+		    //We do not set internal reference as external one. Deep copy
+            this.phoneNumbers = new HashSet<>();
+            phoneNumbers.forEach( number -> {
+                this.phoneNumbers.add(number);
+            });
 			this.firstName = firstName;
 			this.lastName = lastName;
 		}
 
-		/**
-		 * This is only locking the critical code.
-		 * @return
-		 */
-		public static Person getInstance(Set<String> phoneNumbers, String firstName, String lastName) {
-			if (person == null) {
-				synchronized (Person.class) {
-					if (person == null) {
-						person = new Person(phoneNumbers, firstName, lastName);
-					}
-				}
-			}
-			return person;
-		}
 
 		/**
 		 * We never return reference of Mutable objects.
