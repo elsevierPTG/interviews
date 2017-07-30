@@ -18,6 +18,10 @@ public class Exercise5 {
             private static final Singleton singleton = new Singleton();
         }
 
+		public static Singleton getInstance(){
+			return SingletonHelper.singleton;
+		}
+
 		public void doSomeThing() {
 			System.out.println("Doing something....");
 	    }
