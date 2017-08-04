@@ -10,8 +10,15 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     testCompile 'junit:junit:4.12'
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.10.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring
+    compile group: 'org.springframework', name: 'spring', version: '3.0.0.M3', ext: 'pom'
+
 }
 
 task wrapper(type: Wrapper) {
