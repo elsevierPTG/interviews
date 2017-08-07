@@ -11,9 +11,10 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+		public Car(Engine pEngine) {
+			engine = pEngine;
 		}
 		
 		public void moveForward() {
@@ -21,9 +22,19 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	public class Engine{
+		public void spinWheels() {
+		// no-op for now
+		}
+	}
+
+	
+	public class GasEngine extends Engine{
 		public void spinWheels() {
 			// no-op for now
 		}
+	}
+	
+	public class ElectricEngine extends Engine{
 	}
 }
