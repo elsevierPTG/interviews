@@ -2,18 +2,20 @@ package com.elsevier.education;
 
 /**
 
-TODO refactor the Car to use dependency injection of the engine
-TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
-TODO make sure we have no-op implementations of the gas engine and electric engine
+@author Todd Goglia 8/22/2017
+Refactored the Car to use dependency injection of the IEngine interface.
+Created the IEngine interface.
+Updated the GasEngine class to implement the IEngine interface and created the ElectricEngine implementation.
 
 */
 public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private IEngine engine;
 		
-		public Car() {
+		public Car(IEngine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
@@ -21,9 +23,31 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	/**
+	 * Interface to abstract the Engine class.
+	 */
+	public interface IEngine
+	{
+		void spinWheels();
+	}
+		
+	
+	/** GasEngine implementation of the IEngine interface. */
+	public static class GasEngine implements IEngine {
 		public void spinWheels() {
-			// no-op for now
+			System.out.println("The wheels on the gas engine car go round and round...");
 		}
 	}
+	
+	/** ElectricEngine implementation of the IEngine interface. */
+	public static class ElectricEngine implements IEngine {
+		public void spinWheels() {
+			System.out.println("The wheels on the electric car go round and round...");
+		}
+	}
+	
+	
+	
+	
+	
 }
