@@ -1,5 +1,6 @@
 package com.elsevier.education;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -9,34 +10,42 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
+	/**
+	 * Removed all mutator methods, make all member variables final,
+	 * and prevented modification of phoneNumbers collection.
+	 * 
+	 * @author Rai Singh
+	 * 
+	 * Recruiter: Linda Pham, Jobspring Partners
+	 *
+	 */
+	public final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers = null;
+		private final String firstName = null;
+		private final String lastName = null;
 		
 		public Person() {
 		}
 
+		/**
+		 * Retrieves all phone numbers belong to this class
+		 * 
+		 * @return A copy of the original collection
+		 */
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
+			final Set<String> copyPhoneNumbers = new HashSet<String>();
+			copyPhoneNumbers.addAll(phoneNumbers);
+			return copyPhoneNumbers;
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
 }
