@@ -11,7 +11,6 @@ public class Exercise2 {
 
 	
 	
-	
 }
 
 public static class Car {
