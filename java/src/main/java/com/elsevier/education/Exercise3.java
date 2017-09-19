@@ -6,7 +6,7 @@ import java.util.*;
 
 TODO Examine the failing test case for this class.
  We should be able to call people.add() twice but end with only one object in it.
- We can test with "gradlew test"
+ We can test with "gradle test"
 
 */
 public class Exercise3 {
@@ -19,9 +19,10 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
 		public int hashCode() {
-			return id * generator.nextInt();
+			// Delegate to hashCode implementation of Integer, whatever that is.
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
