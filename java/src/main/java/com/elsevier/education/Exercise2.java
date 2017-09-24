@@ -9,21 +9,60 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 */
 public class Exercise2 {
 
-	public static class Car {
+	public class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine = null;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
+		}
+		
+		public void startEngine(){
+			this.engine.startEngine();
+		}
+		
+		public void spinWheels() {
+			if(engine.isOperational()){
+				// spin the wheels.
+			}
+			else{
+				// no-op condition.
+			}
 		}
 		
 		public void moveForward() {
-			engine.spinWheels();
+			this.spinWheels();
 		}
 	}
 	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
+	
+	public class GasEngine extends Engine{
+		public void startEngine(){
+			// do gas engine specific stuff to determine if able to start engine.
+			// if all ok, start engine.
+			super.startEngine();
+		}
+	}
+	
+
+	public class ElectricEngine extends Engine{
+		public void startEngine(){
+			// do electric engine specific stuff to determine if able to start engine.
+			// if all ok, start engine.
+			super.startEngine();
+		}
+	}
+	
+
+	public class Engine {
+		private boolean operational = true;
+		
+		public void startEngine(){
+			this.operational = true;
+		}
+		
+		public boolean isOperational(){
+			return this.operational;
 		}
 	}
 }
