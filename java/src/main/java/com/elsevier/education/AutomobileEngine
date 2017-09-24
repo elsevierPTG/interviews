@@ -1,0 +1,14 @@
+package com.elsevier.education;
+
+/**
+ * Interface used in Exercise2 to allow dependency injection of automobile engine types.
+ */
+
+public interface AutomobileEngine {
+
+    /**
+     * Spins the wheels of the vehicle, powered by the engine.
+     */
+    void spinWheels();
+
+}
