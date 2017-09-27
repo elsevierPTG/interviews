@@ -6,7 +6,7 @@ package com.elsevier.education;
  * count field and incorrectly use that.
  *
  * I've fixed this by adding the synchronized keyword to the methods to ensure
- * that only one thread may access them at a time. I've also maked the count
+ * that only one thread may access them at a time. I've also marked the count
  * field as volatile so that writes and reads for it are atomic.
  */
 public class Exercise4 {
