@@ -1,42 +1,44 @@
 package com.elsevier.education;
 
 import java.util.Set;
+import java.util.HashSet;
 
 /**
-
-TODO: Make this class immutable.
-
+ * In order to make this class immutable, I made the following changes:
+ * - made all fields final
+ * - removed all setters
+ * - made class final
+ * - copied the set of phone numbers so that it is not a reference to a
+ * mutable object
 */
 public class Exercise1 {
 
-	public static class Person {
+	public static final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String newFirstName, String newLastName,
+			Set<String> newPhoneNumbers) {
+			firstName = newFirstName;
+			lastName = newLastName;
+
+			Set<String> phoneNumbersCopy = new HashSet<String>();
+			phoneNumbersCopy.addAll(newPhoneNumbers);
+			phoneNumbers = phoneNumbersCopy;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
