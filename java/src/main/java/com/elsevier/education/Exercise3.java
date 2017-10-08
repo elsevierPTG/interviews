@@ -9,19 +9,20 @@ TODO Examine the failing test case for this class.
  We can test with "gradlew test"
 
 */
+
+// The Random Number generator always creates a unique object.  The id must be passed in.
 public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
-		private Integer id;
+		private final Integer id;
 		
-		public Person(int newId) {
-			id = newId;
+		public Person(int id) {
+			this.id = id;
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
