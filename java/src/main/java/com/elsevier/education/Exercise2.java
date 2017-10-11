@@ -11,9 +11,10 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
@@ -21,8 +22,20 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
+	protected static abstract class Engine {
+		protected abstract void spinWheels();
+	}
+	
+	public static class GasEngine extends Engine {
+		@Override	
 		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	
+	public static class ElectricEngine extends Engine {
+		@Override
+		protected void spinWheels() {
 			// no-op for now
 		}
 	}
