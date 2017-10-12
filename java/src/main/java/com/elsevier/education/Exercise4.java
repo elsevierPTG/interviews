@@ -2,7 +2,9 @@ package com.elsevier.education;
 
 /**
 
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
+Adding synchronized will locki access to shared data while it is being operated on by a thread,
+ so if we have more than concurrent call for same function has "synchronized", first one will be excute then the others will be in queue waiting
+ for calling the function, which give last updated value.
 
 */
 public class Exercise4 {
@@ -11,15 +13,15 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized void resetCount() {
 			count = 0;
 		}
 
