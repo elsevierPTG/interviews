@@ -13,15 +13,18 @@ public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		/**
+		 * The random integer was preventing the hashing algorithm from recognizing the same object in the set.
+		 * @return
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
