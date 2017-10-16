@@ -24,7 +24,7 @@ public class Exercise1 {
 		}
 
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			return phoneNumbers.stream().collect(Collectors.toSet());
 		}
 		
 		public String getFirstName() {
