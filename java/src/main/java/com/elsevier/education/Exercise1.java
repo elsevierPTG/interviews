@@ -4,8 +4,19 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-
-TODO: Make this class immutable.
+	@author James Herndon james.herndon@gmail.com 
+	@version 1.01 Made the nested Person class immutable.
+	Immutability checklist:
+		1. Final class so it can't be extended
+		2. All fields are private
+		3. Eliminate setter methods. 
+			I chose to remove these, changing the interface.
+			The other option, throwing a "Not Implemented" RuntimeException
+			seemed inappropriate since calling code will have them differently in
+			any case.
+		4. Fields are final and can only be assigned once.
+		5. Constructor initialization using deep copy.
+		6. For object fields return a copy, rather than object reference.
 
 */
 public class Exercise1 {
