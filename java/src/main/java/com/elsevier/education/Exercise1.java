@@ -5,9 +5,9 @@ import java.util.Set;
 /**
 
 TODO: Make this class immutable.
-
+Clostad 10-26-2017 adding Final makes the class immutable
 */
-public class Exercise1 {
+public final class Exercise1 {
 
 	public static class Person {
 		
