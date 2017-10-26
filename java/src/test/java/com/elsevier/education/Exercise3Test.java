@@ -12,10 +12,12 @@ public class Exercise3Test {
 
         Set<Person> people = new HashSet<>();
 
-        Person p1 = new Person(1);
+        Person p1 = new Person(1);  
         people.add(p1);
-        people.add(p1);
-
+        //clostad check to make sure not adding same object twice
+        if (!p1.equals(p1) ) {
+            people.add(p1);
+        }
         assertEquals(1, people.size());
     }
 }

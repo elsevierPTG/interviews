@@ -11,8 +11,9 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
+		//private GasEngine engine = new GasEngine();
+		//clostad 10-26-2017 use the @Inject annotation
+		@Inject GasEngine engine;
 		public Car() {
 		}
 		
@@ -22,6 +23,13 @@ public class Exercise2 {
 	}
 	
 	public static class GasEngine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+	
+	// clostad 10-26-2017, created new class for Electric Engin
+	public static class ElectricEngine {
 		public void spinWheels() {
 			// no-op for now
 		}
