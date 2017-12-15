@@ -10,20 +10,19 @@ TODO: Make this class immutable.
 
 */
 
- public final class Exercise1 {
+ public class Exercise1 {
 
+	/**
+	 * Person is an immutable class, since there is no way to change
+	 * its state after construction.
+	 */
+	public final class Person {
 
-	public class Person {
-
-		/**
-		 * Person is an immutable class, since there is no way to change
-		 * its state after construction.
-		 */
 
 		public Person(String aFirstName, String aLastName, Set<String> aPhoneNumbers) {
 		    firstName = aFirstName;
 		    lastName = aLastName;
-		    phoneNumbers = new HashSet<>(Arrays.asList("2155555555", "2157777777"));
+		    phoneNumbers = aPhoneNumbers; 
 		}
 
         /**
