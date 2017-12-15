@@ -22,7 +22,7 @@ TODO: Make this class immutable.
 		public Person(String aFirstName, String aLastName, Set<String> aPhoneNumbers) {
 		    firstName = aFirstName;
 		    lastName = aLastName;
-		    phoneNumbers = aPhoneNumbers; 
+		    phoneNumbers = aPhoneNumbers;
 		}
 
         /**
