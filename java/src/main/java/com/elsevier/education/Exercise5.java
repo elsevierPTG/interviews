@@ -1,20 +1,40 @@
 package com.elsevier.education;
 
+
 /**
-
-TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
-
-*/
+ * 
+ * This class is refactored to implement the class to be singleton.
+ * -- contructor private
+ * -- create a static instance and return that with a  method.
+ * @author Mukul Das 
+ * Email: m.das001@yahoo.com
+ * Recruiter: Collabera
+ * 
+ * 
+ */
 public class Exercise5 {
-	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
-	}
+		public static class Singleton {
+			private Singleton(){
+				
+			}
+			
+			private static Singleton singleInstance = null;
+			
+			public static Singleton getSingeton() {
+				
+				if(singleInstance == null) {
+					singleInstance = new Singleton();
+				}
+				return singleInstance;
+			}
+			
+			
+			
+			public void doSomething() {
+				System.out.println("Doing something....");
+		    }
+		}
+			
 		
-	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
-	}
 }
+
