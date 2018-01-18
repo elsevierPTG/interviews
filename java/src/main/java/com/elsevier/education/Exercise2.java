@@ -22,6 +22,10 @@ public class Exercise2 {
 			engine.spinWheels();
 		}
 		
+		public Engine getEngine() {
+			return engine;
+		}
+		
 	}
 	
 	public interface Engine {
