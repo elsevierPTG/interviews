@@ -14,9 +14,9 @@ Additional Notes:
 
 - Don't spend more than 45 minutes on this entire assignment.
 - Feel free to describe why you made particular design decisions.
-- Bare in mind this is a simplified program that does not persist data to a common data store. 
+- Bear in mind this is a simplified program that does not persist data to a common data store. 
 - The LessonRepository and ModuleRepository return data from a hardcoded list.
-- The WriteUnitTest console application is an example application which lives in isolation, i.e. other applications do not reference it or it's functions.
+- The WriteUnitTest console application is an example application which lives in isolation, i.e. other applications do not reference it or its functions.
 
 Definitions:
 
