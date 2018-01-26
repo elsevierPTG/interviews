@@ -6,3 +6,74 @@
 
 Suggested Changes:
 	
+	
+There are numerous changes I recommend, which are broken up below by class file.
+
+FileManager.cs
+
+I would create a new class called FileManager that would expose methods
+
+	public bool FileExists(string fileName);
+	public string ExtractFileContents(string fileName);
+	
+This decouples file manipulation functionality from either Program.Main or ExampleClass.ExampleMethod.
+The ExampleMethod should only need a fileName to proceed and not care about System.IO functionality.
+
+
+Messages.cs
+
+I would create a new static class called Messages or something similar, with public static
+string properties to return messages such as "File name is required", "File does not exist", etc.
+This could be done numerous ways and could be pulled from a config file or a configuration repository
+of some sort, but the point is to remove the scattering of hard-coded messages throughout the application,
+which is a huge code smell.
+
+
+Program.cs
+
+1) I assume this simple example should take a command line argument for the file name, so I would modify the Main method
+to simply check that one argument is passed for fileName.  If args is empty, then do a Console.Write('File name is required.)
+or some appropriate message.  But don't hard-code the message, pull it from some static Messages object property.
+
+2) The Main method needs a try-catch block.  In the try block the ExampleMethod should be called.  The exception block
+could simply do a Console.Write of the exception message or full text.
+
+3) Prior to calling the ExampleMethod, call FileManager.FileExists and either continue if true or do a Console.Write
+with an appropriate message from the Messages object.
+
+4) I would use dependency injection to get an instance of ExampleClass, and this should be done before the try block.
+
+5) After the exception block the Console.Write of the exampleText should occur.
+
+
+ExampleClass
+
+1) Add a default constructor.  It might not do anything at this point, but it's better to be explicit.
+
+2) The exampleText property should be Pascal case, not camel case.  So rename it ExampleText.
+
+3) The ExampleText property should have a public getter and private setter.  The ExampleMethod method is responsible
+for populating the ExampleText property with text contents of the file, but as it stands now if you consume the ExampleClass
+object it is not apparent that ExampleText is populated this way.  So if ExampleMethod is the only way to populate ExampleText,
+then the property should explicitly dictate this by hiding the public setter.
+
+4) I would rename the ExampleMethod method to something more appropriate, such as RetrieveFileContents.
+
+5) ExampleMethod should either return a boolean, indicating success or failure of the reading of the file, or it should
+return the ExampleText string.  Either approach is fine with me and it really depends on the coding guidelines established
+for a given project.  If you are trying to be more pure and functional, then returning void is not a good idea, as it's not
+clear as to the side effects of running the ExampleMethod.
+
+6) Within the try block of ExampleMethod, replace the code with a call to the new method FileManager.ExtractFileContents,
+which will do the work of opening the file, reading its content, and returning a string for the file contents.  You could also
+call FileManager.FileExists prior to calling FileManager.ExtractFileContents, or do it internally within the ExtractFileContents method.
+
+7) The catch block is a mess.  As it stands you could use StringBuilder to build up the string, but I would rather move this string
+into a constant or have some other class method or private method return it.  There are numerous ways to clean this up, but the point
+is that the exception block should be asking some other method for this default text, and not be responsible for setting it.  Again,
+another separation of concerns issue.
+
+8) The very last line in the ExampleMethod should be to set the ExampleText property and then also return it, assuming the case
+of changing the ExampleMethod signature to return this string.  Or, you could return a boolean indicating success or failure, if that
+route is taken.  And if so, the boolean value should be set appropriately in the try and catch blocks.
+
