@@ -1,1 +1,6 @@
 C:\Users\lyncha1\SourceCode\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe.config
+C:\code\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe.config
+C:\code\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe
+C:\code\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.pdb
+C:\code\interviews\dot-net\UnitTesting\WriteUnitTest\obj\Debug\WriteUnitTest.exe
+C:\code\interviews\dot-net\UnitTesting\WriteUnitTest\obj\Debug\WriteUnitTest.pdb
