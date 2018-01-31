@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+	compile group: 'org.jboss.weld.se', name: 'weld-se-core', version: '2.4.4.Final'
     testCompile 'junit:junit:4.12'
 }
 
