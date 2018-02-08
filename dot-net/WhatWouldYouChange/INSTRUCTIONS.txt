@@ -5,4 +5,9 @@
 
 
 Suggested Changes:
-	
+	1.) Program.cs
+		- Should be "ExampleText.txt" not "ExampleTexttxt"
+	2.) ExampleClass.cs
+		- The catch should be utilized to catch errors, not aggregate text from the file.
+		- Check if the file exists before attempting to open it.
+		- Instead of adding the text each time use while(streamReader.Peek() >= 0) { text+=streamReader.ReadLine() }
