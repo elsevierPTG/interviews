@@ -6,16 +6,12 @@
 
 <script>
   /*
-  Question 1 (~10 minutes):
+  Instructions
+  (~10 minutes):
 
   This code appears to work. Nonetheless note up to 10 things that look bad to you, including a brief note as to why.
 
   Please consider both minor syntactical issues with the code as it stands, and how the code is structured overall.
-
-  Question 2 (~15 minutes):
-
-  Write a better version of the function. Please include comments explaining your decisions
-
    */
 
   var submitButtonActive = false
@@ -30,7 +26,7 @@
           &&
           document.getElementById(reqFlds[1]).value !== ''
         ) {
-          // Form is valid
+          // valid
           document.getElementById('submitButton').style.backgroundColor = '#00f';
           return true;
     }else {
