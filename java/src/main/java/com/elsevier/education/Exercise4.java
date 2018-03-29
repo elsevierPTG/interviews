@@ -1,26 +1,27 @@
 package com.elsevier.education;
-
+import java.util.concurrent.atomic.AtomicInteger;
 /**
 
 TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
 
+ AM: Orginal code was not Thread-Safe but AtomicInteger is.
 */
 public class Exercise4 {
 
 	public static class Counter {
-		
-		private int count = 0;
+
+		private AtomicInteger counter = new AtomicInteger(0);
 		
 		public int increment() {
-			return ++count;
+			return counter.incrementAndGet();
 		}
 		
 		public int getCount() {
-			return count;
+			return counter.intValue();
 		}
 		
 		public void resetCount() {
-			count = 0;
+			counter.set(0);
 		}
 
 	}
