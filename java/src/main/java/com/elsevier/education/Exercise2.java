@@ -20,33 +20,38 @@ public class Exercise2 {
 			this.engine = engine;
 		}
 		
-		public void moveForward() {
+		public  void moveForward() {
 			engine.spinWheels();
 		}
 	}
 
-	public interface Engine {
-		public void spinWheels();
+	static abstract class   Engine {
+		public void spinWheels(){
+				// no-op for now
+            System.out.println("I am Engine");
+        }
 	}
 
-	public static class ElectricEngine implements Engine{
-		public void spinWheels() {
-			// no-op for now
+	public static class ElectricEngine extends Engine{
+//		public void spinWheels() {
+//			// no-op for now
 //			System.out.println("Its Electric");
-		}
+//		}
 	}
 
 	
-	public static class GasEngine implements Engine {
+	public static class GasEngine extends Engine {
+	    @Override
 		public void spinWheels() {
 			// no-op for now
-//			System.out.println("I Have Gas");
+			System.out.println("I Have Gas");
 		}
 	}
 
-//	public static void main(String a[]){
-//		Car c1 = new Car(new GasEngine()) ;
-//		Car c2 = new Car(new ElectricEngine()) ;
-//		c1.moveForward();
-//	}
+	public static void main(String a[]){
+		Car c1 = new Car(new GasEngine()) ;
+		Car c2 = new Car(new ElectricEngine()) ;
+		c1.moveForward();
+        c2.moveForward();
+	}
 }
