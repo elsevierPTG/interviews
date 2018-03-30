@@ -28,8 +28,8 @@ public class Exercise2 {
 	static abstract class   Engine {
 		public void spinWheels(){
 				// no-op for now
-            System.out.println("I am Engine");
-        }
+//            System.out.println("I am Engine");
+//        }
 	}
 
 	public static class ElectricEngine extends Engine{
@@ -44,7 +44,7 @@ public class Exercise2 {
 	    @Override
 		public void spinWheels() {
 			// no-op for now
-			System.out.println("I Have Gas");
+//			System.out.println("I Have Gas");
 		}
 	}
 
