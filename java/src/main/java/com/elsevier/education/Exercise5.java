@@ -11,12 +11,12 @@ public class Exercise5 {
 	
 	public enum Singleton {
 		INSTANCE;
-		public static void doSomething() {
+		public void doSomething() {
 			System.out.println("Doing something....");
 	    }
 	}
 		
 	public static void main(String a[]){
-		Singleton.doSomething();
+		Singleton.INSTANCE.doSomething();
 	}
 }
