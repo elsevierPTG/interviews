@@ -2,8 +2,11 @@ build/
 
 .gradle/
 .idea/
+*.iml
 
 # Package Files #
 *.jar
 
 *.log
+
+java/out
