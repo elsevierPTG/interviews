@@ -1,12 +1,15 @@
 package com.elsevier.education;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
-
-TODO: Make this class immutable.
-
+ * Made the members 'final' and 'phoneNumbers' unmodifiable 
+ * but it will still allow the underlying data to change if the original reference
+ * is held elsewhere.
+ * I do not think the author intended adding library like guava and
+ * using its ImmutableSet or anything more complicated.
 */
 public class Exercise1 {
 
@@ -17,7 +20,7 @@ public class Exercise1 {
 		private final String lastName;
 		
 		public Person(Set<String> newPhoneNumbers, String firstName, String lastName) {
-			phoneNumbers = newPhoneNumbers;
+			phoneNumbers = Collections.unmodifiableSet(newPhoneNumbers);
 			this.firstName = firstName;
 			this.lastName = lastName;
 		}
