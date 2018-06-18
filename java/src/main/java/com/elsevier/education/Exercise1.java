@@ -1,42 +1,58 @@
 package com.elsevier.education;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
 
 TODO: Make this class immutable.
 
+Class marked as final.
+
 */
-public class Exercise1 {
+public final class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		/**
+		 * All fields need to be final and private to avoid any change
+		 */
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		/**
+		 * 
+		 * Phone numbers from parameters are copied to the local list to avoid any possible alteration from the source.
+		 * 
+		 * @param phoneNumbers
+		 * @param firstName
+		 * @param lastName
+		 */
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+			this.phoneNumbers = new HashSet<>(phoneNumbers);
+			this.firstName = firstName;
+			this.lastName = lastName;
+			
 		}
 
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
+			/**
+			 * To avoid any alteration after returning the list, a copy of the set is returned.
+			 */
+			return new HashSet<>(phoneNumbers);
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
+		/**
+		 * Setters are removed to deny replacements.
+		 */
 	}
 }
