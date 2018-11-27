@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -6,10 +7,11 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            var lessonRepository = new LessonRepository();
+            var moduleRepository = new ModuleRepository();
+            var lessonSvc = new LessonService(lessonRepository, moduleRepository);
 
             var lessonId = 12;
-
             var grade = 98.2d;
 
             lessonSvc.UpdateLessonGrade(lessonId, grade);

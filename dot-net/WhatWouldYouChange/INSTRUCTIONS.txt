@@ -5,4 +5,38 @@
 
 
 Suggested Changes:
-	
+	1) The parameter of the filename being passed is missing the ".", so it's always falling into the catch.
+	> Adjusted the filename from ExampleTexttxt to ExampleText.txt
+
+	2) Move to string builder vs concatenation. Repeated concatenation creates a lot of intermediate strings that need to be allocated and later garbage collected.
+	> Add System.Text reference
+
+	3) Replace "\n" with StringBuilder AppendLine
+	> With AppendLine, the Framework places a newline sequence at the end of the specified string. This method makes code easier to read as well.
+
+	4) Change ExampleMethod to have a return value if the file is empty
+	> Returns the text to the console either from the file or from the string builder
+
+	5) Enclose streamreader with "using" statement
+	> Ensures streamreader is properly closed disposed of after completion
+
+	6) Removed string variable "text"
+	> Results in Cleaner code since string builder changes noted above remove the need for this variable.
+
+	7) Removed "fs" File system reference since StreamReader can handle this for us
+	> Cleaner more efficient code.
+
+	8) Now that we have a method that returns a string, I moved the call to ExampleMethod into the Console.Writeline to reduce redundant code.
+	> Results in Cleaner code.
+
+	9) Added a call to action before ReadKey so that the user knows what to do with the console window versus just showing text
+	> Better user experience (UX)
+
+	10) A further optimization would be to allow the user to type a file name in the console and return a note 
+	    saying "file exists, here's the contents", or "file doesn't exist, here's some placeholder text"
+	    That seemed to be too far out of the scope of this exercise and is basically just a nice UX.
+
+
+
+
+

@@ -9,6 +9,13 @@
 	in isolation, i.e. other applications do not reference it or its
 	functions.
 
+	>>> Approach:
+	This code had a lot of tight coupling to implementation concerns that would make it difficult to unit test in isolation 
+	without knock on effects. Before this code could be unit tested successfully it had to be first refactored to be more unit test friendly. 
+	I refactored the method to use instance variables instead of direct instantiation in the method and added them as parameters to the constructor. 
+	In the main method, I created repository instances and passed them to the service constructor so that I could use MOQ for testing.
+
+
 Background Information:
 	Definitions:
 		Unit Test (https://en.wikipedia.org/wiki/Unit_testing) - In computer 
