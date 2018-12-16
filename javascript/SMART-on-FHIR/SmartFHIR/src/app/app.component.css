@@ -1,0 +1,16 @@
+div {
+  font-family: 'Calibri';
+}
+p, label, input, button {
+  font-size: 13pt;
+}
+label {
+  padding: 0 10px 0 0;
+}
+input {
+  margin: 10px;
+}
+button {
+  background-color: lightblue;
+  border-radius: 5px;
+}

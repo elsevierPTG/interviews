@@ -1,0 +1,24 @@
+<div>
+  <h2>Conditions</h2>
+  <p class="errorMessage" *ngIf="displayError; else showNormal">No conditions were found for this patient.</p>
+  <ng-template #showNormal>
+    <mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" matSortDisableClear>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let condition">{{condition.name}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dateRecorded">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Date Recorded</mat-header-cell>
+        <mat-cell *matCellDef="let condition">{{condition.dateRecorded}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="pubMedURL">
+        <mat-header-cell *matHeaderCellDef>PubMed URL</mat-header-cell>
+        <mat-cell *matCellDef="let condition">
+          <a target="_blank" href="{{condition.pubMedURL}}">{{condition.pubMedURL}}</a>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+    </mat-table>
+  </ng-template>
+</div>

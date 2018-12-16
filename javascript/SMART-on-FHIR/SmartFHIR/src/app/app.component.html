@@ -1,0 +1,18 @@
+<div>
+  <p>Please enter a patient ID and click Submit
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="patientId">Patient ID</label>
+      <input type="text" class="form-control" [(ngModel)]="patientId" name="patientId" required>
+      <label for="displayVerifiedConditions">Verified Conditions Only</label>
+      <input type="checkbox" class="form-control"
+        [(ngModel)]="displayVerifiedConditions"
+        name="displayVerifiedConditions" required>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+  <app-patient-details [patientId]="submittedPatientId"></app-patient-details>
+  <app-patient-table [patientId]="submittedPatientId"
+    [displayVerifiedConditions]="submittedDisplayVerifiedConditions">
+  </app-patient-table>
+</div>

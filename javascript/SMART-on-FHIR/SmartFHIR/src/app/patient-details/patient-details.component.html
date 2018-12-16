@@ -1,0 +1,11 @@
+<div>
+  <h2>Patient Demographics</h2>
+  <p class="errorMessage" *ngIf="displayError; else showNormal">Patient with specified ID was not found.</p>
+  <ng-template #showNormal>
+    <table >
+      <tr><th>Name</th><td>{{name}}</td></tr>
+      <tr><th>Gender</th><td>{{gender}}</td></tr>
+      <tr><th>Date of Birth</th><td>{{birthDate}}</td></tr>
+    </table>
+  </ng-template>
+</div>
