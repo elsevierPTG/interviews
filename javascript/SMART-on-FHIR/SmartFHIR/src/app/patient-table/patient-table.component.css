@@ -1,0 +1,28 @@
+mat-table {
+  font-family: Calibri;
+}
+mat-header-row {
+  font-size: 12pt;
+  font-weight: bolder;
+  color: white;
+  background-color: black;
+}
+mat-row {
+  padding: 0;
+  margin:0;
+}
+mat-row:nth-child(odd) {
+  background: #CCC;
+}
+.mat-column-name {
+  max-width: 30%;
+}
+.mat-column-dateRecorded {
+  max-width: 10%;
+}
+.mat-column-pubMedURL {
+  max-width: 60%;
+}
+.errorMessage {
+  color: red;
+}

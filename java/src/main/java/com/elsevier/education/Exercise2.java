@@ -1,17 +1,19 @@
 package com.elsevier.education;
 
-/**
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-TODO refactor the Car to use dependency injection of the engine
-TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
-TODO make sure we have no-op implementations of the gas engine and electric engine
-
-*/
 public class Exercise2 {
-
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		/**
+		 * Automatically wire the engine using type (Interface Engine).
+		 * Use a qualifier because there may be multiple classes implementing that interface. 
+		 */
+		@Autowired
+		@Qualifier("gasEngine")
+		private Engine engine;
 		
 		public Car() {
 		}
@@ -20,8 +22,35 @@ public class Exercise2 {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+
+	/**
+	 * Declare interface for all engines. This allows us to depend on an interface instead of a class. 
+	 */
+	public static interface Engine {
+		void spinWheels();
+	}
+
+	/**
+	 * Gas engine implements Engine interface.
+	 * Assign unique name to this implementation. Change qualifier to electricEngine if you want to use a different engine. 
+	 */
+	@Component
+	@Qualifier("gasEngine")
+	public static class GasEngine implements Engine {
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+
+	/**
+	 * Electric Engine also implements Engine interface.
+	 * Assign unique name to this implementation.
+	 * @author frafi
+	 *
+	 */
+	@Component
+	@Qualifier("electricEngine")
+	public static class EletricEngine implements Engine {
 		public void spinWheels() {
 			// no-op for now
 		}

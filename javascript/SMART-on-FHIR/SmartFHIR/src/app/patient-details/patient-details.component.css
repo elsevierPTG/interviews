@@ -1,0 +1,16 @@
+table {
+  border: none;
+  border-width: 0;
+  border-spacing: 0;
+}
+th, td {
+  margin: 5px 10px 5px 10px;
+  padding: 5px 10px 5px 10px;
+}
+th {
+  text-align: left;
+  background: #CCC;
+}
+.errorMessage {
+  color: red;
+}
