@@ -1,0 +1,40 @@
+Plan for implementation
+
+In order to keep this as simple and streamlined as possible, 
+I won't be using any frameworks, with the exception
+of jQuery since it makes it much faster to build up elements
+in the DOM, and Bootstrap as it makes it much easier to set up
+styling. I will be using JavaScript's build in fetch method to
+process Ajax requests just to make it clear I know what's going
+on under the hood.
+
+I will be accessing the REST api directly; it wasn't clear from
+the test assignment whether I was expected to make use of the FHIR
+JavaScript client but again, this is another layer of complexity
+that will get in the way of this faster implementation (I could easily 
+spend half of my time just reading through the documentation).
+
+Fortunatly the REST api provided by Cerner’s open sandbox is very
+straightforward.
+
+It appears that I can get all of the data I need just from the
+Patient URL to search for matching patients:
+
+    https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Patient?name=<name>
+
+The patient details are pulled from the patient resource URL:
+
+    https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Patient/<id>
+
+And finally the conditions can be found by searching with the patient ID:
+
+    https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Condition?patient=<patientId>
+
+Final implementation will be a simple search box for searching for a patient.
+Patient results will be displayed in a list, clicking on a patient's name will pull up their record.
+
+Things I would implement if I had more time:
+- a routing systema and history, so that navigation could be preserved and each request would have a corresponding URI
+- a more robust testing system to make sure everything behaves as expected
+- a more elegant interface, probably making use of a framework
+- caching to reduce the number of redundant request to the REST api
