@@ -38,3 +38,6 @@ Things I would implement if I had more time:
 - a more robust testing system to make sure everything behaves as expected
 - a more elegant interface, probably making use of a framework
 - caching to reduce the number of redundant request to the REST api
+- paging records -- currently only first 20 results are displayed for a search
+- better data validation -- right now only checking for records marked "entered-in-error"
+- better name handling -- right now the system only recognizes the most recent, active name
