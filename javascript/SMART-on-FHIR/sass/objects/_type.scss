@@ -1,0 +1,18 @@
+@import 'sass/functions/rem';
+@import 'sass/settings/fonts';
+
+%o-type {
+  &--smallcaps {
+    text-transform: uppercase;
+  }
+
+  &--label {
+    @include font-dimensions('type', 'label');
+
+    font-weight: weight('normal');
+
+    &-small {
+      @include font-dimensions('type', 'label-small');
+    }
+  }
+}

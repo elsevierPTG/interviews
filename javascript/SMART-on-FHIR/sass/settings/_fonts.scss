@@ -1,0 +1,107 @@
+// System font stack (courtesy of WordPress)
+$font-family: (
+  sans: #{-apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen-Sans,
+  Ubuntu,
+  Cantarell,
+  'Helvetica Neue',
+  sans-serif},
+);
+
+// The order of the values is $font-size, $line-height, $letter-spacing
+// $line-height and $letter-spacing are optional
+// Values are in px but will be converted to rem equivalents.
+$font-size: (
+  logo: (
+    base: 18 21,
+  ),
+  heading: (
+    title: 34 40 -0.3,
+    secondary: 27 33,
+    tertiary: 20 18,
+  ),
+  type: (
+    label: 29 35,
+    label-small: 25 30,
+  ),
+  button: (
+    base: 14 18,
+  ),
+);
+
+$font-weight: (
+  light: 300,
+  normal: 400,
+  semibold: 600,
+  bold: 700,
+  xbold: 900,
+);
+
+@function family($key) {
+  @if map-has-key($font-family, $key) {
+    @return map-get($font-family, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $font-family.';
+
+  @return null;
+}
+
+@function weight($key) {
+  @if map-has-key($font-weight, $key) {
+    @return map-get($font-weight, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in $font-weight.';
+
+  @return null;
+}
+
+@mixin font-size($type: null, $size: null) {
+  $pair: map-get(map-get($font-size, $type), $size);
+
+  font-size: rem(nth($pair, 1));
+}
+
+@mixin line-height($type: null, $size: null) {
+  $pair: map-get(map-get($font-size, $type), $size);
+  $length: length($pair);
+
+  @if $length >= 2 {
+    line-height: rem(nth($pair, 2));
+  }
+}
+
+@mixin letter-spacing($type: null, $size: null) {
+  $pair: map-get(map-get($font-size, $type), $size);
+  $length: length($pair);
+
+  @if $length >= 3 {
+    letter-spacing: rem(nth($pair, 3));
+  }
+}
+
+@mixin font-dimensions($type: null, $size: null) {
+  @include font-size($type, $size);
+  @include line-height($type, $size);
+  @include letter-spacing($type, $size);
+}
+
+@mixin font($family: null, $type: null, $size: null, $weight: null) {
+  @if $family {
+    font-family: family($family);
+  }
+
+  @if $type and $size {
+    @include font-size($type, $size);
+    @include line-height($type, $size);
+    @include letter-spacing($type, $size);
+  }
+
+  @if $weight {
+    font-weight: weight($weight); /* stylelint-disable-line */
+  }
+}

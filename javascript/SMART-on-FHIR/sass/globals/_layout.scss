@@ -1,0 +1,7 @@
+@import 'functions/rem';
+
+.container {
+  width: rem(960);
+  margin: 0 auto;
+  padding: rem(20);
+}

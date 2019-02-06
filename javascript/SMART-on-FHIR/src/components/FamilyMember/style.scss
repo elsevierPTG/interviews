@@ -1,0 +1,10 @@
+@import 'sass/functions/rem';
+@import 'sass/objects/type';
+
+.family-member {
+  @extend %o-type--smallcaps;
+  @extend %o-type--label-small;
+
+  position: relative;
+  border-radius: rem(3);
+}

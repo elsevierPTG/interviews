@@ -1,0 +1,31 @@
+@import 'sass/functions/rem';
+@import 'sass/settings/fonts';
+@import 'sass/settings/colors';
+@import 'sass/objects/type';
+
+.heading {
+  color: $black;
+  font-weight: weight('normal');
+
+  &--title {
+    @include font-dimensions('heading', 'title');
+
+    margin-bottom: rem(60);
+  }
+
+  &--secondary {
+    @include font-dimensions('heading', 'secondary');
+
+    margin-bottom: rem(20);
+  }
+
+  &--tertiary {
+    @include font-dimensions('heading', 'tertiary');
+
+    @extend %o-type--smallcaps;
+    @extend %o-type--label-small;
+
+    font-weight: weight('bold');
+    margin-bottom: rem(20);
+  }
+}

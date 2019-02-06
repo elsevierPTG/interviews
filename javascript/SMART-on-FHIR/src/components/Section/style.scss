@@ -1,0 +1,9 @@
+@import 'sass/functions/rem';
+
+.section {
+  padding-top: rem(90);
+
+  .heading--title {
+    text-align: center;
+  }
+}

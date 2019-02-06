@@ -1,0 +1,14 @@
+@import 'sass/functions/rem';
+
+.family-list {
+  display: flex;
+
+  &__item {
+    width: 25%;
+    margin-right: rem(20);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

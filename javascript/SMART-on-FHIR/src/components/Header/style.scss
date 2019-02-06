@@ -1,0 +1,30 @@
+@import 'sass/functions/rem';
+@import 'sass/settings/colors';
+@import 'sass/settings/fonts';
+
+.main-header {
+  border-bottom: rem(5) solid $emperor;
+  margin-bottom: 10px;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__sidebar {
+    display: flex;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    @include font-dimensions('logo', 'base');
+
+    font-weight: weight('xbold');
+  }
+}

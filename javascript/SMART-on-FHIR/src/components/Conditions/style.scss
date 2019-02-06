@@ -1,0 +1,11 @@
+// Add a little more padding to each cell
+.ReactTable {
+  & .rt-th,
+  & .rt-td {
+    padding: 10px;
+  }
+
+  & .rt-tbody {
+    padding-top: 5px;
+  }
+}

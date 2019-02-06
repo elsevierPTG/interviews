@@ -1,0 +1,42 @@
+@import 'sass/functions/rem';
+@import 'sass/objects/selected';
+@import 'sass/settings/colors';
+@import 'sass/objects/type';
+@import 'sass/settings/fonts';
+
+.btn {
+  @extend %o-type--smallcaps;
+
+  @include font-dimensions('button', 'base');
+
+  cursor: pointer;
+  background: $white;
+  border: rem(3) solid $gray;
+  border-radius: rem(3);
+  padding: rem(15) rem(30);
+  color: $gray;
+  font-weight: weight('bold');
+  width: 100%;
+
+  &:hover {
+    background: $gray;
+    color: $white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--selected {
+    // bump up the specificity
+    &.btn {
+      @extend %o-selected;
+
+      font-weight: weight('bold');
+    }
+
+    &:hover {
+      background: $niagara;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "smart-family-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jonlong/smart-family-dashboard.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
+        "flexbox": "no-2009"
+      }
+    }
+  },
+  "alias": {
+    "sass": "./sass"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss|png|svg)$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "components": "^0.1.0",
+    "parcel-bundler": "^1.11.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-table": "^6.9.0",
+    "sass": "^1.16.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-react": "^7.12.3",
+    "jest-cli": "^23.6.0",
+    "stylelint": "^9.10.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.5.1"
+  }
+}
