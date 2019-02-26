@@ -5,4 +5,14 @@
 
 
 Suggested Changes:
-	
+	* Program.cs
+		* Missing dot in file name
+	* ExampleClass.cs
+		* Check if file exists before attempting to open/read.
+		* Use using statement for `fs` and `streamReader` to ensure resources are disposed and the file is closed.
+		* For `File.Open`, use `FileShare.Read` to allow multiple opening of the file by the current process or other processes.
+		* In catch statement, use either the `@` symbol (verbatim string) or StringBuilder. Preferably use verbatim for ease of development and readability. Also, verbatim would be more performant than standard string concatenation. However, if remaining with string concatenation, use `+=` for ease of development.
+		* When setting `exampleText`, use `this.` to indicate it's scope as a class property.
+		* Create an async version of `ExampleMethod` to read a potentially large file asynchronously which would improve performance. Use `ReadToEndAsync` along with async/await and use TPL in Program.cs.
+		* Place the `catch` text into either a const variable, resource file or config file to centralize the string and prevent duplicate code.
+		* If `exampleText` is not going to be utilized elsewhere, return the text result from `ExampleMethod` instead because `exampleText` is unnecessarily using resources.
