@@ -1,4 +1,5 @@
 ﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Services
 {
@@ -8,7 +9,7 @@ namespace WriteUnitTest.Services
         {
         }
 
-        public void UpdateLessonGrade(int lessonId, double grade)
+        public Lesson UpdateLessonGrade(int lessonId, double grade)
         {
             var lessonRepo = new LessonRepository();
             var lesson = lessonRepo.GetLesson(lessonId);
@@ -18,17 +19,12 @@ namespace WriteUnitTest.Services
             if (!lesson.IsPassed)
             {
                 var moduleRepository = new ModuleRepository();
-                var module = moduleRepository.GetModule(lessonId);
+                var module = moduleRepository.GetModule(lesson.ModuleId);
 
-                if (grade >= module.MinimumPassingGrade)
-                {
-                    lesson.IsPassed = true;
-                }
-                else
-                {
-                    lesson.IsPassed = false;
-                }
+                lesson.IsPassed = (grade >= module.MinimumPassingGrade);
             }
+
+            return lesson;
         }
     }
 }

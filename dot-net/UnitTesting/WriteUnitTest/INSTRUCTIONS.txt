@@ -31,3 +31,13 @@ Background Information:
 		and behaves as intended.
 		
 		Module - a collection of lessons 
+
+NOTES:
+	* Installed xUnit. It's more robust and modern.
+		* Can write/run parameterized tests. Numerous test methods, each for different parameters, are not needed and consequently simplifies test writing.
+	* Removed Lesson list from Module. Added ModuleId to Lesson. This was done to 
+	  centralize data for this simple scenario.
+	* For a real-world application, the service, repositories and entities need to be 
+	  fleshed out using interfaces and dependency injection. Each area of concern placed
+	  in their separate components.
+	* Interfaces would allow for use of mock repositories and db contexts within unit tests.

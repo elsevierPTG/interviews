@@ -15,29 +15,14 @@ namespace WriteUnitTest.Repositories
                 new Module
                 {
                     ModuleId = 873,
-                    MinimumPassingGrade = 80,
-                    Lessons = new List<Lesson>
-                    {
-                        new Lesson
-                        {
-                            LessonId = 12,
-                            Grade = 63.7d,
-                            IsPassed = false
-                        },
-                        new Lesson
-                        {
-                            LessonId = 86,
-                            Grade = 88.2d,
-                            IsPassed = true
-                        }
-                    }
+                    MinimumPassingGrade = 80
                 }
             };
         }
 
-        public Module GetModule(int lessonId)
+        public Module GetModule(int moduleId)
         {
-            return moduleList.FirstOrDefault(x => x.Lessons.Any(y => y.LessonId == lessonId));
+            return moduleList.FirstOrDefault(x => x.ModuleId == moduleId);
         }
     }
 }

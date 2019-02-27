@@ -1,0 +1,12 @@
+/* .Spinner {
+    line-height: 1.5em;
+    margin: 1em 0;
+  } */
+  
+  .Spinner svg {
+    fill: darkblue;
+    margin-right: 0.25em;
+    vertical-align: middle;
+    stroke: darkblue;
+  }
+  
