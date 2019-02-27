@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using System;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -11,8 +12,14 @@ namespace WriteUnitTest
             var lessonId = 12;
 
             var grade = 98.2d;
-
-            lessonSvc.UpdateLessonGrade(lessonId, grade);
+            try
+            {
+                lessonSvc.UpdateLessonGrade(lessonId, grade);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
