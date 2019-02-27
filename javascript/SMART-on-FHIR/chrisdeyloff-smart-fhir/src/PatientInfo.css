@@ -1,0 +1,15 @@
+.patient-info {
+    border-radius: 5px;
+    border: thin solid lightgray;
+    margin: 2em 0;
+    padding: 0.5em;
+  }
+  
+.patient-info-table {
+    margin-top: 0.5em;
+}
+
+.patient-detail-info {
+    font-size: larger;
+    font-weight: bold;
+}

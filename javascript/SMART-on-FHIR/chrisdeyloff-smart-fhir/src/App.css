@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.app-header {
+  background-color: #09255e;
+  color: white;
+  line-height: 5vh;
+  min-height: 5vh;
+  width: 100%;
+  font-size: x-large;
+}
+
+section {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.input-label {
+  text-align: left;
+  margin-right: 0.4em;
+}

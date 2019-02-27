@@ -14,12 +14,14 @@ namespace WriteUnitTest.Repositories
             {
                 new Lesson
                 {
+                    ModuleId = 873,
                     LessonId = 12,
                     Grade = 63.7d,
                     IsPassed = false
                 },
                 new Lesson
                 {
+                    ModuleId = 873,
                     LessonId = 46,
                     Grade = 0.0d,
                     IsPassed = false

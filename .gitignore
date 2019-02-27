@@ -7,3 +7,5 @@ build/
 *.jar
 
 *.log
+/dot-net/UnitTesting/.vs/WriteUnitTest/v15/Server/sqlite3
+/dot-net/UnitTesting/WriteUnitTest/obj/Debug
