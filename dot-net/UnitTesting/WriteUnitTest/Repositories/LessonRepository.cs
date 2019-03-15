@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using WriteUnitTest.Entities;
-
-namespace WriteUnitTest.Repositories
+﻿namespace WriteUnitTest.Repositories
 {
-    public class LessonRepository
+    using System.Collections.Generic;
+    using System.Linq;
+    using WriteUnitTest.Entities;
+
+    public class LessonRepository : ILessonRepository
     {
         private readonly List<Lesson> lessonList;
 
