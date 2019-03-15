@@ -5,4 +5,17 @@
 
 
 Suggested Changes:
-	
+	Major
+	.text should be created with a StringBuilder. StringBuilder is an mutable object, as opposed to string which is inmutable (and therefore, will allocate a new block of memory on every appending). Also, If the text file is too big, we risk running out of memory.
+	.Add fs(FileStream) inside a using to close the stream and dispose the object after the end of the block
+	.Validating input would be advisable (checking if the file exists)
+	.A catch with no exception is going to swallow every exception, regardless how critical or not it is. It would be wise to notify the user or developer in some way (or log the error)
+	.A catch for the FileNotFoundException and NotSupportedException to differentiate those cases would be nice (File.Open will throw it if the file is not found or unreadable, respecively)
+
+	Minor
+	.We can pass FileAccess.Read and FileShare.ReadWrite to the File.Open method if we want to keep the file unblocked
+
+	Cosmetic
+	.In the program class, there's a typo in the name of the text file
+	.Clearly this is an example, but we should avoid the word "Class" for classes
+	.example test is a public property. It is recommended to use Pascal case for public properties
