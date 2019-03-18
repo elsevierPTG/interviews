@@ -1,34 +1,42 @@
-﻿using WriteUnitTest.Repositories;
-
-namespace WriteUnitTest.Services
+﻿namespace WriteUnitTest.Services
 {
+    using Entities;
+    using Repositories;
+
     public class LessonService
     {
-        public LessonService()
+        private readonly ILessonRepository lessonRepository;
+        private readonly IModuleRepository moduleRepository;
+
+        public LessonService(ILessonRepository lessonRepository, IModuleRepository moduleRepository)
         {
+            this.lessonRepository = lessonRepository;
+            this.moduleRepository = moduleRepository;
         }
 
-        public void UpdateLessonGrade(int lessonId, double grade)
+        public Lesson UpdateLesson(int lessonId, double grade)
         {
-            var lessonRepo = new LessonRepository();
-            var lesson = lessonRepo.GetLesson(lessonId);
+            var lesson = lessonRepository.GetLesson(lessonId);
+            if (lesson == null)
+            {
+                return null;
+            }
+
+            if (lesson.IsPassed)
+            {
+                return lesson;
+            }
 
             lesson.Grade = grade;
 
-            if (!lesson.IsPassed)
+            var module = moduleRepository.GetModule(lessonId);
+            if (module == null)
             {
-                var moduleRepository = new ModuleRepository();
-                var module = moduleRepository.GetModule(lessonId);
-
-                if (grade >= module.MinimumPassingGrade)
-                {
-                    lesson.IsPassed = true;
-                }
-                else
-                {
-                    lesson.IsPassed = false;
-                }
+                return lesson;
             }
+
+            lesson.IsPassed = grade >= module.MinimumPassingGrade;
+            return lesson;
         }
     }
 }

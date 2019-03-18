@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace WriteUnitTest.Entities
+﻿namespace WriteUnitTest.Entities
 {
+    using System.Collections.Generic;
+
     public class Module
     {
         public int ModuleId;
