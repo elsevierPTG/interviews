@@ -55,6 +55,12 @@
     <Compile Include="Services\LessonServiceUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WriteUnitTest\WriteUnitTest.csproj">
+      <Project>{00A40A05-8314-4F25-A444-46DDEAC3497E}</Project>
+      <Name>WriteUnitTest</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
