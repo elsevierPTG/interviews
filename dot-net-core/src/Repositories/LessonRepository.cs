@@ -11,11 +11,10 @@ namespace Interviews.Repositories
         public LessonRepository()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .UseInMemoryDatabase("ApplicationDatabase")
                 .Options;
 
             _applicationDbContext = new ApplicationDbContext(options);
-            _applicationDbContext.Database.EnsureDeleted();
         }
 
         public void CreateLesson(string lesson)

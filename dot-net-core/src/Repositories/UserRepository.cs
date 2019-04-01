@@ -11,11 +11,10 @@ namespace Interviews.Repositories
         public UserRepository()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .UseInMemoryDatabase("ApplicationDatabase")
                 .Options;
 
             _applicationDbContext = new ApplicationDbContext(options);
-            _applicationDbContext.Database.EnsureDeleted();
         }
 
         public void CreateUser(string user)

@@ -1,4 +1,4 @@
-# .NET Coding and Thinking Challenges
+# .NET Coding Challenges
 
 Microsoft .NET based at home tests for engineering interviews.
 
