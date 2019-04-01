@@ -12,15 +12,14 @@
   This code appears to work. Nonetheless note up to 10 things that look bad to you, including a brief note as to why.
 
   - First thing that happens when you run this is you get an onclick error. if you move the script tag below the body tag, the error goes away and the code starts to run properly
-  - It would better to define reqFlds right up front instead of three different times right after the next.
-  - I also think that you should you can do that like:
+  - It would better to define reqFlds right up front instead of three different times right after the next. you can do that like:
   
    reqFlds = [
     username = '',
     password = ''
     ]
   - Instead of document.getElementById(reqFlds[0]) you can now reference username.value 
-  - If statement is wild looking. The spacing is way off. 
+  - If statement is wild looking. The spacing is way off. return false should be all on the same line
   - The submitButtonActive never actually changes from false. it should look more like:
 
 function validateField() {
