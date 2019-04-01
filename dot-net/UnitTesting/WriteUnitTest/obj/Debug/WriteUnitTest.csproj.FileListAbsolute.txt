@@ -1,1 +1,8 @@
-C:\Users\lyncha1\SourceCode\interviews\dot-net\UnitTesting\WriteUnitTest\bin\Debug\WriteUnitTest.exe.config
+C:/Users/lyncha1/SourceCode/interviews/dot-net/UnitTesting/WriteUnitTest/bin/Debug/WriteUnitTest.exe.config
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/bin/Debug/WriteUnitTest.exe.config
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/bin/Debug/WriteUnitTest.exe
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/bin/Debug/WriteUnitTest.pdb
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/obj/Debug/WriteUnitTest.csprojAssemblyReference.cache
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/obj/Debug/WriteUnitTest.csproj.CoreCompileInputs.cache
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/obj/Debug/WriteUnitTest.exe
+/Users/MichaelJennings/Code/elsevier/dotnet/interviews/dot-net/UnitTesting/WriteUnitTest/obj/Debug/WriteUnitTest.pdb
