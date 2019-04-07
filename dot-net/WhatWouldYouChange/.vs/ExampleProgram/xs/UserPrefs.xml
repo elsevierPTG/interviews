@@ -1,12 +1,15 @@
-﻿<Properties StartupConfiguration="{30B4042C-447C-42A3-A237-1303FCA6FED9}|Unit Tests">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{30B4042C-447C-42A3-A237-1303FCA6FED9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="INSTRUCTIONS.txt">
+    <Files>
+      <File FileName="Program.cs" Line="15" Column="10" />
+      <File FileName="ExampleClass.cs" Line="17" Column="49" />
+      <File FileName="INSTRUCTIONS.txt" Line="16" Column="20" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ExampleProgram" expanded="True">
             <Node name="ExampleProgram" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="Properties" expanded="True" />
               <Node name="INSTRUCTIONS.txt" selected="True" />
             </Node>
           </Node>

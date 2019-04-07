@@ -5,4 +5,23 @@
 
 
 Suggested Changes:
-	
+	1. The first thing I would change is the try...catch. I am drawing similarities between this and promises from javascript.
+    When I try to fetch some data or pull from a file, I want to see this actually worked or not. To do this, I would use the catch 
+    to throw an error. The way the try...catch is written now is basically saying "Try to pull from the text file. If you can't, 
+    let's just hard code it line by line." The reason why this is a bad idea is because what your program is today might 
+    not be what your program is a week or a month from now. You want to make sure it can adapt. Let's say that the ExampleText.txt 
+    file is a living txt file that updates on a weekly basis. If you build the try...catch with hard coded values, your output will 
+    never show the most recent file (if it's not working properly) and your users would be none the wiser. If you threw an error 
+    instead you would know right away that something went wrong in the process and you can start to debug your code from there.
+   2. Piggybacking off of the first point, the try doesn't actually ever work the way that it's written. Program.cs line 11 is missing a period. 
+    I noticed this when running the code through debug mode with a break point on line 11. If you step into from there, you start to see that 
+    the try isn't working and it's going right to the catch. If you change line 11 in Program.cs to `exampleClass.ExampleMethod("ExampleText.txt");` 
+    it starts working as intended. 
+   3. If the purpose of this program is just to return some text, I think it would be better if you just return the text right in ExampleMethod. 
+    To clean up the code a bit based on my third point:
+            A. ExampleClass.cs 
+                - Delete line 7. 
+                - replace whats on line 50 with `System.Console.WriteLine(text);` 
+            B. Program.cs
+                - Delete line 13 and 14. 
+    The program performs the same as it did before with less code.
