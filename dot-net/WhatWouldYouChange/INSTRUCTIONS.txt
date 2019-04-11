@@ -1,8 +1,30 @@
 ﻿Objective:
-	Review the ExampleProgram console application. Do not modify or refactor the code. Instead describe any changes 
-	you think should be made in the section below. Don't spend more than 30 minutes on this entire assignment.
+    Review the ExampleProgram console application. Do not modify or refactor the code. Instead, describe any changes you think should be made in the section below. Don't spend more than 30 minutes on this entire assignment.
         Feel free to describe why you made particular design decisions.
 
 
 Suggested Changes:
-	
+
+Assuming we can't modfiy the logic of this application, these are the changes I'd make.
+
+ProjectName, ExampleClass, ExampleMethod, and it's parameters should be renamed to something meaningful that describes what they are responsible for
+
+We could convert the ExampleClass to a static class and ExampleMethod to a static method to make it easier to test and maintain the code and avoid 
+creating an instance each time we need to invoke the method. 
+Testing static method is easier because you don't have to write tests for all variations of the state of the intance.
+exampleText property should be deleted and ExampleMethod should return file contents directly
+
+The text in the catch block should be saved in a multiline string constant because it doesn't change and we don't have to concatinate the text each time.
+Concatinating a string creates a new string because string is immutable.
+We could add a defaultText second parameter with defaultValue set to the constant to ExampleMethod that will be returned in case of exception.
+
+Currently the filename parameter value is wrong, it's missing a dot.
+The file name may be parsed from args array. This way we can print the contents of any file provided as an argument to console application
+
+If filename provided to ExampleMethod is null or empty or the file doesn't exist, we shoudl return defaultText right away
+
+We could use File.ReadAllText() instead of lines 15-17, in that case we don't have to worry about opening the file in readonly mode,
+closing the file stream after we finished reading
+
+If we want to print a huge file that doesn't fit into memory, we should use a different approach.
+Our static method could return a Stream, we could read from the stream line by line and print to the Console.

@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using StructureMap;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -6,13 +7,22 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            // Added IoC container to simplify dependency management
+            var container = new Container(c =>
+            {
+                // Automatically resolving classes without configuration
+                c.Scan(_ =>
+                {
+                    _.AssembliesAndExecutablesFromApplicationBaseDirectory();
+                    _.WithDefaultConventions();
+                });
+            });
 
-            var lessonId = 12;
+            var lessonSvc = container.GetInstance<ILessonService>();
 
-            var grade = 98.2d;
-
-            lessonSvc.UpdateLessonGrade(lessonId, grade);
+            const int lessonId = 12;
+            const double grade = 98.2d;
+            lessonSvc.UpdateLessonGrade(lessonId, grade);            
         }
     }
 }

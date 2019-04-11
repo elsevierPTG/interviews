@@ -4,7 +4,8 @@ using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Repositories
 {
-    public class LessonRepository
+    // Extracted an interface to simplify mocking
+    public class LessonRepository : ILessonRepository
     {
         private readonly List<Lesson> lessonList;
 
