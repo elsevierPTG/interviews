@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using System;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -6,13 +7,16 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            //var lessonSvc = new LessonService();
 
-            var lessonId = 12;
+            //var lessonId = 12;
 
-            var grade = 98.2d;
+            //var grade = 98.2d;
 
-            lessonSvc.UpdateLessonGrade(lessonId, grade);
+            //lessonSvc.UpdateLessonGrade(lessonId, grade);
+            
+            //Run unit test via Test Explorer
+            Console.ReadLine();
         }
     }
 }
