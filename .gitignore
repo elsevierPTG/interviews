@@ -7,3 +7,8 @@ build/
 *.jar
 
 *.log
+/.vs
+/dot-net/UnitTesting
+/dot-net/WhatWouldYouChange/obj
+/dot-net/WhatWouldYouChange/bin/Debug
+/dot-net/WhatWouldYouChange/.vs/ExampleProgram/v15
