@@ -5,4 +5,17 @@
 
 
 Suggested Changes:
-	
+	In c#, for multi line string we can use verbatim string that start with @ symbol. It tells to compiler
+	to ignore the escape characters. Another advantage is using @ the string can formatted in human readable format.
+	Also, it will be a lot of work if we use += to append the string because everytime we append a text to string, c# 
+	makes a whole new string. If we have many lines of text to append to string, the appending will take some time.
+	for e.g. below string
+	text = text + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non pulvinar sapien, nec accumsan justo. Suspendisse";
+    text = text + "\n";
+    text = text + "facilisis auctor tortor, a maximus erat feugiat eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin at";
+    text = text + "\n";
+
+	can also be written as 
+	text = text + @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non pulvinar sapien, nec accumsan justo. Suspendisse
+					facilisis auctor tortor, a maximus erat feugiat eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Proin at";
+    

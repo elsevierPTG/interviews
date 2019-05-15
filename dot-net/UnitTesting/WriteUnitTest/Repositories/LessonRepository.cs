@@ -4,13 +4,13 @@ using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Repositories
 {
-    public class LessonRepository
+    public class LessonRepository : ILessonRepository
     {
-        private readonly List<Lesson> lessonList;
+        private readonly List<Lesson> _lessonList;
 
         public LessonRepository()
         {
-            lessonList = new List<Lesson>
+            _lessonList = new List<Lesson>
             {
                 new Lesson
                 {
@@ -29,7 +29,7 @@ namespace WriteUnitTest.Repositories
 
         public Lesson GetLesson(int lessonId)
         {
-            return lessonList.FirstOrDefault(x => x.LessonId == lessonId);
+            return _lessonList.FirstOrDefault(x => x.LessonId == lessonId);
         }
     }
 }
