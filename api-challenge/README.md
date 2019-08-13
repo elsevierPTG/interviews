@@ -3,8 +3,8 @@
 ## Introduction
 
 In the United States, the privacy of patient data is governed by the Health
-Insurance Portability and Accountability Act, or as its commonly known, HIPAA.
-One regulation falling under HIPAA is the Privacy Rule, which among other
+Insurance Portability and Accountability Act, or as it's commonly known, HIPAA.
+One regulation falling under HIPAA is the Privacy Rule, which, among other
 things, governs what health data can be shared and under what circumstances.
 Researchers in health fields often seek out "Limited Data Sets", which have been
 stripped of 18 types of data, including biometrics such as fingerprints, birth
@@ -19,18 +19,18 @@ not going to try to implement all 18, but rather the following rules.
 ## Problem Statement
 
 Write an API that exposes an endpoint for the de-identification of patient
-records. Specifically, we're looking to for the following:
+records. Specifically, we're looking for the following:
 
 * Birthdates should be converted to the patient's age.  If someone is over the age
-  of 89, they should be lumped into an 90+ category
+  of 89, they should be lumped into a 90+ category.
 
 * ZIP Codes should be stripped to the first three digits _except_ where fewer
-  than 20,000 reside in the combination of all ZIP Codes with those three
+  than 20,000 people reside in the combination of all ZIP codes with those three
   digits. In this case, the ZIP Code should be set to 00000.  A file with ZIP
   codes and their populations is included in CSV format.  Note that these are
   Zip Code Tabulation Areas (ZCTAs) which exclude certain ZIP codes which are
   not useful for population data (i.e. some office buildings have their own ZIP
-  codes due to mail volume, but are not considered for census tabulation)
+  codes due to mail volume, but are not considered for census tabulation).
 
 * Admission and Discharge dates should be set to the year only.
 
