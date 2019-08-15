@@ -15,6 +15,7 @@ namespace ExampleProgram
                 var fs = File.Open(exampleTextFile, FileMode.Open);
                 var streamReader = new StreamReader(fs);
                 text = streamReader.ReadToEnd();
+
             }
             catch
             {
