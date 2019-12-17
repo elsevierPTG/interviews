@@ -17,8 +17,8 @@ The following rules apply to matching book titles:
  		* and
  		
 ### Examples:
- ABELOFF'S CLINICAL ONCOLOGY		should match to		Abeloffs Clinical Oncology
- Atlas of Clinical Neurology		should match to 	The Atlas Clinical   Neurology
+ * `ABELOFF'S CLINICAL ONCOLOGY		should match to		Abeloffs Clinical Oncology`
+ * `Atlas of Clinical Neurology		should match to 	The Atlas Clinical   Neurology`
 
 ### Rules:
  You can make any changes to any part of the project as you see fit.  You may add any class, test, or
@@ -28,12 +28,16 @@ The following rules apply to matching book titles:
  
  The code should be unit tested.  It is not necessary to write tests for the existing code.  
    
-   
+### Result:   
 To complete this project you should get the following output when running BookMatchClient:
- Shoulder Arthroplasty: Exists ->true
- Good Night Moon: Exists ->false
- AIDS Therapy: Exists ->true
- Andrews' Diseases of the Skin: Clinical Dermatology: Exists ->true
+
+ `Shoulder Arthroplasty: Exists ->true`
+ 
+ `Good Night Moon: Exists ->false`
+ 
+ `AIDS Therapy: Exists ->true`
+ 
+ `Andrews' Diseases of the Skin: Clinical Dermatology: Exists ->true`
  
 ##### HINT
  You can use the @Transactional annotation on any method to start a hibernate session
