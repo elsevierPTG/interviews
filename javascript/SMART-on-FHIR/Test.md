@@ -25,3 +25,4 @@ Using Cerner’s open sandbox at http://fhir.cerner.com/millennium/dstu2/#open-s
 * For this exercise, you don’t need to implement the SMART authorization flow - accessing the open sandbox (which requires no authorization) is enough.
 * If you feel like this is going to take you an unreasonable amount of time to complete (more than 2-3 hours maybe), please let the hiring manager with whom you spoke know and we’ll figure out how to de-scope.
 * A handy introductory series of FHIR exercises is available at https://github.com/cerner/ignite-learning-lab/wiki/FHIR-Materials.
+* The Cerner sandbox referenced above contains some patients with an unrealistic number of conditions. As an alternative, you can use the [SMART Health IT sandbox](https://launch.smarthealthit.org/) (API available at https://r2.smarthealthit.org, e.g. https://r2.smarthealthit.org/Patient/541033).
