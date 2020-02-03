@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class BookDaoImpl implements BookDao {
@@ -17,6 +18,7 @@ public class BookDaoImpl implements BookDao {
 	public SessionFactory sessionFactory;
 	
 	@Override
+	@Transactional
 	public List<Book> fetchBookList() {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Book");
