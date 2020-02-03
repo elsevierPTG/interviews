@@ -36,12 +36,11 @@ public final class BookMatchClient {
 		List<String> matchedTitles = new ArrayList<String>();
 		for (String title : titlesToMatch) {		
 			normalizedTitle = normalize(title);
-			System.out.println("'" + normalizedTitle + "'");
 			bookMatches = bookTitles.contains(normalizedTitle);	
 			if (bookMatches) {
 				matchedTitles.add(title);
 			}
-			System.out.println(title + ": Exists ->" + bookMatches);
+			System.out.println("'" + title + "': Exists ->" + bookMatches);
 		}
 		return matchedTitles;
 	}
@@ -72,20 +71,20 @@ public final class BookMatchClient {
 			title = bookFromList.getBookTitle();
 			normalizedTitle = normalize(title);
 			bookTitles.add(normalizedTitle);
-			System.out.println("'" + title + "' -> '" + normalizedTitle + "'");
 		}
-		System.out.println("");
 		return bookTitles;
 	}
 
 	private String normalize(String bookTitle) {
-		bookTitle = bookTitle.trim().toLowerCase();
-		bookTitle = bookTitle.replaceAll("\\s+", " ");
+		bookTitle = bookTitle.toLowerCase();		
 		bookTitle = bookTitle.replaceAll("\\p{Punct}", "");
+		bookTitle = bookTitle.replaceAll("’", "");
 		bookTitle = bookTitle.replaceAll("\\s+the\\s+|\\s+the$|^the\\s+", " ");
 		bookTitle = bookTitle.replaceAll("\\s+in\\s+|\\s+in$|^in\\s+", " ");
 		bookTitle = bookTitle.replaceAll("\\s+of\\s+|\\s+of$|^of\\s+", " ");
 		bookTitle = bookTitle.replaceAll("\\s+and\\s+|\\s+and$|^and\\s+", " ");
+		bookTitle = bookTitle.trim();		
+		bookTitle = bookTitle.replaceAll("\\s+", " ");
 		return bookTitle;
 	}
 }
