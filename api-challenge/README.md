@@ -61,7 +61,7 @@ Should yield output of:
 
 ```
 {
-    "age": "19",
+    "age": "20",
     "zipCode": "10000",
     "admissionYear": "2019",
     "dischargeYear": "2019",
