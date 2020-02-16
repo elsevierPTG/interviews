@@ -1,7 +1,5 @@
 package com.elsevier.education;
 
-import java.util.*;
-
 /**
 
 TODO Examine the failing test case for this class.
@@ -11,9 +9,17 @@ TODO Examine the failing test case for this class.
 */
 public class Exercise3 {
 
+	/**
+	 * Modified hashCode() implementation to not use random number generation.
+	 * Now all Person objects created with the same id will have the same hashcode
+	 * and will be replaced in the HashSet (see Exercise3Test.java)
+	 * 
+	 * @author Alex
+	 *
+	 */
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+//		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +27,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
