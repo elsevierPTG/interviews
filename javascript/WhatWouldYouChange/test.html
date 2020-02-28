@@ -12,6 +12,12 @@
   This code appears to work. Nonetheless note up to 10 things that look bad to you, including a brief note as to why.
 
   Please consider both minor syntactical issues with the code as it stands, and how the code is structured overall.
+
+  1. I would place the javascript in a separate file (main.js) as this cached page approach is best for pageload speed, maintenance and separation of concerns.
+  2. I would not use the keyword var to declare the variables but instead use const or let due to scope.
+  3. I wouldn't make write the if statement on separate lines as this makes it difficult to read.
+  4. The JS is place in the head meaning it will load first. I would place it at the end, before the closing body tag.
+  5. I would load the JS using async.
    */
 
   var submitButtonActive = false
