@@ -20,6 +20,7 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		//your are returning different hashcode for same object everytime.
 		public int hashCode() {
 			return id * generator.nextInt();
 		}

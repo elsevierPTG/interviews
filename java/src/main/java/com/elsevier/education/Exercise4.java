@@ -11,6 +11,9 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
+		//this method need to synchronize as two thread can simultaneously access the count. one can be updating and other might read
+		//giving inconsistence results.
+
 		public int increment() {
 			return ++count;
 		}
@@ -19,6 +22,9 @@ public class Exercise4 {
 			return count;
 		}
 		
+		//this method need to synchronize as two thread can simultaneously access the count. one can be updating and other might read
+		//giving inconsistence results.
+
 		public void resetCount() {
 			count = 0;
 		}
