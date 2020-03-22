@@ -5,4 +5,32 @@
 
 
 Suggested Changes:
-	
+
+Snippet
+- Use more descriptive names, though in this case it makes some sense not to go overboard. Specifically ExampleMethod() could have been ReadExampleFile().
+ 
+- Property should start with a capital letter. (ExampleText)
+ 
+- Catch specific exceptions in this case at least: catch (FileNotFoundException e) 
+ 
+- Use using statement to handle the disposal of the File and StreamReader
+ 
+- Don't concantenate the text in the catch block. use the "@" string prefix ex:
+text = @"Lorem ipsum dolor
+facilisis auctor
+euismod nisi" 
+ 
+- Depending on the use case it may be worth converting the fail state (Lorem ipsum...) text into a constant and moving it into a seperate file.
+ 
+- Add guard clauses for the filename parameter.
+	- empty
+	- not null
+	- does the file exist (though only needed if we need to do something specific on that error condition ie logging )
+ 
+- Add logging, especially in the catch block.
+ 
+- Don't start the catch block with text = text + "...". There is the possiblity that the text variable may contain part of the stream. I think it's unlikely but always better to be safe.
+ 
+- In this case the text varaible is unnecessary assignments could be made directly to the property exampleText.
+ 
+- Unless there is a reason not to, make the setter private. 

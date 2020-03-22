@@ -4,7 +4,7 @@ using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Repositories
 {
-    public class LessonRepository
+    public class LessonRepository : ILessonRepository
     {
         private readonly List<Lesson> lessonList;
 
