@@ -23,6 +23,12 @@ namespace WriteUnitTest.Repositories
                     LessonId = 46,
                     Grade = 0.0d,
                     IsPassed = false
+                },
+                new Lesson
+                {
+                    LessonId = 86,
+                    Grade = 0.0d,
+                    IsPassed = false
                 }
             };
         }

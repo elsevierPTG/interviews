@@ -1,0 +1,7 @@
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.dll
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.pdb
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.exe
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.pdb
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.dll
+\\Mac\Home\Desktop\elsevier\interviews\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.pdb

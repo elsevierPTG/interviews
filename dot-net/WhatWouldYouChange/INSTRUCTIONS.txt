@@ -5,4 +5,9 @@
 
 
 Suggested Changes:
-	
+	1) A StringBuilder should be used in the Catch block because when concatenating a string another instance is created in memory.
+	2) The newline character should be added with something like sb.AppendLine(); so as to clean up the code.
+	3) File.ReadLines may be a better choice for reading the file in the Try block because it doesn't read the entire file into memory
+		I also find the foreach block more intuitive and easier to read. If the strategy of reading the file into memory is desired,
+		the File.ReadAllLines accomplishes the same goal as the StreamReader and the code is also more succinct.
+
