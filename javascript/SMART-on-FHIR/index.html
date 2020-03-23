@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Elsevier Web App</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+		.show-search {
+			font-size: larger;
+			font-weight: bolder;
+		}
+	</style>
+
+
+  </head>
+
+  <body>
+
+
+    <div role="main" class="container">
+		<div class="searching">
+		<form id="patient-search">
+		<fieldset>
+			<legend>Patient Search</legend>
+			<div class="form-label-group">
+				<label for="patient-search-field" class="sr-only">Search by name:</label>
+				<input type="search" id="patient-search-field" class="form-control" placeholder="Last name" required="required" autofocus="true">
+				<button class="btn btn-lg btn-primary btn-block">Search</button>
+			</div>
+		</fieldset>
+		</form>
+	  
+		<div id="patient-search-results">
+		</div>
+		</div>
+		
+		<div class="details">
+			<a href="#" class="show-search">&laquo; Back to search results</a>
+			<h1 id="patient-name"></h1>
+			<p>Birthdate <strong id="patient-birth-date"></strong></p>
+			<p>Gender <strong id="patient-gender"></strong></p>
+			<div class="card">
+			  <div class="card-header">
+				Conditions
+			  </div>
+			  <div class="card-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="sort-header" data-sort="name">Condition</th>
+							<th class="sort-header" data-sort="dateRecorded">Date First Recorded</th>
+						</tr>
+					</thead>
+					<tbody id="condition-rows">
+					</tbody>
+				</table>
+			  </div>
+			</div>
+		</div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script src="js/api.js"></script>
+	<script>
+		API.baseURI = 'https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca'
+		SEARCH_URL = 'https://www.ncbi.nlm.nih.gov/pubmed/?term='
+		$(document).on('submit', '#patient-search', (event) => {
+			var $results = $('#patient-search-results')
+			event.stopPropagation()
+			event.preventDefault()
+			$results.empty()
+			getPatients($('#patient-search-field').val()).then(patients => {
+				var $patientList = $('<ul>').addClass('list-group')
+				patients.forEach((patient) => {
+					$('<li>')
+						.addClass('list-group-item')
+						.append(
+							$('<a>')
+								.attr('href','#patient-' + patient.id)
+								.addClass('patient-link')
+								.data('patient', patient.id)
+								.text(patient.name)
+						)
+						.appendTo($patientList)
+				})
+				$results.append($patientList)
+			})
+		})
+		const showSearch = () => {
+			$('.details').hide()
+			$('.searching').show()
+		}
+		showSearch() // initial state on startup
+		$(document).on('click', '.show-search', (event) => {
+			event.stopPropagation()
+			event.preventDefault()
+			showSearch()
+		})
+		
+		var titleCase = (inp) => inp.replace(/\b(\w)(\w+)/gi, (match, head, tail) => head.toUpperCase() + tail.toLowerCase())
+		
+		const dateFormat = (dt) => {
+			return dt.toLocaleDateString(
+				'en-US', 
+				{ 
+					timeZone: 'UTC', 
+					month: 'long', 
+					day: '2-digit', 
+					year: 'numeric' 
+				}
+			)
+		}
+		
+		$(document).on('click', '.patient-link', (event) => {
+			var patient, conditions, input=event.target
+			event.stopPropagation();
+			event.preventDefault();
+			getPatient($(input).data('patient')).then(data => {
+				patient = data
+				displayPatient(patient)
+				return getActiveConditions(patient)
+			}).then(data => {
+				conditions = data
+				displayConditions(conditions)
+				$('.searching').hide()
+				$('.details').show()
+			})
+		})
+		
+		$(document).on('click', '.sort-header', (event) => {
+			var $header = $(event.target),
+				sort = $header.data('sort'),
+				rows = $('#condition-rows').data('rows')
+			event.stopPropagation();
+			event.preventDefault();
+			let sorted = rows.sort((a, b) => {
+				if (a[sort] < b[sort]) {
+					return -1
+				} else if (a[sort] === b[sort]) {
+					return 0
+				}
+				return 1
+			})
+			displayConditions(sorted)
+		})
+
+		const displayPatient = (patient) => {
+			$('#patient-name').text(patient.displayName)
+			$('#patient-birth-date').text(patient.birthDate ? dateFormat(patient.birthDate):'n/a')
+			$('#patient-gender').text(patient.gender ? titleCase(patient.gender) : 'n/a')
+		}
+		
+		const displayConditions = conditions => {
+			$('#condition-rows')
+				.empty()
+				.data('rows', conditions)
+			conditions.forEach((condition) => {
+				$('<tr>')
+					.append(
+						$('<td>')
+							.text(condition.name)
+							.append(' ')
+							.append(
+								$('<a>')
+									.attr('href', SEARCH_URL + encodeURIComponent(condition.name))
+									.addClass('search-link float-right')
+									.text('Search')
+							)
+					)
+					.append(
+						$('<td>')
+							.text(condition.dateRecorded ? dateFormat(condition.dateRecorded) : 'n/a')
+					)
+					.appendTo('#condition-rows')
+			})
+		}
+	</script>
+  </body>
+</html>
