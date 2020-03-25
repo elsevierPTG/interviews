@@ -2,28 +2,6 @@ import React from 'react'
 import { FaChevronCircleDown } from 'react-icons/fa'
 import { Row, Col } from 'react-grid-system'
 
-// function Patient(props) {
-//     const name = props.name
-//     const resource = props.resource
-//     return (
-//         <ul>
-//             <li>
-//                 <ul className='name'>
-//                     <li><h3>{ name.given[0] }</h3></li>
-//                     <li><h3>{ name.family }</h3></li>
-//                 </ul>
-//             </li>
-//             <li><p>{ resource.gender }</p></li>
-//             <li><h4>Birth Date:</h4></li>
-//             <li><p>{ resource.birthDate }</p></li>
-//             <li className='display' onClick={ () => props.handleClick() }>
-//                 <h6>DISPLAY CONDITIONS</h6>
-//                 <FaChevronCircleDown />
-//             </li>
-//         </ul>
-//     )
-// }
-
 function Patient(props) {
     const name = props.name
     const resource = props.resource
