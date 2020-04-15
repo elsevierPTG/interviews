@@ -5,7 +5,7 @@ namespace WriteUnitTest.Entities
     public class Module
     {
         public int ModuleId;
-        public int MinimumPassingGrade;
+        public double MinimumPassingGrade;
         public List<Lesson> Lessons;
     }
 }

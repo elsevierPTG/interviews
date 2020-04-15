@@ -1,0 +1,8 @@
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe.config
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.exe
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleProgram.pdb
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.csprojAssemblyReference.cache
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.csproj.CoreCompileInputs.cache
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.exe
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\obj\Debug\ExampleProgram.pdb
+C:\Users\mitch\Source\Repos\interviews\dot-net\WhatWouldYouChange\bin\Debug\ExampleText.txt
