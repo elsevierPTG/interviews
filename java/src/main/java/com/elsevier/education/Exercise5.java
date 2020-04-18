@@ -3,18 +3,20 @@ package com.elsevier.education;
 /**
 
 TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
+ java 8 style to enum.  Otherwise would have had the double syncronized check on the instance and a get instances method
+ to return the single instance
 
 */
 public class Exercise5 {
 	
-	public static class Singleton {
+	public enum Singleton {
+		INSTANCE;
 		public void doSomething() {
 			System.out.println("Doing something....");
 	    }
 	}
 		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+		Singleton.INSTANCE.doSomething();
 	}
 }

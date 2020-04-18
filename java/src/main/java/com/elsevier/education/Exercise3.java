@@ -19,9 +19,11 @@ public class Exercise3 {
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
+		//if there was any other field it would be id * name.hashCode() or something but there is only id.
+		//so id is the hash at this point.
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
