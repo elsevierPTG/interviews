@@ -11,32 +11,32 @@ public class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		// Making the fields final will not allow them to be changed after being set initially
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		// Final fields need to be set in the contstructor 
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		// Remove setters because they would allow the object to be mutable
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		// Remove setters because they would allow the object to be mutable
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		// Remove setters because they would allow the object to be mutable
+
 	}
 }

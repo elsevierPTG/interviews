@@ -11,19 +11,36 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
-		public Car() {
+		// Change the explicit implementation to a interface field
+		private final Engine engine;
+
+		// Pass whichever type of engine into the class
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
-		
+
+		// Call the interface's method which will call the impl
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+
+	// Create an interface to allow multiple engine impls
+	public interface Engine {
+		void spinWheels();
+	}
+
+	// Gas engine impl
+	public static class GasEngine implements Engine {
 		public void spinWheels() {
-			// no-op for now
+			// no op
+		}
+	}
+
+	// Electric engine impl
+	public static class ElectricEngine implements Engine {
+		public void spinWheels() {
+			// no op
 		}
 	}
 }

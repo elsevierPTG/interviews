@@ -21,7 +21,9 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			// if we have use the generator then every time we check hash the hash will
+			// compute to a different value but we want it to use a set value
+			return id;
 		}
 		
 		public boolean equals(Object other) {
