@@ -17,11 +17,20 @@ public class Exercise3 {
 		private Integer id;
 		
 		public Person(int newId) {
-			id = newId;
+			/**
+			 * Generator moved to constructor to get the value just once.
+			 */
+			id = newId * generator.nextInt();
 		}
 		
+		/**
+		 * Every time an object is added to a list the hash code is calculated to compare the content with the new insertion.
+		 * Having the generator returning the next number in this method will produce a different code every time hashCode is called.
+		 * We need to move the generator to the constructor to avoid changes but still having the generator working.
+		 * 
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id; //* generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
