@@ -30,4 +30,13 @@ Background Information:
 		written and run by software developers to ensure that code meets its design 
 		and behaves as intended.
 		
-		Module - a collection of lessons 
+		Module - a collection of lessons
+
+
+ Design Decision:
+	I have added interfaces for each class LessonRepository, ModuelRepository and LessonService 
+	to help me implementing Dependency Injection DI. rather than directly instantiating dependencies,
+	or the objects that are needed for class to perform its operation are provided to the class
+	in abstracted way. It reduces dependencies and our code is loosely coupled. This helps in unit
+	testing our code and following the TDD approach. 
+		I have added unit test cases by using NUnit and FakeItEasy framework 

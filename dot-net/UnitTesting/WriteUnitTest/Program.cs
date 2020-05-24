@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -6,7 +7,7 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            var lessonSvc = new LessonService(new LessonRepository(), new ModuleRepository());
 
             var lessonId = 12;
 

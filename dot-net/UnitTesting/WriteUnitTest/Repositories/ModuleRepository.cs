@@ -4,13 +4,13 @@ using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Repositories
 {
-    public class ModuleRepository
+    public class ModuleRepository : IModuleRepository
     {
-        private readonly List<Module> moduleList;
+        private readonly List<Module> _moduleList;
 
         public ModuleRepository()
         {
-            moduleList = new List<Module>
+            _moduleList = new List<Module>
             {
                 new Module
                 {
@@ -37,7 +37,7 @@ namespace WriteUnitTest.Repositories
 
         public Module GetModule(int lessonId)
         {
-            return moduleList.FirstOrDefault(x => x.Lessons.Any(y => y.LessonId == lessonId));
+            return _moduleList.FirstOrDefault(x => x.Lessons.Any(y => y.LessonId == lessonId));
         }
     }
 }
