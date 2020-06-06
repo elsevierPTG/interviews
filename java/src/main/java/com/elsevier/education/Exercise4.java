@@ -2,7 +2,11 @@ package com.elsevier.education;
 
 /**
 
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
+DONE Is Counter thread-safe? If so, why, and if not, how can we fix it?
+
+NO - fix is to make all methods of the object that touch count be synchronized
+this will prevent more than one thread from trying to access count at the same time
+we could also use synchronize blocks, in this simple example that seems unnecessary
 
 */
 public class Exercise4 {
@@ -11,15 +15,15 @@ public class Exercise4 {
 		
 		private int count = 0;
 		
-		public int increment() {
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		public synchronized void resetCount() {
 			count = 0;
 		}
 

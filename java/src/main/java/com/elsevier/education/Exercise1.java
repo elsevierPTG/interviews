@@ -4,39 +4,43 @@ import java.util.Set;
 
 /**
 
-TODO: Make this class immutable.
+DONE: Make this class immutable.
 
+FIXes:
+	1) declare class final so it cannot be subclassed
+	2) make all member fields private (so even if could be subclassed, variables are invisible to everyone outside class)
+	3) remove setters - only set at construction
+	4) make mutable fields final - set only in constructor
+	5) avoid returning member references in gettors - return copy references instead (did this on firstname/lastname)
 */
-public class Exercise1 {
+public  class Exercise1 {
 
-	public static class Person {
+	public static final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String aFirstName, String aLastName, Set<String> aPhoneNumberList) {
+			this.firstName = aFirstName;
+			this.lastName = aLastName;
+			this.phoneNumbers = aPhoneNumberList;
 		}
 
 		public Set<String> getPhoneNumbers() {
+			
 			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
 		}
 		
 		public String getFirstName() {
-			return firstName;
-		}
-		public void setFirstName(String newName) {
-			firstName = newName;
+			String returnFirstName = firstName;
+			return returnFirstName;
 		}
 		
 		public String getLastName() {
-			return lastName;
+			String returnLastName = lastName;
+			return returnLastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }

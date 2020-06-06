@@ -4,10 +4,16 @@ import java.util.*;
 
 /**
 
-TODO Examine the failing test case for this class.
+DONE Examine the failing test case for this class.
  We should be able to call people.add() twice but end with only one object in it.
  We can test with "gradlew test"
 
+* Fix:    If the members of a class instance do not change, the hash code should not either on successive calls
+*	Randomizing the hashCode makes no sense to me.  So I simply make the hashCode be the Id value.
+*	Integer is the same size as int, so it is even a good choice for data size.
+*  @Author Andrew Lewis
+*
+*
 */
 public class Exercise3 {
 
@@ -21,7 +27,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
