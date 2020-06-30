@@ -28,7 +28,6 @@ public class TitleHandler {
     public String getNormalizedTitle(String title) {
         title = lowerCaseTitle(title);
         title = removeApostrophes(title);
-        title = removeApostrophes(title);
         title = removePunctuationChars(title);
         title = removeSpaces(title);
         title = removeNoiseWords(title);
