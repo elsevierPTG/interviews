@@ -12,7 +12,9 @@ namespace WriteUnitTest
 
             var grade = 98.2d;
 
-            lessonSvc.UpdateLessonGrade(lessonId, grade);
+            bool passes = false;
+
+            lessonSvc.UpdateLessonGrade(lessonId, grade, out passes);
         }
     }
 }
