@@ -9,17 +9,21 @@ public class Exercise4 {
 
 	public static class Counter {
 		
+		// int type is immutable so we are good
 		private int count = 0;
 		
-		public int increment() {
+		// Make sure the increment operation is atomic
+		public synchronized int increment() {
 			return ++count;
 		}
 		
-		public int getCount() {
+		// Make sure the latest count value is returned
+		public synchronized int getCount() {
 			return count;
 		}
 		
-		public void resetCount() {
+		// Make sure reset is atomic
+		public synchronized void resetCount() {
 			count = 0;
 		}
 

@@ -20,8 +20,10 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		// simplest fix, hashcode should be equal if object are equal
+		// otherwise may be equal may be not
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id ;
 		}
 		
 		public boolean equals(Object other) {
