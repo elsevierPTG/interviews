@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="gasCar" class="com.elsevier.education.Exercise2.Car">
+		<constructor-arg ref="gasEngine" />
+	</bean>
+	
+	<bean id="electricCar" class="com.elsevier.education.Exercise2.Car">
+		<constructor-arg ref="electricEngine" />
+	</bean>
+	
+	<bean id="gasEngine" class="com.elsevier.education.Exercise2.GasEngine" />
+	<bean id="electricEngine" class="com.elsevier.education.Exercise2.ElectricEngine" />
+	
+</beans>
