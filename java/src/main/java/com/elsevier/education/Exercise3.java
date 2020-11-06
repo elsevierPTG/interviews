@@ -9,23 +9,39 @@ TODO Examine the failing test case for this class.
  We can test with "gradlew test"
 
 */
+ /**
+ * 
+ * @author swapnilkulkarni
+ * @author swapnilkulkarni 
+ * email - kulswapnil@gmail.com
+ * cell - 267 844 5443
+ * recuiter - collabera
+ * Added a new variable to hold the hashcode value
+ * Compare the hashcode value in equals method.
+ *  */
 public class Exercise3 {
 
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
 		private Integer id;
+		public Integer result;
 		
+		public Integer getResult() {
+			return result;
+		}
+
 		public Person(int newId) {
 			id = newId;
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			result = id * generator.nextInt();
+			return result.intValue();
 		}
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+			return result.equals(((Person)other).getResult());
 		}
 	}
 }
