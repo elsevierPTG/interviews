@@ -15,13 +15,17 @@ public class Exercise3 {
 	
 		private static Random generator = new java.util.Random();
 		private Integer id;
+		private Long rand;
 		
 		public Person(int newId) {
 			id = newId;
+			rand =  generator.nextInt();
 		}
-		
+		/**
+		hash code shold be same at all the time
+		**/
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id *rand;
 		}
 		
 		public boolean equals(Object other) {
