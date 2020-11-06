@@ -20,9 +20,7 @@ public class Exercise3 {
 			id = newId;
 		}
 		
-		public int hashCode() {
-			return id * generator.nextInt();
-		}
+		public int hashCode() { return id.hashCode(); }
 		
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
