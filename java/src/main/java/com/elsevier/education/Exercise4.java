@@ -1,18 +1,18 @@
 package com.elsevier.education;
 
-/**
-
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
-
-*/
 public class Exercise4 {
 
 	public static class Counter {
 		
 		private int count = 0;
 		
+		/**
+		 * I did not think ++ is thread safe so I separated
+                 * the equation and the return and refactored the implied increment by 1
+		 */
 		public int increment() {
-			return ++count;
+                        counter = counter + 1;
+			return this.counter
 		}
 		
 		public int getCount() {
