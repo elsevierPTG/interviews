@@ -15,28 +15,36 @@ public class Exercise1 {
 		private String firstName;
 		private String lastName;
 		
-		public Person() {
+		/**
+		 * Contstructor
+		 *
+		 * For an immutable class every field MUST be passed in
+		 * since there is no changing it afterwards
+		 * 
+		 * @param firstName
+		 * @param lastName
+		 * @param phoneNumbers
+		 * @return
+		 */
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
 
+		/*
+		No need for setters, no longer allowed, removed
+		 */
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
