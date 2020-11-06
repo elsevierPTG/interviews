@@ -2,41 +2,46 @@ package com.elsevier.education;
 
 import java.util.Set;
 
-/**
-
-TODO: Make this class immutable.
-
-*/
 public class Exercise1 {
 
-	public static class Person {
+	// add final to class definition
+	public static final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		/* make all mutable fileds final and private to prevent modify from outside */
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		/* initiate the mutable field from the class constructor */
+		public Person(Set<String> phoneNumbers,String firstName,String lastName) {
+			this.phoneNumbers = phoneNumbers;
+			this.firstName = firstName;
+			this.lastName = lastName;
+
 		}
 
-		public Set<String> getPhoneNumbers() {
+		/* remove setter */
+/*		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
+*/
+		/* public void setPhoneNumbers(Set<String> newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
 		}
+		*/
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
+		/*public void setFirstName(String newName) {
 			firstName = newName;
-		}
+		}*/
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
+		/*public void setLastName(String newName) {
 			lastName = newName;
-		}
+		}*/
 	}
 }

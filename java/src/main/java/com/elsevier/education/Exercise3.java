@@ -21,7 +21,11 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			/* the function generator will change the id each time we add new id
+			in order to keep same id, we should return the original one
+			 */
+			//return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
