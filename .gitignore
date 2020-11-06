@@ -1,7 +1,11 @@
+.gitignore
 build/
 
 .gradle/
 .idea/
+
+.classpath
+.project
 
 # Package Files #
 *.jar
