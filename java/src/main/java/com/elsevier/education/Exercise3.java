@@ -21,7 +21,11 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			// The code has been modified to return the id.
+			// Two objects which are considered to be equal 
+			// should return the same hashCode 
+			return id;
 		}
 		
 		public boolean equals(Object other) {
