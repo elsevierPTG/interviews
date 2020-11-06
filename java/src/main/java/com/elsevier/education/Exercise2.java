@@ -7,23 +7,104 @@ TODO allow use of either a gas engine or electric engine (create an appropriate 
 TODO make sure we have no-op implementations of the gas engine and electric engine
 
 */
-public class Exercise2 {
-
+/**
+  Created and implemented interfaces for Driver, CarEngine, CarEngineInjector
+ Created a noop method
+ */
+  public class Exercise2 {
+	
+  
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
-		
+		private GasEngine engine = new GasEngine();		
 		public Car() {
 		}
 		
 		public void moveForward() {
 			engine.spinWheels();
+
+		/**
+		 *  Interface for Engine
+		 *
+		 */
+		public interface CarEngine{
+			void spinWheels();
 		}
-	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
+
+		/**
+		 * Electric Engine implementation
+		 *
+		 */
+		public class ElectricEngine implements CarEngine{
+			public void spinWheels() {
+				noop();
+			}
 		}
-	}
-}
+		/**
+		 *
+		 * No Op implementation
+		 * @param o
+		 */
+		private static void noop(Object... o) { };
+		public static class GasEngine {
+
+		/**
+		 * Gas Engine implementation
+		 */
+		public class GasEngine implements CarEngine{
+			public void spinWheels() {
+				// no-op for now
+				noop();
+			}
+		}
+
+	    /**
+	     *  Interface for Driver
+	     */
+		public interface Driver{
+			void moveForward();
+		}
+
+	    /**
+	     *  Driver Choice implementation
+	     */
+		public class DriverChoice implements Driver{
+			private CarEngine myCarEngine;
+			public DriverChoice(CarEngine mce){
+				this.myCarEngine = mce;
+			}
+
+			@Override
+			public void moveForward(){
+				this.myCarEngine.spinWheels();
+			}
+		}
+
+	    /**
+	     * Interface for injector
+	     */
+		public interface CarEngineInjector {
+
+			public DriverChoice getDriverChoice();
+		}
+
+	    /**
+	     * Implementation for injector GasEngine
+	     */
+		public  class GasEngineInjector implements CarEngineInjector{
+			public DriverChoice getDriverChoice(){
+				DriverChoice dc = new DriverChoice(new GasEngine());
+				return dc;
+			}
+		}
+
+	    /**
+	     * Implementation for injector Electric Engine
+	     */
+		public  class ElectricEngineInjector implements CarEngineInjector {
+			public DriverChoice getDriverChoice() {
+				DriverChoice dc = new DriverChoice(new ElectricEngine());
+				return dc;
+			}
+		}
+  } 
