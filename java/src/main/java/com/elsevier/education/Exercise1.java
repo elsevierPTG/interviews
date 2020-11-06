@@ -4,39 +4,40 @@ import java.util.Set;
 
 /**
 
-TODO: Make this class immutable.
+@author Todd Goglia: Made this class immutable by removing setter methods and making the properties final.
 
 */
 public class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
-		public Person() {
+		public Person(String firstName, String lastName, Set<String> phoneNumbers) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
-
+		
+		/**
+		 * Creates a clone of the phoneNumbers set and returns the clone. Otherwise, the phone number list itself would be immutable, but
+		 * the strings themselves could be changed. Though Strings in java are themselves immutable, so this might not be needed.
+		 * @return The cloned set.
+		 */
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
+			Set<String> clone = new TreeSet<String>(Collections.unmodifiableCollection(phoneNumbers));
+			return clone;
 		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }

@@ -4,9 +4,9 @@ import java.util.*;
 
 /**
 
-TODO Examine the failing test case for this class.
- We should be able to call people.add() twice but end with only one object in it.
- We can test with "gradlew test"
+@author Todd Goglia 8/22/2017
+Fixed a bug where a new distinct hashcode was generated for each subsequent call to hashCode() by moving
+the call call to the Random.nextInt() to the constructor and creating a member variable to hold the value.
 
 */
 public class Exercise3 {
@@ -15,13 +15,16 @@ public class Exercise3 {
 	
 		private static Random generator = new java.util.Random();
 		private Integer id;
+		private Integer hashCode;
 		
 		public Person(int newId) {
 			id = newId;
+			this.hashCode = generator.nextInt();
+			
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return this.hashCode;
 		}
 		
 		public boolean equals(Object other) {
