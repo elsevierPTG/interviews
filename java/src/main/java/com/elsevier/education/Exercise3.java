@@ -1,19 +1,13 @@
 package com.elsevier.education;
 
-import java.util.*;
-
 /**
-
-TODO Examine the failing test case for this class.
- We should be able to call people.add() twice but end with only one object in it.
- We can test with "gradlew test"
-
+* 1. Assuming that test case scenario where more than one user with the same id is allowed, randomization is not necessary.
+* @author Boris Filipov
 */
 public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +15,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
