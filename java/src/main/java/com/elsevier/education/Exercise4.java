@@ -1,17 +1,14 @@
 package com.elsevier.education;
 
 /**
-
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
-
+ * The purpose of this class is to implement thread-safe Counter by using synchronized
 */
-public class Exercise4 {
-
-	public static class Counter {
+	public class Counter implements Runnable{
 		
-		private int count = 0;
+		private static int count = 0;
 		
-		public int increment() {
+		public static synchronized int increment() {
+			System.out.println(Thread.currentThread().getName() + ": " + count);
 			return ++count;
 		}
 		
@@ -23,5 +20,19 @@ public class Exercise4 {
 			count = 0;
 		}
 
+		@Override
+		public void run() {
+			while(count<1000){
+				increment();
+	          }
+		}
+		
+		public static void main(String[] args) {
+			Counter t = new Counter();
+	          Thread thread1 = new Thread(t);
+	          Thread thread2 = new Thread(t);
+
+	          thread1.start();
+	          thread2.start();          
+	     }
 	}
-}
