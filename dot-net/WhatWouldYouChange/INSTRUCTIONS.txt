@@ -5,4 +5,5 @@
 
 
 Suggested Changes:
-	
+	To start, I would convert the fs and streamreader variables to utilize using statements to ensure that the objects are correctly disposed of in the ExampleMethod method of the ExampleClass.cs.
+	Secondly, I would also include an a generic Exception object as an argument in the catch block of the ExampleMethod method of the ExampleClass.cs in order to display a more meaningful and descriptive indication of the error encountered in the program, instead of a blind failure.
