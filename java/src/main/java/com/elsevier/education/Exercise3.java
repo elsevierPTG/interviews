@@ -9,6 +9,13 @@ TODO Examine the failing test case for this class.
  We can test with "gradlew test"
 
 */
+/**
+ * 
+ * @author Rohini Byrishetty
+ *Changed the hashCode to return the same hash ID, as two objects that are equal must be with same hashcode 
+ *
+ */
+		
 public class Exercise3 {
 
 	public static class Person {
@@ -20,8 +27,10 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		//Changed the return 
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return id.hashCode();
 		}
 		
 		public boolean equals(Object other) {
