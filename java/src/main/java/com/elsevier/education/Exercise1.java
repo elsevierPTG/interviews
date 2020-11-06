@@ -9,34 +9,31 @@ TODO: Make this class immutable.
 */
 public class Exercise1 {
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+	public static final class Person {
+		// All the class variable are made final and hence cant be changed
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+		// parameterised constructor is done to assign the value to all the final class variable during object initialisation
+		public Person(Set<String> newPhoneNumbers,String newFirstName, String newLastName) {
+			this.phoneNumbers = newPhoneNumbers;
+			this.lastName =  newLastName;
+			this.firstName = newFirstName;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }
