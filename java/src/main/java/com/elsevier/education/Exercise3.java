@@ -9,11 +9,15 @@ TODO Examine the failing test case for this class.
  We can test with "gradlew test"
 
 */
+
+// Removed Random number generator, which allowed for different hash codes to be produced when add() was 
+// called twice on the same person, which ruins the purpose of a HashSet. Instead, hash code can just be id
+// because id is a value that is unique to each person.
+
 public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +25,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
