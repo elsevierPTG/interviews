@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using WriteUnitTest.Entities;
-
-namespace WriteUnitTest.Repositories
+﻿namespace WriteUnitTest.Repositories
 {
-    public class ModuleRepository
+    using Entities;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class ModuleRepository : IModuleRepository
     {
         private readonly List<Module> moduleList;
 

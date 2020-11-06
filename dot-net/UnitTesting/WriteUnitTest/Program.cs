@@ -1,18 +1,18 @@
-﻿using WriteUnitTest.Services;
-
-namespace WriteUnitTest
+﻿namespace WriteUnitTest
 {
+    using Repositories;
+    using Services;
+
     public class Program
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            var lessonService = new LessonService(new LessonRepository(), new ModuleRepository());
 
-            var lessonId = 12;
+            const int lessonId = 12;
+            const double grade = 98.2d;
 
-            var grade = 98.2d;
-
-            lessonSvc.UpdateLessonGrade(lessonId, grade);
+            lessonService.UpdateLesson(lessonId, grade);
         }
     }
 }
