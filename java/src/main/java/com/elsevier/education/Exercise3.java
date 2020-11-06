@@ -12,16 +12,20 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+	//Step:2
+		//private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
-		
+		//Step:1
+		//When hashCode function is invoked on same object more than once, it will return same value. 
+		//So in the test class, same object has been added twice and testing as one object being added.
+		//If we remove comments on commented code in hashCode(), It returns different values as random numbers are generated and multipled to same values.
+		//As we have commented this, We don't need Random class to generate random numbers. So Step:2 
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id /* * generator.nextInt()*/;
 		}
 		
 		public boolean equals(Object other) {
