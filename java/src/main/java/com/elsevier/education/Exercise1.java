@@ -7,36 +7,43 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
+/**
+ * 
+ * @author swapnilkulkarni 
+ * email - kulswapnil@gmail.com
+ * cell - 267 844 5443
+ * recuiter - collabera
+ * Made the class as final
+ * set all variable as private & initialize them in constructor.
+ * Remove the set methods for variables.
+ * return collection as immutable.
+ *
+ */
+public final class Exercise1 {
 
-	public static class Person {
+	public static final class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
+			phoneNumbers = new HashSet<String>(Arrays.asList("267 844 5443", "234354"));
+			firstName = "Swapnil";
+			lastName = "Kulkarni";
 		}
 
-		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+		public Collection<String> getPhoneNumbers() {
+			return Collections.unmodifiableCollection(phoneNumbers);
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+				
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+				
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }
