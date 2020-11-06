@@ -5,38 +5,38 @@ import java.util.Set;
 /**
 
 TODO: Make this class immutable.
-
+To make class immutable: 
+-removed setters
+-set class to final and private
+-initialized person method
+-Straightforward approach to remove mutability
 */
-public class Exercise1 {
+final public class Exercise1 {
 
-	public static class Person {
+	final public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
 		
-		public Person() {
+		private final String firstName;
+		private final String lastName;
+		private final Set<String> phoneNumbers;
+		
+		
+		public Person(Set<String> phoneNumbers, String firstName, String lastName)) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.phoneNumbers = phoneNumbers;
 		}
 
-		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
-		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
 }
