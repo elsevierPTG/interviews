@@ -11,19 +11,32 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private final Engine engine;
 		
-		public Car() {
+		public Car(final Engine engine ) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
+
+	//remove no-op from class as it is now in the interface
+	public static final class GasEngine implements Engine{
+
+	}
+
+	public static final class ElectricEngine implements Engine{
+
+	}
+	//Since this keeps using nested classes, I'll keep up with the methodology, however in reality it should be in its own
+	//class file like everything else.
+	public interface Engine{
+		default void spinWheels() {
+			//No-op for the engines in interface.
 		}
 	}
+
+
 }
