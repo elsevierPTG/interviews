@@ -10,7 +10,12 @@ TODO Examine the failing test case for this class.
 
 */
 public class Exercise3 {
-
+/**
+ * The reason why the size of the set people were two is because
+ * on line 29, the method would always return a different number regardless of whether the objects
+ * are the same that are already existing in the set.
+ * 
+ */
 	public static class Person {
 	
 		private static Random generator = new java.util.Random();
@@ -20,12 +25,16 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		@Override
 		public int hashCode() {
-			return id * generator.nextInt();
+			//return id * generator.nextInt();
+			return id;
 		}
 		
+		@Override
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
+
 	}
 }
