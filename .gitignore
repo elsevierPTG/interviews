@@ -7,3 +7,6 @@ build/
 *.jar
 
 *.log
+/bin/
+.classpath
+.project
