@@ -1,6 +1,6 @@
 package com.elsevier.education;
 
-import java.util.*;
+import java.util.Random;
 
 /**
 
@@ -13,19 +13,28 @@ public class Exercise3 {
 
 	public static class Person {
 	
+		// this is not relevant to the example
 		private static Random generator = new java.util.Random();
-		private Integer id;
 		
+		// use primitive with getter
+		private int id;
+		
+		// does not use the random generator, id set by constructor
 		public Person(int newId) {
 			id = newId;
 		}
+
+		public int getId() {return id;}
 		
+		// inherits from Object which uses memory location as hash code
+		// randomly assigned memory location not appropriate
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
+		// in other words equal if the same location in memory
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+			return getId() == ((Person)other).getId();
 		}
 	}
 }
