@@ -6,6 +6,7 @@ TODO refactor the Car to use dependency injection of the engine
 TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
 TODO make sure we have no-op implementations of the gas engine and electric engine
 
+ Note: I didn't have time to do this exercise.
 */
 public class Exercise2 {
 

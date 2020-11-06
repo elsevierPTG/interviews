@@ -52,3 +52,41 @@
 
 </body>
 </html>
+
+<!--
+Answers:
+I'm writing my answers here so preserve line numbers above as I add answers.
+1. Line 17 is missing a semicolon. JavaScript does automatic semicolon insertion, but there are certain circumstances
+wherein incorrect behavior can result from not adding semicolons manually. In particular, if the next line starts with
+certain characters, the interpreter will continue the statement with the code on the next time. I don't recall
+the full list of those characters, but one I recall is "(".
+2. On line 20, the reqFlds variable is declared without using "var" (or "const" or "let", if ES6 were supported for this).
+That not good because doing so implicitly declares reqFlds as a global variable
+(for JS in a browser, makes it an attribute of the window object). That variable is best scoped, with minimally required
+access, to the lexical scope of the validateField function. That's because, in general, software is best written with least access as a
+guiding principle, and globals are a general antipattern.
+3. Line 21 sets the first element in the array using array index notation. That element could have been pushed into the array,
+as is done on line 22. The reason that is better, is that it avoids magic numbers (in this case 0), and would be consistent
+with line 22.
+4. In fact, lines 20-22 could be combined into a simpler statement: var reqFlds = ['username', 'password']. That
+statement both declares and initializes the reqFlds array. That would be better because it would be less code, and make it
+easier to understand at a glance what is happening.
+5. The reqFlds array could, in my opinion, have its identifier name improved. I would suggest requiredFields. That would
+be better because the identifier would very directly state what it was for, so readers would not have to spend any time
+deciphering it.
+6. As a further improvement, the reqFlds array could be eliminated entirely, because it simply holds two strings that
+are later de-referenced by array index. Instead, the strings could be used literally (or each made a variable with the
+typical constant naming convention: VARIABLE_NAME). That would be better because it would be less code and it would
+make the code easier to follow. The result would be, for example document.getElementById('username').
+7. The if statement on line 24 has unusual formatting. I would format it like this, for readability by keeping with
+commonly accepted conventions:
+if(document.getElementById(reqFlds[0]).value !== '' && document.getElementById(reqFlds[1]).value !== '').
+8. There should not be a new line after the return keyword on line 34. That's because that's not the commonly accepted
+convention, and it adds another line of code unnecessarily.
+9. The code will not actually have the apparently desired effect, because the variable 'submitButtonIsActive' does not
+have the same name as the variable 'submitButtonActive'. So the names should should be merged to single name.
+That will then allow the return value of "validateField" to be logged to the console, rather than "false" always being logged.
+10. document.getElementById('submitButton') is in two places. Since it is needed in both branches, it could be extracted
+to a single variable declaration. That would eliminate that code duplication. The advantage of that is that if, for example,
+the id changes (or the lookup attribute is changed from id to class), the code would only need to be changed in one place.
+-->

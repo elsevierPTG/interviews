@@ -19,6 +19,7 @@ Example things to consider:
 * The content itself
 
 Bonus point for the correct use of the word "semantic" in an answer.
+
 -->
 
 <div ID=redSection>
@@ -30,3 +31,32 @@ Bonus point for the correct use of the word "semantic" in an answer.
 
 </body>
 </html>
+
+
+<!--Answers:
+I am putting the answers after the code in order to preserve line numbers in the code while I'm writing the answers.
+1. the "id" attribute in the div on line 25 is capitalized. I would make is lowercase. That's because lowercase is the widely accepted
+convention for HTML tag attributes.
+2. The value of the ID attribute for the div on line 25 missing quotation marks around it. That change is needed because
+it won't work without the quotation marks. Correct is: <div id="redSection">
+3. The p tag on line 26 is not semantic markup, so it should be changed to a div.
+That's because surrounds an input section, not a paragraph of freeform text.
+4. The class name (recruitment-question) for the p tag on line 26 is not very declarative, because the element in
+which it resides is a container for both the question and the answers. A more declarative name could be "recruitment-selection"
+for the question and answer, or "recruitment-question" if the element were to only wrap the prompt/question part of the HTML.
+5. The b tags on line 26 are an antipattern, because they mix the concerns of markup and styling. A better choice would
+be a span tag with a class for which there is a css rule of font-weight: bold
+ (ideally a "framework-level" class used everywhere bold is needed).
+6. There is an extra space after the br and before the closing slash in the br tag on line 26. Also, self-closing tags
+don't need the slash in the HTML5 specification I believe (unlike XHTML).
+7. For the input tags, self-closing tags don't need the slash in the HTML5 specification I believe (unlike XHTML).
+8. The input tags allow for multiple selections, due to being of type checkbox. Since the prompt asks for the user's
+favorite framework, it is implied that only one of the three can be selected at a given time. To do that, the input tag type
+should be changed to radio.
+9. br tags are used for line breaks. More typical is to use divs. That's because divs allow you to style/lay out the element
+as a whole. For example, if we wanted to give each input section(checkbox and label) a margin-top of 10px, a div with a class
+on it would accomplish both items.
+10. The markup is not arranged in a typical way. For example, the opening and closing p tags are not directly above/below
+each other. Arranging the markup in a typical way helps developers to visualize the layout and see problems more easily.
+The prompt text would also typically be on a new line after the opening p tag (although the p tag should be a div as noted earlier).
+-->
