@@ -11,7 +11,8 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		@Autowired
+		private GasEngine engine
 		
 		public Car() {
 		}
@@ -21,9 +22,15 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
+	public static abstract class Engine{
+		public  final  void spinWheels(){
+			// TODO Auto-generated method stub
 		}
+	}
+public static class GasEngine extendts Engine {
+		
+	}
+	public static class ElectricEngine extendts Engine {
+		
 	}
 }
