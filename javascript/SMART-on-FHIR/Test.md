@@ -12,12 +12,12 @@ http://docs.smarthealthit.org
 (SMART is the security component that allows for an OAuth2-based application launch with a secure context. FHIR defines the structure of various resources (patient demographic data, conditions, observations, allergies, etc.) that allows applications to do interesting things with health data.)
  
 ## Your challenge
-Using Cerner’s open sandbox at http://fhir.cerner.com/millennium/dstu2/#open-sandbox  - create a web application that:
+Using the SMART Health IT sandbox at https://r2.smarthealthit.org - create a web application that:
 * reads and displays a given patient’s demographic data (name, gender, date of birth)
 * displays a sortable table of active conditions that the patient currently has, including
   * condition name
   * date first recorded, if available
-  * link to search for this condition on PubMed (URL takes format `https://www.ncbi.nlm.nih.gov/pubmed/?term=[condition name]` )
+  * link to search for this condition on PubMed (URL takes format `https://pubmed.ncbi.nlm.nih.gov/?term=[condition name]` )
  
 ### Notes:
 * The design and implementation of the application is totally up to you - you may use whichever libraries/frameworks you feel appropriate to get the job done, but be prepared to justify your choices. It doesn’t necessarily have to run entirely in the browser, either, if you feel like a server-side component is worthwhile.
@@ -25,4 +25,4 @@ Using Cerner’s open sandbox at http://fhir.cerner.com/millennium/dstu2/#open-s
 * For this exercise, you don’t need to implement the SMART authorization flow - accessing the open sandbox (which requires no authorization) is enough.
 * If you feel like this is going to take you an unreasonable amount of time to complete (more than 2-3 hours maybe), please let the hiring manager with whom you spoke know and we’ll figure out how to de-scope.
 * A handy introductory series of FHIR exercises is available at https://github.com/cerner/ignite-learning-lab/wiki/FHIR-Materials.
-* The Cerner sandbox referenced above contains some patients with an unrealistic number of conditions. As an alternative, you can use the [SMART Health IT sandbox](https://launch.smarthealthit.org/) (API available at https://r2.smarthealthit.org, e.g. https://r2.smarthealthit.org/Patient/541033).
+* The exercise specifies the DTSU2 version of FHIR, but other FHIR versions (including the latest, R4) could be used as well. An R4 server is available at https://r4.smarthealthit.org.
