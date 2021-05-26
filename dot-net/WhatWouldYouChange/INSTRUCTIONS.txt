@@ -6,3 +6,18 @@
 
 Suggested Changes:
 	
+	1. Program class (Program.cs) - Recommend changing the input string for the call to ExampleMethod.  The current input is misspelled so ExampleText.txt will never be used in the running of this program, and instead will always trigger a FileNotFound exception, leading to the catch block in ExampleClass.ExampleMethod.  Additionally, using a configurable appSetting variable (or accepting user input) for this input will allow for adapting to different files to be used without going through repeated deployments, saving time.
+
+	2.  Overall Solution - Recommend replacing all instances of the var keyword with the actual object types.  For most uses it is not really needed as the assignment is "new <ObjectType>()", which is fairly self-explanatory.  However with the line "var fs = File.Open(exampleTextFile, FileMode.Open);", it may not be clear that fs is of type FileStream.  Minimizing usage of the var keyword keeps the code easier to read and understand what type each variable is.
+
+	3.  ExampleClass.exampleText (ExampleClass.cs) - Recommend changing public string member to ExampleText, for capitalization consistency with the other member of the class, ExampleMethod.
+
+	4.  ExampleClass.ExampleMethod (ExampleClass.cs) - Recommend wrapping everything in the try block in a using block (using FileStream fs = File.Open(exampleTextFile, FileMode.Open)).  This will ensure that the fs object will be properly closed/disposed of when the program execution completes.
+
+	5.  ExampleClass.ExampleMethod (ExampleClass.cs) - Recommend moving what is in the catch block of the method to a different method (perhaps even a different class).  This makes what is in ExampleMethod more concise and reduces responsibilities in the method.  As it stands, the method has more than one responsibility.  It handles opening/reading the file, but also handles building out a default string.
+
+	6.  ExampleClass.ExampleMethod (ExampleClass.cs) - Recommend using an instance of StringBuilder to build the default text in the catch block.  The number of lines of code will be reduced by using the StringBuilder.AppendLine method instead of adding newline characters to the string, as well as performance improvements over the more taxing concatenation operation being used so much.
+
+	7.  ExampleClass.ExampleMethod (ExampleClass.cs) - Since exampleText will be set to text at the end of the method regardless of workflow, simply eliminating the text variable and assigning to exampleText directly would serve to make the code more concise due to the text variable being redundant.
+
+	8.   ExampleClass (ExampleClass.cs) - Since the usage of this class is fairly limited and not requiring multiple instances of the class, converting to a static class could be useful to further reduce any load the program may put on the machine running it.  This will also further reduce the amount of code written by avoiding writing any declarations for the class.

@@ -1,33 +1,33 @@
 ﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Services
 {
     public class LessonService
     {
-        public LessonService()
+        private ILessonRepository _lessonRepo;
+        private IModuleRepository _moduleRepo;
+
+        public LessonService(ILessonRepository lessonRepo, IModuleRepository moduleRepo)
         {
+            //moved repository objects to constructor to allow for mocking of output in testing/dependency injection
+            _lessonRepo = lessonRepo;
+            _moduleRepo = moduleRepo;
         }
 
         public void UpdateLessonGrade(int lessonId, double grade)
         {
-            var lessonRepo = new LessonRepository();
-            var lesson = lessonRepo.GetLesson(lessonId);
+            //var keyword is ambiguous, prefer to specify the obect type whenever possible for ease of reading purposes
+            Lesson lesson = _lessonRepo.GetLesson(lessonId);
 
             lesson.Grade = grade;
 
             if (!lesson.IsPassed)
             {
-                var moduleRepository = new ModuleRepository();
-                var module = moduleRepository.GetModule(lessonId);
+                Module module = _moduleRepo.GetModule(lessonId);
 
-                if (grade >= module.MinimumPassingGrade)
-                {
-                    lesson.IsPassed = true;
-                }
-                else
-                {
-                    lesson.IsPassed = false;
-                }
+                //simplifying boolean expression to single line to make it readable as a single expression instead of an if/else block
+                lesson.IsPassed = (grade >= module.MinimumPassingGrade);
             }
         }
     }
