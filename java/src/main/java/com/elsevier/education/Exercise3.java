@@ -13,15 +13,22 @@ public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
+		private static Random generator;
 		private Integer id;
+		private int r;
 		
 		public Person(int newId) {
 			id = newId;
+			r = new java.util.Random(id).nextInt();
 		}
-		
+
+		/**
+		 * The Java spec states that the hashCode function should return the same int for the same object.
+		 * @return
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			System.out.println("r: " + r);
+			return id * r;
 		}
 		
 		public boolean equals(Object other) {

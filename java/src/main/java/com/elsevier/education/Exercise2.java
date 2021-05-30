@@ -11,19 +11,33 @@ public class Exercise2 {
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
+
+}
+
+interface Engine {
+	void spinWheels();
+}
+
+class GasEngine implements Engine {
+
+	@Override
+	public void spinWheels() {
+	}
+}
+
+class ElectricEngine implements Engine {
+
+	@Override
+	public void spinWheels() {
 	}
 }
