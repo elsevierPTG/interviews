@@ -4,39 +4,43 @@ import java.util.Set;
 
 /**
 
-TODO: Make this class immutable.
+DONE: Make this class immutable.
 
+EXPLANATION: To force immutability, I removed the "setters" and
+default constructor, made the three instance variables final,
+and added a new constructor which receives the values of all
+three instance variables.
+
+(Making the three instance variables final isn't strictly necessary,
+but communicates that future developers shouldn't write methods which
+mutate those variables.)
 */
 public class Exercise1 {
 
 	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+			this.phoneNumbers = phoneNumbers;
+			this.firstName = firstName;
+			this.lastName = lastName;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
+
 }
