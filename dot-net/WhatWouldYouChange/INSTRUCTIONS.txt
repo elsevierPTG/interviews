@@ -5,4 +5,24 @@
 
 
 Suggested Changes:
-	
+	`public string exampleText` maintains proper encapsulation using the `{ get; set; }` auto-properties, which is great! Originally, I was concerned that it was set to `public`, but I just learned about these auto-properties today.
+
+	In `ExampleMethod`, `var text = ""` should be declared with a type; in this instance, it should be `string text = ""` because we are always expecting it to be a string.
+
+	A StreamReader can be passed the txt file directly via the `exampleTextFile` parameter, so we don't need the `fs` variable.
+
+	The StreamReader should use a `using` statement so that even if an exception occurs, Dispose will still be called.
+
+	`catch` should really only be used for error handling. If we want to assign some default value if the operation fails, then that functionality should be captured in a condition check. There can be multiple reasons why an operation would fail and enter the `catch` block, and we might not necessarily always want the same thing to happen no matter how it fails.
+
+	As written, the construction of the "default" `text` variable inside of the `catch` block uses far more momory than it needs to since it is going through many reassignments. If the new lines are necessary, we can build up the `text` variable with the default "lorem ipsum" text using a StringBuilder and leverage `.AppendLine()` to be more efficient.
+
+	If the new lines are *not* necessary, then we can use simple string concatenation and break it into multiple lines in our editor instead of reassigning the `text` variable over and over. Example:
+		text = 
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+			"Duis non pulvinar sapien, nec accumsan justo. " +
+			"etc."
+
+	When reassigning `exampleText`, we should use `this.exampleText` to properly reference it inside the class.
+
+	In `Program.cs`, `ExampleMethod` is being called with a string rather than a path to a valid .txt file. In this scenario, if we wanted to call the method with the `ExampleText.txt` file in the same directory, then it would need a valid file extension (ie. `ExampleTexttxt` !== `ExampleText.txt`).

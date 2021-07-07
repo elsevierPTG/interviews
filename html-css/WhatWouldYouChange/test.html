@@ -21,12 +21,42 @@ Example things to consider:
 Bonus point for the correct use of the word "semantic" in an answer.
 -->
 
-<div ID=redSection>
+<!-- Old Markup -->
+<!-- <div ID=redSection>
     <p class="recruitment-question">Select <b>your favorite</b> javascript framework:<br />
         <input type="checkbox" value="angular" /> Angular JS<br>
         <input type="checkbox" value="jquery" /> JQuery.<br>
         <input type="checkbox" value="reactjs" /> React JS<p>
-</div>
+</div> -->
+
+<!-- Every page should have an h1 for SEO purposes -->
+<h1>HTML &amp; CSS test</h1>
+<!-- id should be lowercase and the id name should be in quotes. However, a red section may be reusable, so I changed it to a class instead since id's should only be present once per page. The class name should also be separated by dashes, as is convention for css, and for consistency within this page -->
+<section class="red-section">
+    <!-- In HTML5, we can use the <section> tag to provide semantic meaning to our markup. This tells us that this form is a part of a group of content that has meaning no matter where on a page it is placed -->
+
+    <!-- If there are inputs we are trying to capture, this should be inside of a form tag, which would have some action or JS to capture submissions -->
+    <form>
+        <!-- <b> tags are outdated. <strong> is better, but setting font-weight: bold in CSS is best -->
+        <p class="recruitment-question">Select <strong>your favorite</strong> javascript framework:<br />
+
+        <!-- Sibling elements should be tabbed in at the same level for easier skimming of the markup -->
+        <!-- input type for should be "radio" when only one selection should be made, such as when you select a "favorite" item. When using type="radio", you must set the same "name" property so that only one choice can be provided -->
+        <input type="radio" name="framework" value="angular" id="angular" />
+        <label for="angular">Angular JS</label><br />
+        <!-- labels for inputs should be put in label tags with a for attribute pointing to the input's id for screen readers/accessibility -->
+        <!-- putting in the trailing "/" on a self closing tag is optional. They are present on the <input> tags, so I added them to the <br /> tags as well -->
+        <input type="radio" name="framework" value="jquery" id="jquery" />
+        <label for="jquery">jQuery</label><br />
+
+        <!-- previously, <br> tags were in use, and having an unclosed <p> tag is faulty markup -->
+        <input type="radio" name="framework" value="reactjs" id="reactjs" />
+        <label for="reactjs">React JS</label><br />
+
+        <!-- The form needs a submit button -->
+        <button type="submit">Submit</button>
+    </form>
+</section>
 
 </body>
 </html>
