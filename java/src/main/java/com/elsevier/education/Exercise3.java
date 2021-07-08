@@ -1,19 +1,17 @@
 package com.elsevier.education;
 
-import java.util.*;
-
 /**
 
-TODO Examine the failing test case for this class.
- We should be able to call people.add() twice but end with only one object in it.
- We can test with "gradlew test"
+I could have kept the random generator, removing it from hashCode() and
+using it to generate the 'id' (and removing the constructor arg for that),
+but that would require me to change the unit test, which I'm interpreting
+as the "source of truth" here about the rest of the imaginary project setup.
 
 */
 public class Exercise3 {
 
 	public static class Person {
 	
-		private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +19,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
