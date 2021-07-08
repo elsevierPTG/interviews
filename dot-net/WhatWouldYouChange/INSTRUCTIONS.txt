@@ -5,4 +5,38 @@
 
 
 Suggested Changes:
+* Instead of a single project, you could have a couple of more to facilitate separation of concerns.
+  Eg. Managers -> Controlling the work flow.
+      Engines -> Performing any business logic.
+	  Data -> Performing the data access layer. Repositories, Dtos, Extension methods, etc.
+	  Ifx -> To set up IoC, etc
+	  Common -> Anything common to all layers
+	  Model -> Any models for entity objects
+
+* Change the text for line 11 from "ExampleTexttxt" to "ExampleText.txt". This will prevent the FileNotFoundException.
+* In ExampleClass.cs, replace the string concatenation with a string builder.
+* The catch statement is a bit too generic. It should be more specific with one of the exceptions here for:
+   a) File.Open -> https://docs.microsoft.com/en-us/dotnet/api/system.io.file.open?view=netframework-4.7.2  
+   b) StreamReader.ReadToEnd -> OutOfMemoryException or IOException
+   If you're more specific with the type of exception, you'll be able to handle it a lot better.
+* Since File.Open could throw an exception, it'd be good to make a method to check it's existance Eg. bool DoesFileExist(string fileName)
+  This could be done in a sort of static class called Argument which would have generic methods to check for instance filename argument cannot be empty.
+* We could also split the logic in ExampleClass to a fileManager/fileEngine that would expose fileOperations and could be injected with an interface
+  into the example class.
+* ExampleMethod could be rennamed to ReadFileContents.
+* StreamReader implements TextReader which in turn implements IDisposable. It'd be a good idea to wrap it in a using statement to prevent a memory leak.
+* The exampleMethod requires a file name. It'd be nice to have it configurable. Either through a command line argument or an application configuration file setting.
+* It's technically possible that Console.WriteLine could throw an exception. Eg. I/O Exception. So there should be a try/catch statement in order to prevent the application from
+   crashing. If this was API world, you could return a BadRequest() or some failure response code.
+* A little extreme, since the application is small. But it'd be nice to use dependency injection. It's easier to write unit tests and speeds up development.
+* exampleText property should not be camel case. Change to ExampleText.
+* Example Text should have a private setter because the method seems to be responsible for setting it's value. To prevent external classes from setting it's value,
+make it private set;
+* The calling class to ExampleMethod has no idea whether it succeeded or not. Maybe return a boolean and check it's value before deciding on an operation. 
+  Sort of similar to a Guid.TryParse. If the guid is valid do step A else do step B.
+* Add a logger for the exception to log it.
+* The catch statement is a bit heavy. 
+
+
+
 	
