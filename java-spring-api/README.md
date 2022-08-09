@@ -54,7 +54,7 @@ Create all endpoints listed below, ensuring to follow any of the specific instru
 > _For the GET /patient/{id} endpoint it should also return age along with the dob_
 
 > _For the PATCH endpoint the only fields able to be updated are phoneNumber and lastName, no other
-> fields should be passed up with the request (other than the id in tha path)_
+> fields should be passed up with the request (other than the id in the path)_
 
 ### Repository
 
