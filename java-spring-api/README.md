@@ -21,7 +21,7 @@ to run or test the application.
 Create a patient model based on the description below (class already exists with no fields)
 
 > _Anything marked with dID should be able to be de-identified. For example
-> a patient with SSN 111-11-1111 should be \***\-\**\-\****_
+> a patient with SSN 111-11-1111 should replace all numbers with a *_
 > _Anything with a * is a required field_
 
 * id* (uuid)
@@ -44,7 +44,7 @@ Create all endpoints listed below, ensuring to follow any of the specific instru
 > endpoints_
 
 * ***GET*** _/patients_ - return all patients
-* ***GET*** _/patients_ - return all patients with necessary field de-identified
+* ***GET*** _/patients_ - return all patients with necessary fields de-identified
 * ***GET*** _/patients/{id}_ - return specific patient
 * ***POST*** _/patients_ - save a given patient
 * ***PATCH*** _/patients/{id}_ - save a given patient only passing in the necessary fields
@@ -59,6 +59,10 @@ Create all endpoints listed below, ensuring to follow any of the specific instru
 
 A PatientRepository already exists, it will simply work as an in-memory data store.
 All that is needed here is to implement the skeleton methods to return what is necessary.
+
+### Unit Tests
+
+Write whatever unit tests you see fit to implement, any tests that are written should pass
 
 ### Running the Application
 
