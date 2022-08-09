@@ -45,6 +45,7 @@ Create all endpoints listed below, ensuring to follow any of the specific instru
 
 * ***GET*** _/patients_ - return all patients
 * ***GET*** _/patients_ - return all patients with necessary fields de-identified
+  * This can be the same endpoint as the other GET with a parameter, or it can be a separate endpoint, your choice.
 * ***GET*** _/patients/{id}_ - return specific patient
 * ***POST*** _/patients_ - save a given patient
 * ***PATCH*** _/patients/{id}_ - save a given patient only passing in the necessary fields
