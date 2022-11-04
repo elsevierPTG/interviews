@@ -7,36 +7,36 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
+//Make class as final so we can not create subclass
+public final class Exercise1 {
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
+	public static final class Person {
+		// All the class variable are made final and hence cant be changed
+		private final Set<String> phoneNumbers;
+		private finalString firstName;
+		private finalString lastName;
+		// parameterised constructor is done to assign the value to all the final class variable during object initialisat
 		public Person() {
 		}
+		 public Person(Set<String> newPhoneNumbers,String newFirstName, String newLastName) {
+            this.phoneNumbers = newPhoneNumbers;
+            this.lastName =  newLastName;
+            this.firstName = newFirstName;
+        }
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
+		
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
+		
 		
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+		
 	}
 }
