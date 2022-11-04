@@ -47,6 +47,8 @@
     <Compile Include="Entities\Module.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILessonRepository.cs" />
+    <Compile Include="Repositories\IModuleRepository.cs" />
     <Compile Include="Repositories\LessonRepository.cs" />
     <Compile Include="Repositories\ModuleRepository.cs" />
     <Compile Include="Services\LessonService.cs" />

@@ -7,3 +7,9 @@ build/
 *.jar
 
 *.log
+/dot-net/UnitTesting/.vs/WriteUnitTest/v15
+/dot-net/UnitTesting/WriteUnitTest/bin/Debug
+/dot-net/UnitTesting/WriteUnitTest/obj/Debug
+/dot-net/UnitTesting/WriteUnitTest.UnitTests/bin/Debug
+/dot-net/UnitTesting/WriteUnitTest.UnitTests/obj/Debug
+/dot-net/WhatWouldYouChange

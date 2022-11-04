@@ -4,7 +4,7 @@ using WriteUnitTest.Entities;
 
 namespace WriteUnitTest.Repositories
 {
-    public class ModuleRepository
+    public class ModuleRepository : IModuleRepository
     {
         private readonly List<Module> moduleList;
 
