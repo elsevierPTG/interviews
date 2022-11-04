@@ -1,19 +1,31 @@
-
-
-apply plugin: 'java'
+plugins {
+  id 'groovy'
+}
 
 sourceCompatibility = 1.8
 
-version = '1.0'
+version     = '1.0.0'
+description = 'elsevier java interview coding problems'
+group       = 'org.elsevier.education.interview'
+
+ext {
+  junitVersion  = '4.12'
+  spockVersion  = '1.0-groovy-2.4'
+  groovyVersion = '2.4.10'
+}
+
 
 repositories {
-    mavenCentral()
+  jcenter()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+  compile "org.codehaus.groovy:groovy:${groovyVersion}"
+  testCompile "junit:junit:${junitVersion}"
+
+  testCompile "org.spockframework:spock-core:${spockVersion}"
+  // For mocking interfaces and classes with no default constructor
+  testRuntime "cglib:cglib-nodep:3.2.4"
+  testRuntime "org.objenesis:objenesis:2.5.1"
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.0'
-}
