@@ -6,15 +6,14 @@ TODO: Turn the "Singleton" class into an actual singleton. The main() method sho
 
 */
 public class Exercise5 {
-	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
-	}
+	/**
+	 * Inner classes change the rules on being able to create the singleton.  So I moved it out into it's own class.
+	 * @param a
+	 */
 		
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+		Singleton st = Singleton.instance();
+//		Singleton stg = new Singleton();
+		st.doSomething();
 	}
 }
