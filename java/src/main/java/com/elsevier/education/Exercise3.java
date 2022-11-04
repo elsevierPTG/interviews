@@ -12,16 +12,24 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+		
+		// Don't need this anymore (Just commenting it out so you know what it was)
+		// private static Random generator = new java.util.Random();
 		private Integer id;
 		
 		public Person(int newId) {
 			id = newId;
 		}
 		
+		/**
+		 * This function is the culprit. Generating random hashes eliminates the usefulness
+		 * of hashing, where the same input always returns the same hash. Just returning 
+		 * the straight id works fine
+		 * 
+		 * @return
+		 */
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;
 		}
 		
 		public boolean equals(Object other) {
