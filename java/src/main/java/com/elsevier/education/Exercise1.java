@@ -1,5 +1,6 @@
 package com.elsevier.education;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -14,29 +15,40 @@ public class Exercise1 {
 		private Set<String> phoneNumbers;
 		private String firstName;
 		private String lastName;
-		
-		public Person() {
+
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+			this.phoneNumbers = phoneNumbers;
+			this.firstName = firstName;
+			this.lastName = lastName;
 		}
 
+		/**
+		 * Create a new collection to make the collection immutable.
+		 * It will not make the elements of the collection immutable though.
+		 * @return
+		 */
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			if (phoneNumbers != null) {
+				return new HashSet<String>(phoneNumbers);
+			} else {
+				return phoneNumbers;
+			}
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
+		/**
+		 * Java Strings are immutable, no need to clone
+		 * @return
+		 */
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
+		/**
+		 * Java Strings are immutable
+		 * @return
+		 */
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
