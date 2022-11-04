@@ -9,21 +9,35 @@ TODO make sure we have no-op implementations of the gas engine and electric engi
 */
 public class Exercise2 {
 
-	public static class Car {
+	public class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
 			engine.spinWheels();
 		}
 	}
-	
-	public static class GasEngine {
+
+	public interface Engine {
+		void spinWheels();
+	}
+
+	public class GasEngine implements Engine{
 		public void spinWheels() {
 			// no-op for now
 		}
 	}
+
+	public class ElectricEngine implements Engine{
+		public void spinWheels() {
+			// no-op for now
+		}
+	}
+
+
+
 }
