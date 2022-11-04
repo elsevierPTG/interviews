@@ -8,6 +8,7 @@ TODO Examine the failing test case for this class.
  We should be able to call people.add() twice but end with only one object in it.
  We can test with "gradlew test"
 
+The test failed because the hash code is different for person with the same id.
 */
 public class Exercise3 {
 
@@ -21,7 +22,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * 31;
 		}
 		
 		public boolean equals(Object other) {
