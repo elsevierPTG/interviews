@@ -2,19 +2,14 @@ package com.elsevier.education;
 
 /**
 
-TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
+I moved Singleton into its own class because here, even though its constructor was private,
+it was accessible to this class.
 
 */
 public class Exercise5 {
-	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
-	}
-		
+			
 	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+		Singleton st = Singleton.getInstance();
+		st.doSomething();
 	}
 }

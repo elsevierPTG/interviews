@@ -2,18 +2,24 @@ package com.elsevier.education;
 
 /**
 
-TODO refactor the Car to use dependency injection of the engine
-TODO allow use of either a gas engine or electric engine (create an appropriate abstraction)
-TODO make sure we have no-op implementations of the gas engine and electric engine
+I could have also used an abstract class with a no-op method. I used an
+interface here because I started to imagine other bits of functionality
+like 'power on' or 'fire missiles' that might or might not apply to
+every object that has an engine.
 
 */
 public class Exercise2 {
+	
+	static interface Engine {
+		default void spinWheels() {}
+	}
 
 	public static class Car {
 		
-		private GasEngine engine = new GasEngine();
+		private Engine engine;
 		
-		public Car() {
+		public Car(Engine engine) {
+			this.engine = engine;
 		}
 		
 		public void moveForward() {
@@ -21,9 +27,9 @@ public class Exercise2 {
 		}
 	}
 	
-	public static class GasEngine {
-		public void spinWheels() {
-			// no-op for now
-		}
+	public static class GasEngine implements Engine {
+	}
+	
+	public static class ElectricEngine implements Engine {
 	}
 }
