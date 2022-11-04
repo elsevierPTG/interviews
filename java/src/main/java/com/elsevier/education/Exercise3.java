@@ -12,20 +12,27 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
+
 		private static Random generator = new java.util.Random();
 		private Integer id;
-		
+
 		public Person(int newId) {
 			id = newId;
 		}
-		
+
 		public int hashCode() {
 			return id * generator.nextInt();
 		}
-		
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
+		}
+
+		public  static void main(String args[]){
+			Person p1 = new Person(89);
+			persone p2 = p1;
+			System.out.println(p1.equals(p2));
+
 		}
 	}
 }
