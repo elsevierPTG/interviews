@@ -21,7 +21,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id ;
 		}
 		
 		public boolean equals(Object other) {
@@ -29,3 +29,5 @@ public class Exercise3 {
 		}
 	}
 }
+
+failure testcase: because of randomgenerator two same name person will be having different hascode value so they won't be same
