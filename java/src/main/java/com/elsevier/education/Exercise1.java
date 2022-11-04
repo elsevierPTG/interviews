@@ -7,36 +7,66 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
 
-	public static class Person {
+/**
+ * 
+ * @author Rohini Byrishetty
+ * To Make a Class immutable, the instance variable of the class should be final and there should not be any setter methods 
+ *
+ */
+public final class Exercise1 {
+
+	//changing class to Final
+	private final static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		//changing variables to final 
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
 		
 		public Person() {
 		}
 
+		//cloning the return objects
 		public Set<String> getPhoneNumbers() {
-			return phoneNumbers;
+			return phoneNumbers.clone();
 		}
+		
+		/*
 		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
+		} */
+		
+		//cloning the return objects
+		public String getFirstName() {
+			return firstName.clone();
 		}
 		
-		public String getFirstName() {
-			return firstName;
-		}
+		/*
 		public void setFirstName(String newName) {
 			firstName = newName;
+		}*/
+		
+		//cloning the return objects
+		public String getLastName() {
+			return lastName.clone();
 		}
 		
+		/*
 		public String getLastName() {
-			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
+			return lastName.clone();
+		} */
+		
+		// Performing the exact copy
+		public Person(String firstName, String lastName, Set pN) {
+			System.out.println("Performing Deep Copy for Object initialization");
+			this.firstName = firstName;
+			this.lastName = lastName;
+			Set phoneNumbers = new HashSet();
+			for (String temp : pN) {
+				phoneNumbers.add(temp);
+			}
+			this.phoneNumbers = phoneNumbers;
 		}
 	}
 }
