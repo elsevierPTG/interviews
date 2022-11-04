@@ -9,6 +9,12 @@ TODO Examine the failing test case for this class.
  We can test with "gradlew test"
 
 */
+
+/**
+ * Hash code was returning a different value for equal objects, which is incorrect.
+ *
+ * Implemented hashCode properly.
+ */
 public class Exercise3 {
 
 	public static class Person {
@@ -21,7 +27,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id ^ (id >>> 32);//id * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
