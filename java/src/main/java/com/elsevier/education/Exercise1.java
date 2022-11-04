@@ -6,37 +6,47 @@ import java.util.Set;
 
 TODO: Make this class immutable.
 
+Declared Exercise1 class as final and person class as final
+
 */
-public class Exercise1 {
+public final class Exercise1 {
 
 	public static class Person {
 		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
+		final private Set<String> phoneNumbers;
+		final private String firstName;
+		final private String lastName;
 		
-		public Person() {
-		}
+		public Person(Set ph, String fn, String ln) {
+			phoneNumbers = ph;
+			firstName = fn;
+			lastName = ln;
+		} 
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
+		/*
+		public void setPhoneNumbers(Set<String> 				newPhoneNumbers) {
 			phoneNumbers = newPhoneNumbers;
 		}
+		*/
 		
 		public String getFirstName() {
 			return firstName;
 		}
+		/*
 		public void setFirstName(String newName) {
 			firstName = newName;
 		}
-		
+		*/
 		public String getLastName() {
 			return lastName;
 		}
+		/*
 		public void setLastName(String newName) {
 			lastName = newName;
 		}
+		*/
 	}
 }
