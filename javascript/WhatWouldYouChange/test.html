@@ -1,47 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>JavaScript test: What would you change?</title>
-
-<script>
-  /*
-  Instructions
-  (~10 minutes):
-
-  This code appears to work. Nonetheless note up to 10 things that look bad to you, including a brief note as to why.
-
-  Please consider both minor syntactical issues with the code as it stands, and how the code is structured overall.
-   */
-
-  var submitButtonActive = false
-
-  function validateField() {
-    reqFlds = [];
-    reqFlds[0] = 'username';
-    reqFlds.push('password');
-
-    if(
-          document.getElementById(reqFlds[0]).value !== ''
-          &&
-          document.getElementById(reqFlds[1]).value !== ''
-        ) {
-          // valid
-          document.getElementById('submitButton').style.backgroundColor = '#00f';
-          return true;
-    }else {
-          document.getElementById('submitButton').style.backgroundColor = '#f00';
-          return
-            false;
-    }
-  }
-
-  document.getElementById('submitButton').onclick = function(){
-    submitButtonIsActive = validateField();
-    console.log('submitButtonActive', submitButtonActive)
-  }
-</script>
-
+  <meta charset="utf-8">
+  <title>JavaScript test: What would you change?</title>
 </head>
 <body>
 
@@ -50,5 +11,48 @@
 <p><label>Password <input type="password" id="password" name="password"/></label></p>
 <p><input id="submitButton" type="submit" value="submit" /></p>
 
+<script>
+    /*
+    Instructions
+    (~10 minutes):
+  
+    This code appears to work. Nonetheless note up to 10 things that look bad to you, including a brief note as to why.
+  
+    Please consider both minor syntactical issues with the code as it stands, and how the code is structured overall.
+     */
+  
+    var submitButtonActive = false
+  
+    function validateField() {
+      // store username and password in variables for use later. This will make our if condition more readable
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      // The commented code below was pushing a password and validating even if no password was entered. Since we're storing both username and password above from the input fields on the page, the reqFlds array is unnecessary
+      // reqFlds = [];
+      // reqFlds[0] = 'username';
+      // reqFlds.push('password');
+  
+      // an empty string is falsy, so we just need to check if there is a value at all for username & password
+      if (username && password) {
+        document.getElementById('submitButton').style.backgroundColor = '#00f';
+        return true;
+      } else {
+        document.getElementById('submitButton').style.backgroundColor = '#f00';
+        // the bool that is returned should be on the same line for readability
+        return false;
+      }
+    }
+  
+    document.getElementById('submitButton').onclick = function() {
+      submitButtonIsActive = validateField();
+      console.log('submitButtonActive', submitButtonActive)
+    }
+  </script>
+
+<!-- ideally, we would have our js in an external file and include it here -->
+<!-- <script src="example.js"></script> -->
+
+<!-- In lieu of an external JS file, I've moved the script tag containing our code to the end of the body so that the DOM loads before we start executing code that depends on it being present -->
+  
 </body>
 </html>
