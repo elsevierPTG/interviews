@@ -15,28 +15,32 @@ public class Exercise1 {
 		private String firstName;
 		private String lastName;
 		
-		public Person() {
+		/**
+		 * In order to make this immutable, all values must be
+                 * passed through the constructor only with no other means
+                 * of manipulation once created.
+                 *
+                 * @param phoneNumbers   a set of numbers associated with a given person
+                 * @param firstName      A person's first name
+                 * @param lastName       A person's last name
+                 * @return               An instance of a person with all attributes read only
+                 */
+		public Person(Set<String> phoneNumbers, String firstName, String lastName) {
+			this.phoneNumbers = phoneNumbers;
+			this.firstName = firstName;
+			this.lastName = lastName;
 		}
 
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
 		
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
 		
 		public String getLastName() {
 			return lastName;
-		}
-		public void setLastName(String newName) {
-			lastName = newName;
 		}
 	}
 }
