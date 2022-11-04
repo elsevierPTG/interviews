@@ -12,6 +12,8 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.12'
+    //added for Exercise2
+    compile 'javax.inject:javax.inject:1'
 }
 
 task wrapper(type: Wrapper) {
