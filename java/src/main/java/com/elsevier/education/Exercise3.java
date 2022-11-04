@@ -20,6 +20,10 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		/*
+		* This method is preventing the HashSet in the Unit test from recognizing duplicate object instances.
+		I think the contains() method invoked by HashSet.add() uses the hashCode, not the equals() method to compare for instance equality.
+		*/
 		public int hashCode() {
 			return id * generator.nextInt();
 		}
