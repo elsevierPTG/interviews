@@ -9,10 +9,10 @@ public class Exercise4 {
 
 	public static class Counter {
 		
-		private int count = 0;
+		private AtomicInteger count = new AtomicInteger(0);
 		
 		public int increment() {
-			return ++count;
+			return count.incrementAndGet();
 		}
 		
 		public int getCount() {
