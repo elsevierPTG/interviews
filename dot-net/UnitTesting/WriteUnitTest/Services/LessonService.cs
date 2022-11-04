@@ -15,20 +15,22 @@ namespace WriteUnitTest.Services
 
             lesson.Grade = grade;
 
-            if (!lesson.IsPassed)
-            {
-                var moduleRepository = new ModuleRepository();
-                var module = moduleRepository.GetModule(lessonId);
+            // For consistency, we need to set the lesson's pass status
+            // each time the grade changes
+            //if (!lesson.IsPassed)
+            //{
+            var moduleRepository = new ModuleRepository();
+            var module = moduleRepository.GetModule(lessonId);
 
-                if (grade >= module.MinimumPassingGrade)
-                {
-                    lesson.IsPassed = true;
-                }
-                else
-                {
-                    lesson.IsPassed = false;
-                }
+            if (grade >= module.MinimumPassingGrade)
+            {
+                lesson.IsPassed = true;
             }
+            else
+            {
+                lesson.IsPassed = false;
+            }
+            //}
         }
     }
 }
