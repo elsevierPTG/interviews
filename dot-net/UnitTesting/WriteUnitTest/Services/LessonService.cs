@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Entities;
+using WriteUnitTest.Repositories;
 
 namespace WriteUnitTest.Services
 {
@@ -8,7 +9,7 @@ namespace WriteUnitTest.Services
         {
         }
 
-        public void UpdateLessonGrade(int lessonId, double grade)
+        public Lesson UpdateLessonGrade(int lessonId, double grade)
         {
             var lessonRepo = new LessonRepository();
             var lesson = lessonRepo.GetLesson(lessonId);
@@ -29,6 +30,8 @@ namespace WriteUnitTest.Services
                     lesson.IsPassed = false;
                 }
             }
+            
+            return lesson;
         }
     }
 }
