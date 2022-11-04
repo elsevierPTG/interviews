@@ -23,9 +23,20 @@ public class Exercise3 {
 		public int hashCode() {
 			return id * generator.nextInt();
 		}
+		//Set cannot contain duplicates and we need to compare id with equals operator rather than .equals();
 		
 		public boolean equals(Object other) {
-			return id.equals(((Person)other).id);
+			if (other == null) 
+			   return false;
+			if(this == other)
+			   return true;
+			if(other instanceof Person)
+			   return true;	
+			
+			return id==((Person)other).id;
+			
+			
+			
 		}
 	}
 }
