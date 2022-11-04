@@ -12,18 +12,22 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
+
 		private static Random generator = new java.util.Random();
-		private Integer id;
-		
+        // Only set the ID once
+		private final Integer id;
+        // Create static seed for the hashCode method
+        private static Integer seed = generator.nextInt();
+
 		public Person(int newId) {
-			id = newId;
+            // Set it and forget it. We don't want this to change
+			this.id = newId;
 		}
-		
+
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * seed;
 		}
-		
+
 		public boolean equals(Object other) {
 			return id.equals(((Person)other).id);
 		}
