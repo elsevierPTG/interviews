@@ -20,8 +20,10 @@ public class Exercise3 {
 			id = newId;
 		}
 		
+		// NOTE: hashCode must return the same value for each Person, randomization is BAD :)
+		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id;// * generator.nextInt();
 		}
 		
 		public boolean equals(Object other) {
