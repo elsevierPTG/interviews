@@ -1,4 +1,5 @@
-﻿using WriteUnitTest.Services;
+﻿using WriteUnitTest.Repositories;
+using WriteUnitTest.Services;
 
 namespace WriteUnitTest
 {
@@ -6,11 +7,16 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            //var keyword is ambiguous, prefer to specify the obejct type whenever possible for ease of reading purposes
+            //mapping interfaces to repository classes
+            ILessonRepository lessonRepo = new LessonRepository();
+            IModuleRepository moduleRepo = new ModuleRepository();
 
-            var lessonId = 12;
+            LessonService lessonSvc = new LessonService(lessonRepo, moduleRepo);
 
-            var grade = 98.2d;
+            int lessonId = 12;
+
+            double grade = 98.2d;
 
             lessonSvc.UpdateLessonGrade(lessonId, grade);
         }
