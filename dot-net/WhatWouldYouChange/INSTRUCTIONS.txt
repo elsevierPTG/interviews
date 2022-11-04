@@ -3,6 +3,27 @@
 	you think should be made in the section below. Don't spend more than 30 minutes on this entire assignment.
         Feel free to describe why you made particular design decisions.
 
-
 Suggested Changes:
+1. In the entry point of the app - Program -> Main, 
+	1.1 The file name is hardcoded and has a typo.
+	1.2 Instead of hardcoding, FileName can be passed in as argument (string[] args)
+2. In the method ExampleClass.ExampleMethod,
+	2.1 There is no check for whether the FileExists.  I understand there is try-catch to handle any exception. However, if we add the check and raise or log errors, the code will be much cleaner and easy to maintain.
+	2.2. StreamReader is used to read the contents of the file. However there is no use of using syntax. Thus it look like resource will not be disposed properly. Moreover I dont see the File.Close method call to close the file.
+	2.3 Instead of StreamReader, File.ReadAllText can be used. The code is less verbose this way and it will take care of disposing resources automatically. It will not be developer's headache to worry about that anymore.
+	2.4 The code assumes the file with provide filename is will exists in current run-time working directory (say bin folder) which is not a good assumption. There can be various approaches take to fix this - either have fully qualified path or UNC path or a config param (app.config appSettings) 
+	to store the source directory. Then use Path.Combine to get full path and use it to read the contents of the file.
+	2.5 In the catch block the default text string is built using concatenation approach. Instead, we can use verbatim string i.e. var s = @"This is line 1
+	This is line 2
+	This is line 3
+	.
+	.
+	.
+	This is line n";
+	We can also use StringBuilder instead.
+3. Design Patterns
+	3.1 Repository Pattern & Dependency Injection -We can define interface instead of using concrete implementation (ExampleClass). This way we can easy swap underlying way of getting the file contents. Say down the lane we get the contents from say api stream instead of file stream. 
+	This approach will also make our code unit testable. We can easily mock against the interface and test our method or unit of code.
+	3.2 Factory Pattern & Inversion of Control Container - Instead of instantiating concrete class instance, we can have IoC container inject/spin-up the concreate objects into our code.
+
 	
