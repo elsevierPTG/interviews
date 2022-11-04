@@ -4,5 +4,19 @@
         Feel free to describe why you made particular design decisions.
 
 
-Suggested Changes:
-	
+Suggested Changes (in priority order) within ExampleClass.cs:	
+    1) From a functionality standpoint, ExampleMethod appears to store identical text in the exampleText property
+        whether it successfully reads the text file by the given name or not. Since that's all this method does,
+        I'd recommend the following:
+            - Remove the exampleText property (so the text is closed to client modification)
+            - Update the method to a GetExampleText function that accepts no parameters and returns the text.
+        Taking this approach removes a lot of complexity and potential issues, including garbage collection for
+        the filesystem/streamreader due to the lack of a using statement and latency within the catch block due
+        to brute force string concatenation.
+
+    2) I'd also recommend centralizing the text in a resource file. This way the reference to it is strongly typed
+        rather than referred to by filename (read: a string) which is subject to typos.
+
+    3) A very minor, nice-to-have would be placing the using statements within the namespace declaration. As you define
+        your own objects, placing them in the namespace can both make your using statements more succint and in very rare
+        cases mitigate runtime collisions with similarly named objects.

@@ -1,0 +1,16 @@
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.dll
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.UnitTests.pdb
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Castle.Core.dll
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\NSubstitute.dll
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.exe
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.pdb
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\WriteUnitTest.exe.config
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\Castle.Core.xml
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\NSubstitute.xml
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csprojAssemblyReference.cache
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csproj.CoreCompileInputs.cache
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.csproj.CopyComplete
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.dll
+C:\Repositories\Elsevier\dot-net\UnitTesting\WriteUnitTest.UnitTests\obj\Debug\WriteUnitTest.UnitTests.pdb

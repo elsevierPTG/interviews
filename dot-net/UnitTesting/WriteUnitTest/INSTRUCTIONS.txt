@@ -30,4 +30,4 @@ Background Information:
 		written and run by software developers to ensure that code meets its design 
 		and behaves as intended.
 		
-		Module - a collection of lessons 
+		Module - a collection of lessons
