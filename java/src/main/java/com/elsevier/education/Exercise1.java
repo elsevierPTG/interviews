@@ -7,36 +7,36 @@ import java.util.Set;
 TODO: Make this class immutable.
 
 */
-public class Exercise1 {
+//Added final modify access, so any class cannot extends
+//this class and modify data
+public final class Exercise1 {
+    //Added final modify access, so any class cannot extends
+    //this class and modify data
+    //Removed setXXX methods, so no one can update values.
+	public static final class Person {
 
-	public static class Person {
-		
-		private Set<String> phoneNumbers;
-		private String firstName;
-		private String lastName;
-		
-		public Person() {
+		private final Set<String> phoneNumbers;
+		private final String firstName;
+		private final String lastName;
+		//Added new construction to set phoneNumbers, firstName, lastName
+		public Person(final Set<String> phoneNumbers, final String firstName, final String lastName) {
+		    this.phoneNumbers = phoneNumbers;
+		    this.firstName = firstName;
+		    this.lastName = lastName;
 		}
-
 		public Set<String> getPhoneNumbers() {
 			return phoneNumbers;
 		}
-		public void setPhoneNumbers(Set<String> newPhoneNumbers) {
-			phoneNumbers = newPhoneNumbers;
-		}
-		
+
+
 		public String getFirstName() {
 			return firstName;
 		}
-		public void setFirstName(String newName) {
-			firstName = newName;
-		}
-		
+
+
 		public String getLastName() {
 			return lastName;
 		}
-		public void setLastName(String newName) {
-			lastName = newName;
-		}
+
 	}
 }
