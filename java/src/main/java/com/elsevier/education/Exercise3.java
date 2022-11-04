@@ -12,8 +12,19 @@ TODO Examine the failing test case for this class.
 public class Exercise3 {
 
 	public static class Person {
-	
-		private static Random generator = new java.util.Random();
+		
+		/*
+		 * Setting a final int value for prime to compute hashCode
+		 * Removed generator as each time nextInt is called, a new value is returned
+		 * When a Person object is added to the list, its hashCode is computed and checked to see
+		 * if it already exists in the list.  The next time it is added, the hashCode 
+		 * should be the same as the first if no variables (id) have changed.  
+		 * Calling nextInt will return a different value, so the hashCode will be different.
+		 * Using a predefined prime number as a constant for multiplicity will ensure each unique
+		 * id has a unique hashcode, and Person objects with the same id should have the same hashcode
+		 * 
+		 */
+		final int prime = 43;
 		private Integer id;
 		
 		public Person(int newId) {
@@ -21,7 +32,7 @@ public class Exercise3 {
 		}
 		
 		public int hashCode() {
-			return id * generator.nextInt();
+			return id * prime;
 		}
 		
 		public boolean equals(Object other) {
