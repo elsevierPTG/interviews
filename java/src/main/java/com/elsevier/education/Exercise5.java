@@ -1,20 +1,36 @@
 package com.elsevier.education;
 
 /**
-
-TODO: Turn the "Singleton" class into an actual singleton. The main() method should still call .doSomething().
-
+ * The purpose of this class is to show Singleton Example
 */
-public class Exercise5 {
 	
-	public static class Singleton {
-		public void doSomething() {
-			System.out.println("Doing something....");
-	    }
+public class Singleton {
+
+	   private static Singleton singleton = new Singleton( );
+
+	   /* A private Constructor prevents any other
+	    * class from instantiating.
+	    */
+	   private Singleton() { }
+
+	   /* Static 'instance' method 
+	    Private static variable of the same class that is the only instance of the class.
+	    */
+	   public static Singleton getInstance( ) {
+	      return singleton;
+	   }
+
+	   /*Public static method that returns the instance of the class, this is the global access point for 
+	    outer world to get the instance of the singleton class. */
+	   protected static void doSomething( ) {
+	      System.out.println("doSomething for singleton");
+	   }
 	}
-		
-	public static void main(String a[]){
-		Singleton st = new Singleton();
-		st.doSomeThing();
+	
+ class SingletonDemo {
+
+	   public static void main(String[] args) {
+	      Singleton singletonObject = Singleton.getInstance( );
+	      singletonObject.doSomething( );
+	   }
 	}
-}
