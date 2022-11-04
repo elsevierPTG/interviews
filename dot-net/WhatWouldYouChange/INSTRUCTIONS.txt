@@ -5,4 +5,17 @@
 
 
 Suggested Changes:
-	
+	I would change the visibility of the exampleText field in ExampleClass so that the getter is public but the setter is protected or private. 
+		As it is now, the main program can manipulate the value of exampleText, and	modifying class data from outside the class is typically not good practice.
+	I would change the value passed by Program to be "ExampleText.txt", so that it will pass in the correct name of the text file, allowing ExampleMethod to properly read it.
+	I would change the catch in ExampleMethod in a few ways:
+		1) Catch more specific exceptions than just a blanket catch-all; I think catching EVERY exception File.Open can throw might be overkill, but I would minimally catch 
+			FileNotFoundException and IOException, and provide a third catch on Exception to catch other errors.
+		2) The catch should respond with the details of the caught exception rather than just modifying the data with the desired value. It isn't even known that the caller of this
+			method _always_ wants the contents of ExampleText.txt; if a different text file is passed in with different contents (and experiences an error during open), 
+			this method fails to perform its function.
+	I would use explicit types in place of var in all cases. I think this is just good practice in general.
+	I would add class-level and function-level comments documenting the expected behavior of the code.
+	I would close the streamReader when I am done with it, after reading the data.
+	I may change the variable name of exampleText to ExampleText, as this seems to be the standard for class fields in C#, but it would depend upon my team's style agreement.	
+		

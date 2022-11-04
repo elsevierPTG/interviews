@@ -6,11 +6,11 @@ namespace WriteUnitTest
     {
         public static void Main(string[] args)
         {
-            var lessonSvc = new LessonService();
+            LessonService lessonSvc = new LessonService();
 
-            var lessonId = 12;
+            int lessonId = 12;
 
-            var grade = 98.2d;
+            double grade = 98.2d;
 
             lessonSvc.UpdateLessonGrade(lessonId, grade);
         }
