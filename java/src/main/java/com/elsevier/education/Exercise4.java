@@ -1,27 +1,32 @@
 package com.elsevier.education;
 
 /**
-
-TODO Is Counter thread-safe? If so, why, and if not, how can we fix it?
-
-*/
+ * 
+ * This class is made thread safe by making the variable counter volatile. 
+ * (volatile variable is always read from the memory, not from the thread cache)
+ * 
+ * @author Mukul Das 
+ * Email: m.das001@yahoo.com
+ * Recruiter: Collabera
+ * 
+ * 
+ */
 public class Exercise4 {
-
 	public static class Counter {
-		
-		private int count = 0;
-		
-		public int increment() {
-			return ++count;
+			
+			private volatile int count = 0;
+			
+			public int increment() {
+				return ++count;
+			}
+			
+			public int getCount() {
+				return count;
+			}
+			
+			public void resetCount() {
+				count = 0;
+			}
+	
 		}
-		
-		public int getCount() {
-			return count;
-		}
-		
-		public void resetCount() {
-			count = 0;
-		}
-
-	}
 }
