@@ -5,4 +5,10 @@
 
 
 Suggested Changes:
-	
+	1-  static class would be better choice for the given scope of the program. IMHO
+	2-  the resources used by IO operation should be release and disposed of properly.
+	3-  StringBuilder would be better choice for string variable "text".IMHO
+	4-  we could pass file name by using App.config file.IMHO
+	5-	a little validation for file name would be better.IMHO
+	6-	usually it's better, handling exceptions with appropriate exception types e.g. IOException.
+	7	if memory is concern then all this could be done by simply returning the StringBuilder text variable and writing-off the global string property completely.
