@@ -1,24 +1,28 @@
-﻿using WriteUnitTest.Repositories;
+﻿using WriteUnitTest.Interfaces;
+using WriteUnitTest.Repositories;
 
 namespace WriteUnitTest.Services
 {
     public class LessonService
     {
-        public LessonService()
+        private readonly ILessonRepository _lessonRepo;
+        private readonly IModuleRepository _moduleRepository;
+
+        public LessonService(ILessonRepository lessonRepo, IModuleRepository moduleRepository)
         {
+            _lessonRepo = lessonRepo;
+            _moduleRepository = moduleRepository;
         }
 
         public void UpdateLessonGrade(int lessonId, double grade)
         {
-            var lessonRepo = new LessonRepository();
-            var lesson = lessonRepo.GetLesson(lessonId);
+            var lesson = _lessonRepo.GetLesson(lessonId);
 
             lesson.Grade = grade;
 
             if (!lesson.IsPassed)
             {
-                var moduleRepository = new ModuleRepository();
-                var module = moduleRepository.GetModule(lessonId);
+                var module = _moduleRepository.GetModule(lessonId);
 
                 if (grade >= module.MinimumPassingGrade)
                 {

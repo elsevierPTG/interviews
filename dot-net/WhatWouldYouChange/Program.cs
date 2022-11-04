@@ -8,9 +8,8 @@ namespace ExampleProgram
         {
             var exampleClass = new ExampleClass();
 
-            exampleClass.ExampleMethod("ExampleTexttxt");
-
-            Console.Write(exampleClass.exampleText);
+            Console.Write(exampleClass.ExampleMethod("ExampleText.txt"));
+            Console.Write("Press Any Key to Exit");
             Console.ReadKey();
         }
     }
