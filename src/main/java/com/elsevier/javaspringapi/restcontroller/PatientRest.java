@@ -26,6 +26,7 @@ public class PatientRest {
 	private PatientService patientService;
 
 	// GET /patients - return all patients
+	
 	@GetMapping("/patients")
 	public ResponseEntity<List<Patient>> getAllPatients() {
 		List<Patient> allPatient = patientService.getAllPatient();
