@@ -20,6 +20,9 @@ import lombok.Data;
 
 // TODO: implement this model
 
+//Entity class
+
+
 @Entity
 @Data
 @Table(name = "patient_table")
