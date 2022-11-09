@@ -11,6 +11,7 @@ gradle
 .settings
 .springBeans
 .sts4-cache
+*.class
 
 ### IntelliJ IDEA ###
 .idea
