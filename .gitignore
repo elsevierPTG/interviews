@@ -1,3 +1,4 @@
+bin/
 target/
 gradle
 !**/src/main/**/target/
@@ -11,7 +12,6 @@ gradle
 .settings
 .springBeans
 .sts4-cache
-*.class
 
 ### IntelliJ IDEA ###
 .idea
