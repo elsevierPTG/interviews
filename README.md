@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Java Spring Elsevier Interview 
 
 ## Description
@@ -75,3 +76,7 @@ through this. To build the image run:
 followed by
 
 ``docker run -p 8080:8080 java-spring-api``
+=======
+# interviews
+This is a set of coding challenges designed to vet the technical ability of software engineers applying to Elsevier.
+>>>>>>> f8c18cebae20bdabdb61de805eb33037ed5e0947

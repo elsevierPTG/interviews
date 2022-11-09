@@ -1,0 +1,11 @@
+data/src/main/java/match/dao/BookDao.java.i
+data/src/main/java/match/client/BookMatchClient.java.i
+data/src/main/java/match/client/BooksToMatch.java.i
+data/pom.xml.i
+data/src/main/java/match/dao/BookDaoImpl.java.i
+data/.hgignore.i
+data/src/main/java/match/model/Book.java.i
+data/src/main/resources/import.sql.i
+data/src/main/resources/applicationContext.xml.i
+data/readme/Notes.txt.i
+data/readme/instructions.txt.i

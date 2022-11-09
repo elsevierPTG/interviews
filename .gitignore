@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bin/
 target/
 gradle
@@ -20,3 +21,14 @@ gradle
 *.ipr
 
 
+=======
+build/
+
+.gradle/
+.idea/
+
+# Package Files #
+*.jar
+
+*.log
+>>>>>>> f8c18cebae20bdabdb61de805eb33037ed5e0947
