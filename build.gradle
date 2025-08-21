@@ -1,0 +1,21 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}

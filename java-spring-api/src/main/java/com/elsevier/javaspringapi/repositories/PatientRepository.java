@@ -1,7 +1,6 @@
 package com.elsevier.javaspringapi.repositories;
 
 import com.elsevier.javaspringapi.models.Patient;
-import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.UUID;
 
 public class PatientRepository {
     // TODO: Once the patient model is complete add some test patients here, 3 should be fine.
-    private List<Patient> patients = new ArrayList<>(){{
+    private List<Patient> patients = new ArrayList<com.elsevier.javaspringapi.models.Patient>(){{
         add(new Patient());
         add(new Patient());
         add(new Patient());
