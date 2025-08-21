@@ -6,6 +6,8 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.hibernate.validator:hibernate-validator:6.1.5.Final'
     runtimeOnly 'org.springframework.boot:spring-boot-devtools:2.7.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
